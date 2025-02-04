@@ -1,110 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Documento Básico</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="./bulma.css" />
+  </head>
+  <body>
     <header>
-        <h1></h1>
-        <nav></nav>
+      <h1></h1>
+      <nav></nav>
     </header>
     <main>
-        <section>
-            <div>
-                <!-- Sección de fondo (imagen) -->
+      <section>
+        <!-- Imagen de fondo ocupando todo el ancho -->
+        <div
+          class="hero is-fullheight"
+          style="background: url('tu-imagen.jpg') center/cover no-repeat"
+        >
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <!-- Aquí podrías agregar un título si lo deseas -->
             </div>
-        
-            
-            <div>
-           <!-- Añadir texto -->
-              
-                
+          </div>
+        </div>
+
+        <!-- Zona de información con fondo blanco y letras azules en columnas -->
+        <div class="section has-background-white">
+          <div class="container">
+            <div class="columns">
+              <!-- Columna izquierda -->F
+              <div class="column is-half" style="color: #0068c3">
+                <p class="has-text-justified">
+                  <!-- Aquí va el texto de la izquierda -->
+                </p>
+              </div>
+
+              <!-- Columna derecha -->
+              <div class="column is-half" style="color: #0068c3">
+                <p class="has-text-justified">
+                  <!-- Aquí va el texto de la derecha -->
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
+      <section></section>
 
-        <section>
-          
-        </section>
+      <section></section>
 
+      <section>
+        <form class="formulario" action="/enviar" method="post">
+          <input type="text" id="gmail" placeholder="Email" required /><br />
+          <input
+            type="password"
+            id="contraseña"
+            placeholder="contraseña"
+            required
+          /><br />
+          <label for="mensaje"
+            >¿Porque quieres participar en el voluntariado?</label
+          >
+          <input type="text" id="mensaje" required /><br />
+          <input type="submit" value="enviar" />
+        </form>
+      </section>
 
-        <section>
+      <section>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+          </div>
+        </div>
+      </section>
 
-        </section>
-
-
-        
-        <section>
-            <form class="formulario" action="/enviar" method="post">
-                <input type="text" id="gmail" placeholder="Email" required><br>
-                <input type="password" id="contraseña" placeholder="contraseña" required><br>
-                <label for="mensaje">¿Porque quieres participar en el voluntariado?</label>
-                <input type="text" id="mensaje" required><br>
-                <input type="submit" value="enviar">
-            </form>
-        </section>
-
-
-        <section>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="item">1</div>
-                    <div class="item">2</div>
-                    <div class="item">3</div>
-                    <div class="item">4</div>
-                    <div class="item">5</div>
-                    <div class="item">6</div>
-                    <div class="item">7</div>
-                    <div class="item">8</div>
-                    <div class="item">9</div>
-                    <div class="item">10</div>
-                    <div class="item">1</div>
-                    <div class="item">2</div>
-                    <div class="item">3</div>
-                    <div class="item">4</div>
-                    <div class="item">5</div>
-                    <div class="item">6</div>
-                    <div class="item">7</div>
-                    <div class="item">8</div>
-                    <div class="item">9</div>
-                    <div class="item">10</div>
-                </div>
-            </div>
-        </section>
-
-
-        
-        <section>
-
-        </section>
-
-
-
+      <section></section>
     </main>
-    <footer>
-        <div>
-            <h3>DATOS NOMBRE</h3>
-            <p>DATOS--DRECCION</p>
-            <p>DATOS TELEFONO Y CORREO</p>
+    <footer class="footer has-text-white p-5" style="background-color: #0068c3">
+      <div class="container">
+        <div class="columns is-multiline">
+          <!-- Sección de información -->
+          <div class="column is-4">
+            <h3 class="title is-5 has-text-white">NOMBRE INSTITUCIÓN</h3>
+            <p>Dirección: Calle X, Ciudad</p>
+            <p>Teléfono: 123 456 789</p>
+            <p>Email: contacto@email.com</p>
+          </div>
+
+          <!-- Sección de logos -->
+          <div class="column is-4 has-text-centered">
+            <p>Gobierno de Navarra</p>
+            <p>Agenda 2030</p>
+          </div>
+
+          <!-- Sección de redes sociales -->
+          <div class="column is-4 has-text-centered">
+            <a href="#"
+              ><img src="instagram.png" alt="Instagram" class="icon"
+            /></a>
+            <a href="#"
+              ><img src="facebook.png" alt="Facebook" class="icon"
+            /></a>
+            <a href="#"><img src="twitter.png" alt="Twitter" class="icon" /></a>
+            <a href="#"><img src="youtube.png" alt="YouTube" class="icon" /></a>
+            <a href="#"
+              ><img src="whatsapp.png" alt="WhatsApp" class="icon"
+            /></a>
+          </div>
         </div>
-        <div>
-            <p>DATOS</p>
-            <p>AGENDA 2030</p>
+
+        <!-- Sección de enlaces legales -->
+        <div class="has-text-centered mt-4">
+          <a href="#" class="has-text-white">Aviso legal</a> |
+          <a href="#" class="has-text-white">Protección de datos</a> |
+          <a href="#" class="has-text-white">Política de cookies</a>
         </div>
-        <div>
-            <a href="#"><img src="" alt="Instagram"></a>
-            <a href="#"><img src="" alt="Facebook"></a>
-            <a href="#"><img src="" alt="Twitter"></a>
-            <a href="#"><img src="" alt="YouTube"></a>
-            <a href="#"><img src= "" alt="WhatsApp"></a>
-        </div>
-        <div>
-            <a href="#">Aviso legal</a> |
-            <a href="#">Protección de datos</a> |
-            <a href="#">Política de cookies</a>
-        </div>
+      </div>
     </footer>
-    
-</body>
+  </body>
 </html>
