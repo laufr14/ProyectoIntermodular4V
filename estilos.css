@@ -1,0 +1,107 @@
+.hero {
+    padding: 0; /* Elimina el padding extra */
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.hero-body {
+    padding: 0; /* Evita el espacio interno de Bulma */
+    padding-left: 0%;
+    padding-right: 0%;
+    display: flex;
+    align-items: stretch; /* Asegura que ocupe toda la altura */
+}
+
+.hero-body .container {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+}
+
+.hero-body .image img {
+    width: 100%;
+    height: 100vh; /* Ajusta la imagen a la altura de la pantalla */
+    object-fit: cover; /* Evita distorsión y rellena toda el área */
+}
+
+.section {
+    padding: 60px 20px;
+    background-color: #1177aa;
+}
+
+.title, .subtitle {
+    color: white;
+}
+
+.store-button {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.app-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    white-space: nowrap; /* Evita que los elementos salten de línea */
+    background: white;
+    border-top: 3px solid #222;
+    border-bottom: 3px solid #222;
+    padding: 15px 0;
+    scrollbar-width: auto; /* Firefox */
+    scrollbar-color: #7d7c7c #ddd; /* Color del scroll en Firefox */
+}
+
+/* Scrollbar en Chrome y Edge */
+.carousel-container::-webkit-scrollbar {
+    height: 12px; /* Grosor de la barra */
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: #ddd; /* Fondo del scrollbar */
+    border-radius: 20px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff4500, #ff6347); /* Degradado de color */
+    border-radius: 20px;
+    border: 3px solid #ddd; /* Borde para separar del fondo */
+}
+
+/* Contenido del carrusel */
+.carousel {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.item {
+    width: 360px;
+    height: 360px;
+    background: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}

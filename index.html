@@ -4,49 +4,39 @@
     <meta charset="UTF-8" />
     <title>Página Principal</title>
     <link rel="stylesheet" href="./bulma.css" />
+    <link href="./estilos.css" rel="stylesheet" />
   </head>
+
   <body>
     <header>
       <h1></h1>
       <nav></nav>
     </header>
     <main>
-      <section>
-        <!-- Imagen de fondo ocupando todo el ancho -->
-        <div
-          class="hero is-fullheight"
-          style="background: url('tu-imagen.jpg') center/cover no-repeat"
-        >
-          <div class="hero-body">
-            <div class="container has-text-centered">
-              <!-- Aquí podrías agregar un título si lo deseas -->
+      <section class="hero is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container">
+                <figure class="image is-fullwidth">
+                    <img src="./Imagenes/Inicio.png" alt="Descripción de la imagen" class="is-fullwidth">
+                </figure>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Zona de información con fondo blanco y letras azules en columnas -->
-        <div class="section has-background-white">
-          <div class="container">
-            <div class="columns">
-              <!-- Columna izquierda -->F
-              <div class="column is-half" style="color: #0068c3">
-                <p class="has-text-justified">
-                  <!-- Aquí va el texto de la izquierda -->
-                </p>
-              </div>
-
-              <!-- Columna derecha -->
-              <div class="column is-half" style="color: #0068c3">
-                <p class="has-text-justified">
-                  <!-- Aquí va el texto de la derecha -->
-                </p>
-              </div>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h2 class="title is-4">Título 1</h2>
+                    <p class="content">Introduce aquí tu texto para editar.</p>
+                </div>
+                <div class="column">
+                    <h2 class="title is-4">Título 2</h2>
+                    <p class="content">Introduce aquí tu texto para editar.</p>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-
-      <section></section>
+    </section>
 
       <section></section>
 
@@ -94,7 +84,48 @@
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <section class="section">
+          <div class="container">
+            <div class="columns is-vcentered">
+              <div class="column is-half">
+                <h2 class="title is-3 has-text-white">
+                  Lleva el mundo en tu bolsillo.
+                </h2>
+                <p class="subtitle is-5 has-text-white">
+                  Descarga nuestra aplicación y descubre experiencias únicas con
+                  una gran comunidad.
+                </p>
+
+                <div class="buttons">
+                  <a href="https://play.google.com/store/apps" target="_blank">
+                    <img
+                      src="./Imagenes/GooglePlay2.png"
+                      alt="Google Play"
+                      class="store-button"
+                    />
+                  </a>
+                  <a href="https://www.apple.com/app-store/" target="_blank">
+                    <img
+                      src="./Imagenes/AppStore.png"
+                      alt="App Store"
+                      class="store-button"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <img
+                  src="./Imagenes/Captura.PNG"
+                  alt="App Preview"
+                  class="app-image"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
     </main>
     <footer class="footer has-text-white p-5" style="background-color: #0068c3">
       <div class="container">
