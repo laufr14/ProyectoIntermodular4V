@@ -8,20 +8,39 @@
   </head>
 
   <body>
-    <header>
-      <h1></h1>
-      <nav></nav>
-    </header>
-    <main>
-      <section class="hero is-fullheight-with-navbar">
-        <div class="hero-body">
-            <div class="container">
-                <figure class="image is-fullwidth">
-                    <img src="./Imagenes/Inicio.png" alt="Descripción de la imagen" class="is-fullwidth">
-                </figure>
-            </div>
+    
+      <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="nav-links" id="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">¿Quiénes Somos?</a>
+            <a href="#">Experiencias</a>
+            <a href="#">Únete</a>
+            <a href="#">Contacto</a>
         </div>
-    </section>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+        <a href="#">Proyectos</a>
+        <a href="#">Actividades</a>
+        <a href="#">Historias inspiradoras</a>
+        <a href="#">Conoce a nuestros voluntarios</a>
+        <a href="#">Formulario</a>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
+
+      <main>
+      <section class="hero is-fullheight-with-navbar">
+  
+            <div class="container">
+                    <img src="./Imagenes/Inicio.png" alt="Descripción de la imagen" class="image">
+            </div>
+        </div>    </section>
 
     <section class="section">
         <div class="container">
@@ -41,20 +60,37 @@
       <section></section>
 
       <section>
-        <form class="formulario" action="/enviar" method="post">
-          <input type="text" id="gmail" placeholder="Email" required /><br />
-          <input
-            type="password"
-            id="contraseña"
-            placeholder="contraseña"
-            required
-          /><br />
-          <label for="mensaje"
-            >¿Porque quieres participar en el voluntariado?</label
-          >
-          <input type="text" id="mensaje" required /><br />
-          <input type="submit" value="enviar" />
-        </form>
+        <div class="containers">
+          <div>
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="email" placeholder="Email" required>
+                <span class="icon is-small is-left">
+                  <img src="./Imagenes/usuario.png" alt="usuarioLogo" id="imagen2">
+                </span>
+                
+              </p>
+            </div>
+            <div>
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password" required>
+                <span class="icon is-small is-left">
+                  <img src="./Imagenes/contraseña.png" alt="usuarioLogo" id="imagen1">
+                </span>
+              </p>
+            </div>
+            <div id="pregunta">
+              <label for="mensaje">¿Porque quieres participar en el voluntariado?</label>
+              <input type="text" id="mensaje" required><br>
+            </div>
+            <div>
+              <p class="control">
+                <button>
+                  Enviar
+                </button>
+              </p>
+            </div>
+          </div>
+          
       </section>
 
       <section>
