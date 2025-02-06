@@ -8,115 +8,123 @@
   </head>
 
   <body>
-    
-      <nav class="navbar">
-        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-        <div class="nav-links" id="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#">¿Quiénes Somos?</a>
-            <a href="#">Experiencias</a>
-            <a href="#">Únete</a>
-            <a href="#">Contacto</a>
-        </div>
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#">Inicio</a>
+        <a href="#">¿Quiénes Somos?</a>
+        <a href="#">Experiencias</a>
+        <a href="#">Únete</a>
+        <a href="#">Contacto</a>
+      </div>
     </nav>
-    <div class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleSidebar()">×</button>
-        <a href="#">Proyectos</a>
-        <a href="#">Actividades</a>
-        <a href="#">Historias inspiradoras</a>
-        <a href="#">Conoce a nuestros voluntarios</a>
-        <a href="#">Formulario</a>
-    </div>
 
     <script>
-        function toggleSidebar() {
-            document.getElementById("sidebar").classList.toggle("active");
-        }
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
     </script>
 
-      <main>
-      <section class="hero is-fullheight-with-navbar">
-  
-            <div class="container">
-                    <img src="./Imagenes/Inicio.png" alt="Descripción de la imagen" class="image">
-            </div>
-        </div>    </section>
-
-    <section class="section">
+    <main>
+      <section class="hero">
         <div class="container">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <h2 class="title is-4">Título 1</h2>
-                    <p class="content">Introduce aquí tu texto para editar.</p>
-                </div>
-                <div class="column">
-                    <h2 class="title is-4">Título 2</h2>
-                    <p class="content">Introduce aquí tu texto para editar.</p>
-                </div>
-            </div>
+          <img
+            src="./Imagenes/Inicio.png"
+            alt="Descripción de la imagen"
+            class="image"
+          />
         </div>
-    </section>
+      </section>
 
-      <section></section>
+      <section class="section">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <h2 class="title is-4">Título 1</h2>
+              <p class="content">Introduce aquí tu texto para editar.</p>
+            </div>
+            <div class="column">
+              <h2 class="title is-4">Título 2</h2>
+              <p class="content">Introduce aquí tu texto para editar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sidebar" id="sidebar">
+          <button class="close-btn" onclick="toggleSidebar()">×</button>
+          <a href="#">Proyectos</a>
+          <a href="#">Actividades</a>
+          <a href="#">Historias inspiradoras</a>
+          <a href="#">Conoce a nuestros voluntarios</a>
+          <a href="#">Formulario</a>
+        </div>
+      </section>
 
       <section>
         <div class="containers">
           <div>
-              <p class="control has-icons-left has-icons-right">
-                <input class="input" type="email" placeholder="Email" required>
-                <span class="icon is-small is-left">
-                  <img src="./Imagenes/usuario.png" alt="usuarioLogo" id="imagen2">
-                </span>
-                
-              </p>
-            </div>
-            <div>
-              <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password" required>
-                <span class="icon is-small is-left">
-                  <img src="./Imagenes/contraseña.png" alt="usuarioLogo" id="imagen1">
-                </span>
-              </p>
-            </div>
-            <div id="pregunta">
-              <label for="mensaje">¿Porque quieres participar en el voluntariado?</label>
-              <input type="text" id="mensaje" required><br>
-            </div>
-            <div>
-              <p class="control">
-                <button>
-                  Enviar
-                </button>
-              </p>
-            </div>
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" required />
+              <span class="icon is-small is-left">
+                <img
+                  src="./Imagenes/usuario.png"
+                  alt="usuarioLogo"
+                  id="imagen2"
+                />
+              </span>
+            </p>
           </div>
-          
+          <div>
+            <p class="control has-icons-left">
+              <input
+                class="input"
+                type="password"
+                placeholder="Password"
+                required
+              />
+              <span class="icon is-small is-left">
+                <img
+                  src="./Imagenes/contraseña.png"
+                  alt="usuarioLogo"
+                  id="imagen1"
+                />
+              </span>
+            </p>
+          </div>
+          <div id="pregunta">
+            <label for="mensaje"
+              >¿Porque quieres participar en el voluntariado?</label
+            >
+            <input type="text" id="mensaje" required /><br />
+          </div>
+          <div>
+            <p class="control">
+              <button>Enviar</button>
+            </p>
+          </div>
+        </div>
       </section>
 
       <section>
         <div class="carousel-container">
-          <div class="carousel">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item">7</div>
-            <div class="item">8</div>
-            <div class="item">9</div>
-            <div class="item">10</div>
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item">7</div>
-            <div class="item">8</div>
-            <div class="item">9</div>
-            <div class="item">10</div>
-          </div>
+          <div class="carousel-item">Cuadro 1:</div>
+          <div class="carousel-item">Cuadro 2:</div>
+          <div class="carousel-item">Cuadro 3;</div>
+          <div class="carousel-item">Cuadro 4:</div>
+          <div class="carousel-item">Cuadro 1:</div>
+          <div class="carousel-item">Cuadro 2:</div>
+          <div class="carousel-item">Cuadro 3;</div>
+          <div class="carousel-item">Cuadro 4:</div>
+          <div class="carousel-item">Cuadro 1:</div>
+          <div class="carousel-item">Cuadro 2:</div>
+          <div class="carousel-item">Cuadro 3;</div>
+          <div class="carousel-item">Cuadro 4:</div>
+          <div class="carousel-item">Cuadro 1:</div>
+          <div class="carousel-item">Cuadro 2:</div>
+          <div class="carousel-item">Cuadro 3;</div>
+          <div class="carousel-item">Cuadro 4:</div>
         </div>
       </section>
 
