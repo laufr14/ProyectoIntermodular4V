@@ -68,9 +68,8 @@
 }
 
 
-
-.container{
-    border: 1px black;
+.container-inicio{
+    
     margin: 0;
     width: 100%;
 }
@@ -171,11 +170,11 @@
     width: 75%;
     padding-top:18px ;
 }
-.containers {
+.containers  {
     background: white;
-    padding: 20px;
+    padding-left: 200px;
     border-radius: 10px;
-    width: 300px;
+    width: 600px;
     text-align: center;
 }
 
