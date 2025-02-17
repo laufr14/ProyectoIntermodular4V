@@ -4,35 +4,50 @@
     <meta charset="UTF-8" />
     <title>Página Principal</title>
     <link rel="stylesheet" href="./bulma.css" />
-    <link href="./estilos.css" rel="stylesheet" />
   </head>
-
+  
   <body>
-    <nav class="navbar">
-      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-      <div class="nav-links" id="nav-links">
-        <a href="#">Inicio</a>
-        <a href="#">¿Quiénes Somos?</a>
-        <a href="#">Experiencias</a>
-        <a href="#">Únete</a>
-        <a href="#">Contacto</a>
+    <nav class="navbar is-info">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <h1 class="title">Huellas del cambio</h1>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="nav.html">Inicio</a>
+          <a class="navbar-item" href="quienes-somos.html">¿Quiénes Somos?</a>
+          <a class="navbar-item" href="experiencias.html">Experiencias</a>
+          <a class="navbar-item" href="unete.html">Únete</a>
+          <a class="navbar-item" href="contacto.html">Contacto</a>
+          <div class="navbar-item">
+            <div class="field has-addons">
+              <div class="control">
+                <input class="input" type="text" placeholder="Usuario">
+              </div>
+              <div class="control">
+                <input class="input" type="password" placeholder="Contraseña">
+              </div>
+              <div class="control">
+                <button class="button is-primary">Acceder</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
-    <script>
-      function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle("active");
-      }
-    </script>
-
     <main>
-      <section class="hero">
-        <div class="container-inicio">
-          <img
-            src="./Imagenes/Inicio.png"
-            alt="Descripción de la imagen"
-            class="image"
-          />
+      <section class="hero is-fullheight">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <img src="./Imagenes/Inicio.png" alt="Descripción de la imagen" class="image">
+          </div>
         </div>
       </section>
 
@@ -41,173 +56,108 @@
           <div class="columns is-vcentered">
             <div class="column">
               <h2 class="title is-4">Título 1</h2>
-              <p class="content">Introduce aquí tu texto para editar.</p>
+              <p>Introduce aquí tu texto para editar.</p>
             </div>
             <div class="column">
-              <h2 class="title is-4">Título 2</h2>
-              <p class="content">Introduce aquí tu texto para editar.</p>
+              <h2 class="title is-4">¿Quiénes somos?</h2>
+              <p>Somos Voluntariado Cuatrovientos, un grupo de estudiantes comprometidos con la solidaridad y el servicio a los demás...</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="sidebar" id="sidebar">
-          <button class="close-btn" onclick="toggleSidebar()">×</button>
-          <a href="#">Proyectos</a>
-          <a href="#">Actividades</a>
-          <a href="#">Historias inspiradoras</a>
-          <a href="#">Conoce a nuestros voluntarios</a>
-          <a href="#">Formulario</a>
-        </div>
-      </section>
-
-      <section>
-        <div class="containers">
-          <div>
-            <p class="control has-icons-left has-icons-right">
-              <input class="input" type="email" placeholder="Email" required />
-              <span class="icon is-small is-left">
-                <img
-                  src="./Imagenes/usuario.png"
-                  alt="usuarioLogo"
-                  id="imagen2"
-                />
-              </span>
-            </p>
-          </div>
-          <div>
-            <p class="control has-icons-left">
-              <input
-                class="input"
-                type="password"
-                placeholder="Password"
-                required
-              />
-              <span class="icon is-small is-left">
-                <img
-                  src="./Imagenes/contraseña.png"
-                  alt="usuarioLogo"
-                  id="imagen1"
-                />
-              </span>
-            </p>
-          </div>
-          <div id="pregunta">
-            <label for="mensaje"
-              >¿Porque quieres participar en el voluntariado?</label
-            >
-            <input type="text" id="mensaje" required /><br />
-          </div>
-          <div>
-            <p class="control">
-              <button>Enviar</button>
-            </p>
+      <section class="section">
+        <div class="columns">
+          <div class="column is-one-quarter">
+            <aside class="menu">
+              <p class="menu-label">Navegación</p>
+              <ul class="menu-list">
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Actividades</a></li>
+                <li><a href="#">Historias inspiradoras</a></li>
+                <li><a href="#">Conoce a nuestros voluntarios</a></li>
+                <li><a href="#">Formulario</a></li>
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section class="section sectionCarousel">
+      <section class="section">
+        <div class="columns is-multiline">
+          <div class="column is-one-quarter has-text-centered">
+            <img src="./Imagenes/grafica.png" class="image is-128x128">
+            <p class="title is-4">CIENTOS</p>
+            <p>de afiliados comprometidos con nosotros</p>
+          </div>
+          <div class="column is-one-quarter has-text-centered">
+            <img src="./Imagenes/paz.png" class="image is-128x128">
+            <p class="title is-4">200</p>
+            <p>reseñas hechas por la comunidad</p>
+          </div>
+          <div class="column is-one-quarter has-text-centered">
+            <img src="./Imagenes/estrella.png" class="image is-128x128">
+            <p class="title is-4">4.7</p>
+            <p>promedio de reseñas</p>
+          </div>
+          <div class="column is-one-quarter has-text-centered">
+            <img src="./Imagenes/bocadillo.png" class="image is-128x128">
+            <p class="title is-4">100%</p>
+            <p>de los voluntarios reciben respuestas a sus dudas</p>
+          </div>
+        </div>
+      </section>
+      <section class="sectionCarousel">
         <div class="carousel-container">
-          <div class="carousel-item">Cuadro 1:</div>
-          <div class="carousel-item">Cuadro 2:</div>
-          <div class="carousel-item">Cuadro 3;</div>
-          <div class="carousel-item">Cuadro 4:</div>
-          <div class="carousel-item">Cuadro 1:</div>
-          <div class="carousel-item">Cuadro 2:</div>
-          <div class="carousel-item">Cuadro 3;</div>
-          <div class="carousel-item">Cuadro 4:</div>
-          <div class="carousel-item">Cuadro 1:</div>
-          <div class="carousel-item">Cuadro 2:</div>
-          <div class="carousel-item">Cuadro 3;</div>
-          <div class="carousel-item">Cuadro 4:</div>
-          <div class="carousel-item">Cuadro 1:</div>
-          <div class="carousel-item">Cuadro 2:</div>
-          <div class="carousel-item">Cuadro 3;</div>
-          <div class="carousel-item">Cuadro 4:</div>
-        </div>
-      </section>
+                <div class="carousel-item">Cuadro 1: Bienvenido </div>
+                <div class="carousel-item">Cuadro 2: Información</div>
+                <div class="carousel-item">Cuadro 3: Contacto</div>
+                <div class="carousel-item">Cuadro 4: Más detalles</div>
+                <div class="carousel-item">Cuadro 1: Bienvenido</div>
+                <div class="carousel-item">Cuadro 2: Información</div>
+                <div class="carousel-item">Cuadro 3: Contacto</div>
+                <div class="carousel-item">Cuadro 4: Más detalles</div>
+                <div class="carousel-item">Cuadro 1: Bienvenido</div>
+                <div class="carousel-item">Cuadro 2: Información</div>
+                <div class="carousel-item">Cuadro 3: Contacto</div>
+                <div class="carousel-item">Cuadro 4: Más detalles</div>
+                <div class="carousel-item">Cuadro 1: Bienvenido</div>
+                <div class="carousel-item">Cuadro 2: Información</div>
+                <div class="carousel-item">Cuadro 3: Contacto</div>
+                <div class="carousel-item">Cuadro 4: Más detalles</div>
+            </div>
+    </section>
 
-      
-        <section class="section sectionSpam">
-          <div class="container">
-            <div class="columns is-vcentered">
-              <div class="column is-half">
-                <h2 class="title is-3 has-text-white">
-                  Lleva el mundo en tu bolsillo.
-                </h2>
-                <p class="subtitle is-5 has-text-white">
-                  Descarga nuestra aplicación y descubre experiencias únicas con
-                  una gran comunidad.
-                </p>
-
-                <div class="buttons">
-                  <a href="https://play.google.com/store/apps" target="_blank">
-                    <img
-                      src="./Imagenes/GooglePlay2.png"
-                      alt="Google Play"
-                      class="store-button"
-                    />
-                  </a>
-                  <a href="https://www.apple.com/app-store/" target="_blank">
-                    <img
-                      src="./Imagenes/AppStore.png"
-                      alt="App Store"
-                      class="store-button"
-                    />
-                  </a>
-                </div>
-              </div>
-
-              <div class="column is-half">
-                <img
-                  src="./Imagenes/Captura.PNG"
-                  alt="App Preview"
-                  class="app-image"
-                />
-              </div>
+        <section class="section has-background-primary has-text-white">
+          <div class="container has-text-centered">
+            <h2 class="title is-3">Lleva el mundo en tu bolsillo</h2>
+            <p class="subtitle is-5">Descarga nuestra aplicación y descubre experiencias únicas.</p>
+            <div class="buttons is-centered">
+              <a href="https://play.google.com/store/apps" class="button is-black">Google Play</a>
+              <a href="https://www.apple.com/app-store/" class="button is-black">App Store</a>
             </div>
           </div>
         </section>
     </main>
-    <footer class="footer has-text-white p-5" style="background-color: #0068c3">
+
+    <footer class="footer has-background-info has-text-white">
       <div class="container">
-        <div class="columns is-multiline">
-          <!-- Sección de información -->
-          <div class="column is-4">
-            <h3 class="title is-5 has-text-white">NOMBRE INSTITUCIÓN</h3>
-            <p>Dirección: Calle X, Ciudad</p>
-            <p>Teléfono: 123 456 789</p>
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-5">Voluntariado Cuatrovientos</h3>
+            <p>Dirección: Av. de San Jorge, 6, 31012 Pamplona, Navarra</p>
+            <p>Teléfono: 948 124 129</p>
             <p>Email: contacto@email.com</p>
           </div>
-
-          <!-- Sección de logos -->
-          <div class="column is-4 has-text-centered">
-            <p>Gobierno de Navarra</p>
-            <p>Agenda 2030</p>
+          <div class="column has-text-centered">
+            <p>Gobierno de Navarra | Agenda 2030</p>
           </div>
-
-          <!-- Sección de redes sociales -->
-          <div class="column is-4 has-text-centered">
-            <a href="#"
-              ><img src="instagram.png" alt="Instagram" class="icon"
-            /></a>
-            <a href="#"
-              ><img src="facebook.png" alt="Facebook" class="icon"
-            /></a>
-            <a href="#"><img src="twitter.png" alt="Twitter" class="icon" /></a>
-            <a href="#"><img src="youtube.png" alt="YouTube" class="icon" /></a>
-            <a href="#"
-              ><img src="whatsapp.png" alt="WhatsApp" class="icon"
-            /></a>
+          <div class="column has-text-centered">
+            <p>Redes sociales:</p>
+            <a href="#"><img src="./Imagenes/Instagram.png" class="image is-32x32"></a>
+            <a href="#"><img src="./Imagenes/facebook.png" class="image is-32x32"></a>
+            <a href="#"><img src="./Imagenes/twitter.png" class="image is-32x32"></a>
           </div>
-        </div>
-
-        <!-- Sección de enlaces legales -->
-        <div class="has-text-centered mt-4">
-          <a href="#" class="has-text-white">Aviso legal</a> |
-          <a href="#" class="has-text-white">Protección de datos</a> |
-          <a href="#" class="has-text-white">Política de cookies</a>
         </div>
       </div>
     </footer>

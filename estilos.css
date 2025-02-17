@@ -1,23 +1,30 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background: #007bff;
     padding: 15px 20px;
     color: white;
 }
-.menu-toggle {
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
+
+.navbar-menu {
+    display: none;
+}
+
+.navbar-menu.is-active {
     display: block;
 }
-.nav-links {
+
+.navbar-end {
     display: flex;
-    gap: 15px;
+    align-items: center;
 }
+
+.navbar-item .input {
+    margin-right: 10px;
+}
+
+.navbar-item .button {
+    margin-left: 10px;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -25,32 +32,43 @@
     border-radius: 5px;
     transition: background 0.3s;
 }
+
 .nav-links a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -260px;
     width: 250px;
     height: 100vh;
     background: #22222293;
     padding-top: 60px;
     transition: left 0.3s ease-in-out;
 }
-.sidebar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    transition: background 0.3s;
-}
-.sidebar a:hover {
-    background: #444;
-}
+
 .sidebar.active {
     left: 0;
 }
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
 .close-btn {
     position: absolute;
     top: 15px;
@@ -61,89 +79,18 @@
     background: none;
     border: none;
 }
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
+
+.sectionCarousel {
+    background-color: #5563ff;
 }
 
-
-.container-inicio{
-    
-    margin: 0;
-    width: 100%;
-}
-.image {
- 
-    margin: 0;
-  
-    width: 100%;
-    height: auto;
-}
-
-.section {
-    padding: 60px 20px;
-    background-color: #1177aa;
-}
-
-.title, .subtitle {
-    color: white;
-}
-
-.store-button {
-    width: 150px;
-    margin-right: 10px;
-}
-
-.app-image {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* Contenedor del carrusel */
-.carousel-container {
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    overflow-x: auto; /* Permite el desplazamiento horizontal */
-    white-space: nowrap; /* Evita que los elementos salten de línea */
-    background: white;
-    border-top: 3px solid #222;
-    border-bottom: 3px solid #222;
-    padding: 15px 0;
-    scrollbar-width: auto; /* Firefox */
-    scrollbar-color: #7d7c7c #ddd; /* Color del scroll en Firefox */
-}
-
-/* Scrollbar en Chrome y Edge */
-.carousel-container::-webkit-scrollbar {
-    height: 12px; /* Grosor de la barra */
-}
-
-.carousel-container::-webkit-scrollbar-track {
-    background: #ddd; /* Fondo del scrollbar */
-    border-radius: 20px;
-}
-
-.carousel-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ff4500, #ff6347); /* Degradado de color */
-    border-radius: 20px;
-    border: 3px solid #ddd; /* Borde para separar del fondo */
-}
-
-/* Contenido del carrusel */
 .carousel-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
+
 .carousel-item {
     flex: 0 0 auto;
     width: 300px;
@@ -162,15 +109,38 @@
 }
 
 
-#imagen1{
+
+.image {
     width: 100%;
-    padding-top:18px ;
+    height: auto;
 }
-#imagen2{
+
+.sectionSpam {
+    padding: 60px 20px;
+    background-color: #1177aa;
+}
+
+.store-button {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.app-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#imagen1, #imagen2 {
+    width: 100%;
+    padding-top: 18px;
+}
+
+#imagen2 {
     width: 75%;
-    padding-top:18px ;
 }
-.containers  {
+
+.containers {
     background: white;
     padding-left: 200px;
     border-radius: 10px;
@@ -185,9 +155,11 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;   
 }
-#pregunta{
+
+#pregunta {
     padding-top: 40px;
 }
+
 button {
     background: #168521;
     color: white;
@@ -201,4 +173,28 @@ button {
 
 button:hover {
     background: #357ae8;
+}
+
+.colorfondo {
+    background-color: cornflowerblue;
+    display: flex;
+    margin: 0;
+    padding-right: 40px;
+}
+
+.fotosestadisticas {
+    width: 55%;
+    padding-left: 80px;
+}
+
+.tituloestadisticas, .estadisticas {
+    color: white;
+}
+
+.tituloestadisticas {
+    font-size: 180%;
+}
+
+.paddingestadisticas {
+    padding-left: 60px;
 }
