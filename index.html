@@ -4,162 +4,373 @@
     <meta charset="UTF-8" />
     <title>Página Principal</title>
     <link rel="stylesheet" href="./bulma.css" />
+    <link rel="stylesheet" href="./estilos.css" />
   </head>
-  
+
   <body>
-    <nav class="navbar is-info">
+    <header>
+
+     <!-- Barra de navegación -->
+
+
+
+    <nav class="navbar is-fixed-top is-dark">
+      <img src= "./Imagenes/Logo.png"  alt="Logo" class="Logo" >
       <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          <h1 class="title">Huellas del cambio</h1>
-        </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+          <a class="navbar-item" href="nav.html">
+              <h2 class="title is-3 has-text-light">Huellas del Cambio</h2>
+             
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="toggleNavbar()">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
       </div>
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="nav.html">Inicio</a>
-          <a class="navbar-item" href="quienes-somos.html">¿Quiénes Somos?</a>
-          <a class="navbar-item" href="experiencias.html">Experiencias</a>
-          <a class="navbar-item" href="unete.html">Únete</a>
-          <a class="navbar-item" href="contacto.html">Contacto</a>
-          <div class="navbar-item">
-            <div class="field has-addons">
-              <div class="control">
-                <input class="input" type="text" placeholder="Usuario">
-              </div>
-              <div class="control">
-                <input class="input" type="password" placeholder="Contraseña">
-              </div>
-              <div class="control">
-                <button class="button is-primary">Acceder</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
 
+      <div id="navbarBasic" class="navbar-menu">
+          <div class="navbar-start">
+              <a class="navbar-item" href="index.html">Inicio</a>
+              <a class="navbar-item" href="">¿Quiénes Somos?</a>
+              <a class="navbar-item" href="">Experiencias</a>
+              <a class="navbar-item" href="unete.html">Únete</a>
+              <a class="navbar-item" href="contacto.html">Contacto</a>
+          </div>
+
+
+          <div class="navbar-end">
+              <div class="navbar-item">
+                  <div class="field has-addons">
+                      <div class="control">
+                          <input class="input is-rounded" type="text" placeholder="Usuario">
+                      </div>
+                      <div class="control">
+                          <input class="input is-rounded" type="password" placeholder="Contraseña">
+                      </div>
+                      <div class="control">
+                          <button class="button is-primary is-rounded">Acceder</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+<!--Fin de barra de navegación-->
+    </header>
     <main>
-      <section class="hero is-fullheight">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <img src="./Imagenes/Inicio.png" alt="Descripción de la imagen" class="image">
-          </div>
-        </div>
-      </section>
+<!-- Sección Imagen de inicio -->
 
-      <section class="section">
-        <div class="container">
-          <div class="columns is-vcentered">
-            <div class="column">
-              <h2 class="title is-4">Título 1</h2>
-              <p>Introduce aquí tu texto para editar.</p>
-            </div>
-            <div class="column">
-              <h2 class="title is-4">¿Quiénes somos?</h2>
-              <p>Somos Voluntariado Cuatrovientos, un grupo de estudiantes comprometidos con la solidaridad y el servicio a los demás...</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section">
-        <div class="columns">
-          <div class="column is-one-quarter">
-            <aside class="menu">
-              <p class="menu-label">Navegación</p>
-              <ul class="menu-list">
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Actividades</a></li>
-                <li><a href="#">Historias inspiradoras</a></li>
-                <li><a href="#">Conoce a nuestros voluntarios</a></li>
-                <li><a href="#">Formulario</a></li>
-              </ul>
-            </aside>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+      <div class="hero-slider">
+          <div class="hero-slide">
+              <img src="Imagenes/imagen_1_Inicio.jpg" alt="Voluntariado">
+              <div class="overlay">Voluntariado</div>
           </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="columns is-multiline">
-          <div class="column is-one-quarter has-text-centered">
-            <img src="./Imagenes/grafica.png" class="image is-128x128">
-            <p class="title is-4">CIENTOS</p>
-            <p>de afiliados comprometidos con nosotros</p>
+          <div class="hero-slide">
+              <img src="Imagenes/Inicio.png" alt="Ayuda Social">
+              <div class="overlay">Ayuda Social</div>
           </div>
-          <div class="column is-one-quarter has-text-centered">
-            <img src="./Imagenes/paz.png" class="image is-128x128">
-            <p class="title is-4">200</p>
-            <p>reseñas hechas por la comunidad</p>
+          <div class="hero-slide">
+              <img src="Imagenes/img3.jpg" alt="Unidos por el Cambio">
+              <div class="overlay">Unidos por el Cambio</div>
           </div>
-          <div class="column is-one-quarter has-text-centered">
-            <img src="./Imagenes/estrella.png" class="image is-128x128">
-            <p class="title is-4">4.7</p>
-            <p>promedio de reseñas</p>
-          </div>
-          <div class="column is-one-quarter has-text-centered">
-            <img src="./Imagenes/bocadillo.png" class="image is-128x128">
-            <p class="title is-4">100%</p>
-            <p>de los voluntarios reciben respuestas a sus dudas</p>
-          </div>
-        </div>
-      </section>
-      <section class="sectionCarousel">
-        <div class="carousel-container">
-                <div class="carousel-item">Cuadro 1: Bienvenido </div>
-                <div class="carousel-item">Cuadro 2: Información</div>
-                <div class="carousel-item">Cuadro 3: Contacto</div>
-                <div class="carousel-item">Cuadro 4: Más detalles</div>
-                <div class="carousel-item">Cuadro 1: Bienvenido</div>
-                <div class="carousel-item">Cuadro 2: Información</div>
-                <div class="carousel-item">Cuadro 3: Contacto</div>
-                <div class="carousel-item">Cuadro 4: Más detalles</div>
-                <div class="carousel-item">Cuadro 1: Bienvenido</div>
-                <div class="carousel-item">Cuadro 2: Información</div>
-                <div class="carousel-item">Cuadro 3: Contacto</div>
-                <div class="carousel-item">Cuadro 4: Más detalles</div>
-                <div class="carousel-item">Cuadro 1: Bienvenido</div>
-                <div class="carousel-item">Cuadro 2: Información</div>
-                <div class="carousel-item">Cuadro 3: Contacto</div>
-                <div class="carousel-item">Cuadro 4: Más detalles</div>
-            </div>
-    </section>
-
-        <section class="section has-background-primary has-text-white">
-          <div class="container has-text-centered">
-            <h2 class="title is-3">Lleva el mundo en tu bolsillo</h2>
-            <p class="subtitle is-5">Descarga nuestra aplicación y descubre experiencias únicas.</p>
-            <div class="buttons is-centered">
-              <a href="https://play.google.com/store/apps" class="button is-black">Google Play</a>
-              <a href="https://www.apple.com/app-store/" class="button is-black">App Store</a>
-            </div>
-          </div>
-        </section>
-    </main>
-
-    <footer class="footer has-background-info has-text-white">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <h3 class="title is-5">Voluntariado Cuatrovientos</h3>
-            <p>Dirección: Av. de San Jorge, 6, 31012 Pamplona, Navarra</p>
-            <p>Teléfono: 948 124 129</p>
-            <p>Email: contacto@email.com</p>
-          </div>
-          <div class="column has-text-centered">
-            <p>Gobierno de Navarra | Agenda 2030</p>
-          </div>
-          <div class="column has-text-centered">
-            <p>Redes sociales:</p>
-            <a href="#"><img src="./Imagenes/Instagram.png" class="image is-32x32"></a>
-            <a href="#"><img src="./Imagenes/facebook.png" class="image is-32x32"></a>
-            <a href="#"><img src="./Imagenes/twitter.png" class="image is-32x32"></a>
-          </div>
-        </div>
       </div>
+
+      <div class="hero-content">
+          <h2 class="title is-1 has-text-white">Bienvenido a Huellas del Cambio</h2>
+          <p class="subtitle is-4 has-text-light">Transforma el mundo con nosotros.</p>
+          <a href="Login.html" class="button is-large is-link">Únete a la causa</a>
+      </div>
+  </div>
+     <!--Fin seccion imagen de inicio-->
+</section>
+   
+        <!--Seccion de Estadisticas-->
+
+
+
+          <section class="custom-section">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-one-quarter has-text-centered">
+                  <div class="box custom-box">
+                    <figure class="custom-image">
+                      <img src="./Imagenes/grafica.png" />
+                    </figure>
+                    <h2 class="custom-title">Cientos</h2>
+                    <p class="custom-subtitle">
+                      de afiliados comprometidos con nosotros
+                    </p>
+                  </div>
+                </div>
+
+                <div class="column is-one-quarter has-text-centered">
+                  <div class="box custom-box">
+                    <figure class="custom-image">
+                      <img src="./Imagenes/paz.png " />
+                    </figure>
+                    <h2 class="custom-title">200</h2>
+                    <p class="custom-subtitle">
+                      reseñas hechas por la comunidad
+                    </p>
+                  </div>
+                </div>
+
+                <div class="column is-one-quarter has-text-centered">
+                  <div class="box custom-box">
+                    <figure class="custom-image">
+                      <img src="./Imagenes/estrella.png" />
+                    </figure>
+                    <h2 class="custom-title">4.7</h2>
+                    <p class="custom-subtitle">
+                      promedio de reseñas hechas por la comunidad
+                    </p>
+                  </div>
+                </div>
+
+                <div class="column is-one-quarter has-text-centered">
+                  <div class="box custom-box">
+                    <figure class="custom-image">
+                      <img src="./Imagenes/bocadillo.png" />
+                    </figure>
+                    <h2 class="custom-title">100%</h2>
+                    <p class="custom-subtitle">
+                      de los voluntarios reciben respuestas a sus inquietudes
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Fin sección estadisticas-->
+          </section>
+
+          <!--Seccion Textos-->
+          <section class="seccion1">
+            <div class="columns is-vcentered">
+              
+              <div class="column is-half has-text-centered">
+                <figure class="imageninicio">
+                  <img src="./Imagenes/Inicio.PNG" alt="Descripción de la imagen">
+                </figure>
+              </div>
+          
+              
+              <div class="column is-half">
+                <div class="has-background-white p-5">
+                
+                  <div class="has-text-centered">
+                    <p class="tituloQS">¿QUIÉNES SOMOS?</p>
+                    <p class="padingQS">
+                      Somos un grupo de estudiantes del instituto Cuatrovientos, en concreto del primer año del grado superior de "Desarrollo de aplicaciones multiplataforma" que hemos creado este voluntariado para dedicarle nuestro tiempo a la gente más necesitada.
+                    </p>
+                  </div>
+          
+              
+                  <div class="has-text-centered mt-5">
+                    <p class="tituloQS">¿QUÉ HACEMOS?</p>
+                    <p class="padingQS">
+                      Ayudamos a gente de nuestra ciudad, Pamplona, a que tengan una vida mejor, ya sea dándoles alimentos, cuidados básicos y un techo donde dormir, con el objetivo de que en cinco años no haya nadie viviendo en la calle, ni en pobreza extrema.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Fin seccion textos-->
+          </section>
+          
+    <!--Seccion Carrusel-->
+          <section class="section">
+            <div class="carousel-container">
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                    <h2>Laura Fernandez</h2>
+                    <p>"Ser voluntario me ha cambiado la vida; ayudar a otros me llena el corazón"</p>
+                  </div>
+                </div>
+                
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                    <h2>Miguel Rojas</h2>
+                    <p>"El voluntariado me ha enseñado que pequeñas acciones generan grandes cambios."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Sofía Martínez</h2>
+                  <p>"Doy mi tiempo, pero lo que recibo a cambio es mucho más valioso."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Andrés Gutiérrez</h2>
+                  <p>"Conocer gente increíble y hacer algo por el mundo es la mejor combinación.""</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Valeria López</h2>
+                  <p>"Ayudar a los demás me ha ayudado a encontrar mi propósito en la vida."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Daniel Torres</h2>
+                  <p>"Cada sonrisa que recibo me recuerda que vale la pena cada esfuerzo."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Carolina Méndez</h2>
+                  <p>"No hay mayor satisfacción que saber que hiciste la diferencia en alguien."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Ricardo Sánchez</h2>
+                  <p>"El voluntariado me ha dado amigos, experiencias y una visión más humana del mundo."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Natalia Vargas</h2>
+                  <p>"No se trata solo de dar, sino de aprender y crecer junto a los demás."</p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+                  <div class="fotopersona">
+                    <img src="./Imagenes/imagenpersona.jpeg" alt="Foto de Persona">
+                  </div>
+                  <div class="contenidoCarrusel">
+                  <h2>Javier Ramírez</h2>
+                  <p>"Cambiar una vida con un pequeño gesto es el mayor regalo del voluntariado."</p>
+                  </div>
+                </div>
+                <!--Fin seccion carrusel-->
+          </section>
+<!--Sección SPAM-->
+          <section class="sectionSpam section">
+            <div class="container">
+                <div class="columns is-vcentered">
+    
+                    <div class="column is-half">
+                        <h2 class="title is-3 has-text-white">Lleva el mundo en tu bolsillo.</h2>
+                        
+                        <p class="subtitle is-5 has-text-white">
+                            Descarga nuestra aplicación y descubre experiencias únicas con una gran comunidad.
+                        </p>
+    
+                        <div class="buttons">
+                            <a href="https://play.google.com/store/apps" target="_blank">
+                                <img src="./Imagenes/GooglePlay2.png" alt="Google Play" class="store-button">
+                            </a>
+                            <a href="https://www.apple.com/app-store/" target="_blank">
+                                <img src="./Imagenes/AppStore.png" alt="App Store" class="store-button">
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="column is-half">
+                        <img src="./Imagenes/Captura.PNG" alt="App Preview" class="app-image">
+                    </div>
+    
+                </div>
+            </div>
+            <!--Fin seccion SPAM-->
+        </section>
+
+        
+      <!--Footer-->
+      <footer class="footer has-background-dark has-text-white">
+
+        <div class="container">
+            <div class="columns">
+          
+                <div class="column">
+                    <h3 class="title is-5 has-text-white">Contáctanos</h3>
+                    <p>Dirección: Av. de San Jorge, 6, 31012 Pamplona, Navarra</p>
+                    <p>Teléfono: 948 124 129</p>
+                    <p>Email: info@cuatrovientos.org</p>
+                </div>
+    
+                <div class="column">
+                    <h3 class="title is-5 has-text-white">Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#" class="has-text-grey-light">Inicio</a></li>
+                        <li><a href="#" class="has-text-grey-light">Login </li>
+                        <li><a href="#" class="has-text-grey-light">Contacto</a></li>
+                    </ul>
+                </div>
+    
+                <div class="column">
+                    <h3 class="title is-5 has-text-white">Síguenos</h3>
+                    <div class="mt-3">
+                        <a href="https://www.instagram.com/cipcuatrovientos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="./Imagenes/Instagram.png" class="image is-32x32"></a>
+                        <a href="https://x.com/_cuatrovientos"><img src="./Imagenes/twitter.png" class="image is-32x32"></a>
+                    </div>
+                </div>
+    
+   
+                <div class="column">
+                    <h3 class="title is-5 has-text-white">Infórmate</h3>
+                    <p class="has-text-grey-light">Le enviaremos la información necesaria</p>
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input class="input" type="email" placeholder="Tu correo">
+                        </div>
+                        <div class="control">
+                            <button class="button is-info">Vamos!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+              
+ 
+            <div class="has-text-centered has-text-grey-light">
+                <p>&copy; 2025 Cuatrovientos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+        <!--Fin Footer-->
     </footer>
+    
+    </main>
   </body>
 </html>
