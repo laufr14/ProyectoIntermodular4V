@@ -1,4 +1,21 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+body {
+    font-family: 'Indie Flower';
+    font-size: 20px;
+    
+}
+
+
+
 /* Navbar */
+header{
+    font-size: 30px;
+}
 .Logo {
     width: 5%; 
     height: auto; 
@@ -17,12 +34,12 @@
 
 .navbar-item h1 {
     color: #fff;
-    font-size: 2rem;
+    font-size: 250px;
 }
 
 .navbar-item a {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 200px;
 }
 
 .navbar-burger span {
@@ -186,6 +203,7 @@
 }
 .centrartextoQS{
     text-align: center;
+    font-size: 40px ;
 }
 .padingQS{
     padding-bottom: 30px;
@@ -194,6 +212,7 @@
     margin-left: 40px;
     margin-right: 40px;
     color:rgb(60, 106, 175);
+    font-size: 25px;
 }
 
 
@@ -201,11 +220,11 @@
 /*Estadisticas/*/
 
 .custom-section {
-    background-color: #5f8dd3;
+    background-color: #6891cf;
     padding: 50px 0;
 }
 .custom-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: #82a3c4;
     border-radius: 15px;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -239,49 +258,52 @@
 .carousel-container {
     display: flex;
     overflow-x: auto;
-    border: 2px solid rgb(99, 99, 99);
-    border-radius: 8px;
+    
+    border-radius: 0px;
     padding: 10px;
+    width: 100vw;
+    margin-left: -50px;
 }
 
 .carousel-item {
     flex: 0 0 auto;
-    flex-direction: column;
-    width: 300px;
+    width: 100%;
     height: 350px;
-    margin-right: 20px;
-    background-color: #5563ff;
+    margin-right: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 8px;
-    box-shadow: 2px 2px 10px rgb(100, 100, 100);
+    padding: 20px;
 }
 
 .fotopersona img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 75%;
+    height:75%;
     object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid white;
+    padding-right: 100px;
 }
 
 .contenidoCarrusel {
-    align-items: center;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
+    max-width: 60%;
 }
 
 .contenidoCarrusel h2 {
-    font-size: 1.2rem;
-    margin: 5px 0;
+    font-size: 4rem;
     font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    color:#82a3c4
 }
 
 .contenidoCarrusel p {
-    font-size: 0.9rem;
-    padding: 0 10px;
+    font-size: 0.8cm ;
+    padding-right: 15px;
+    color: #82a3c4;
+    position: relative;
+    top: 10px;
 }
 
 
@@ -290,7 +312,7 @@
 /*SPAM/*/
 .sectionSpam {
     padding: 60px 20px;
-    background-color: #1177aa;
+    background-color: #82a3c4;
 }
 
 .store-button {
@@ -299,10 +321,12 @@
 }
 
 .app-image {
+    width:750px;
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+padding-left: 50px;
 }
+
 
 
 
