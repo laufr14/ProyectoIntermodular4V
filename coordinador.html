@@ -1,0 +1,124 @@
+
+Laura Félix Ramírez
+mié, 19 feb, 19:54 (hace 15 horas)
+para mí
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel de Administrador - Voluntariado</title>
+    <link rel="stylesheet" href="./bulma.css">
+    <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <a class="navbar-item" href="./index.html">Voluntariado</a>
+            <div class="navbar-burger burger" data-target="navMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <a class="navbar-item" href="./index.html">Inicio</a>
+                <a class="navbar-item" href="">Usuarios</a>
+                <a class="navbar-item" href="">Actividades</a>
+                <a class="navbar-item" href="">Reportes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3">
+                <aside class="menu">
+                    <p class="menu-label">Gestión</p>
+                    <ul class="menu-list">
+                        <li><a class="is-active">Dashboard</a></li>
+                        <li><a>Usuarios</a></li>
+                        <li><a>Actividades</a></li>
+                        <li><a>Reportes</a></li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="column is-9">
+                <section class="hero is-info welcome">
+                    <div class="hero-body">
+                        <h1 class="title">Bienvenido, Administrador/a.</h1>
+                        <h2 class="subtitle">Gestión de voluntarios y actividades</h2>
+                    </div>
+                </section>
+
+                <!-- Estadísticas -->
+                <section class="info-tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">125</p>
+                                <p class="subtitle">Voluntarios</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">35</p>
+                                <p class="subtitle">Actividades</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">12</p>
+                                <p class="subtitle">Actividades Pendientes</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tablas -->
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Actividades Recientes</p>
+                    </header>
+                    <div class="card-table">
+                        <table class="table is-fullwidth is-striped">
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa fa-calendar"></i> Visita a hospitales</td>
+                                    <td><a class="button is-small is-info" href="#">Ver</a></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-calendar"></i> Acompañamiento</td>
+                                    <td><a class="button is-small is-info" href="#">Ver</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Usuarios Registrados</p>
+                    </header>
+                    <div class="card-table">
+                        <table class="table is-fullwidth is-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Juan Pérez</td>
+                                    <td><a class="button is-small is-info" href="#">Ver</a></td>
+                                </tr>
+                                <tr>
+                                    <td>María López</td>
+                                    <td><a class="button is-small is-info" href="#">Ver</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el título */
+.title.is-3 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Botones de navegación */
+.navbar-start .navbar-item {
+    text-transform: uppercase;
+}
+
+.navbar-menu {
+    background-color: #333;
+    width: 100%;
+}
+
+.navbar-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-end .navbar-item .field {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* Estilo de los formularios */
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Títulos de formulario */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Campos de formulario */
+.field {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.control {
+    width: 100%;
+}
+
+/* Estilo de inputs */
+.input {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #00d1b2;
+    outline: none;
+}
+
+select.input {
+    appearance: none;
+    padding: 10px;
+}
+
+/* Botones */
+.button {
+    background-color: #00d1b2;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #00b89c;
+}
+
+.button.is-primary {
+    background-color: #00d1b2;
+}
+
+.button.is-primary:hover {
+    background-color: #00b89c;
+}
+
+/* Tabs de formulario */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.tab-buttons .button {
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Sección de contenido */
+.section {
+    padding: 50px 0;
+}
+
+/* Formulario activo */
+.formulario {
+    display: none;
+}
+
+.formulario.activo {
+    display: block;
+}
+
+/* Estilos responsive para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .navbar-burger {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-menu.is-active {
+        display: block;
+    }
+
+    .tab-buttons {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .tab-buttons .button {
+        margin-bottom: 15px;
+    }
+}   

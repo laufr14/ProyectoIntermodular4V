@@ -1,0 +1,81 @@
+ /* Estilos globales */
+ html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 100%;
+    background: #ECF0F3;
+}
+
+/* Barra de navegación */
+nav.navbar {
+    border-top: 4px solid #276cda;
+    margin-bottom: 1rem;
+}
+
+.navbar-item, .navbar-link {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Menú lateral */
+.menu-label {
+    color: #8F99A3;
+    font-weight: 700;
+}
+
+.menu-list a {
+    color: #0F1D38;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.menu-list a:hover {
+    color: #276cda;
+}
+
+.menu-list a.is-active {
+    color: #276cda;
+    font-weight: 700;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+    margin-bottom: 2rem;
+}
+
+.card-header-title {
+    color: #8F99A3;
+    font-weight: 400;
+}
+
+/* Sección de información */
+.info-tiles {
+    margin: 1rem 0;
+}
+
+.info-tiles .subtitle {
+    font-weight: 300;
+    color: #8F99A3;
+}
+
+/* Fondo hero */
+.hero.welcome.is-info {
+    background: linear-gradient(to right, #5B86E5, #36D1DC);
+}
+
+.hero.welcome .title, .hero.welcome .subtitle {
+    color: #fff;
+}
+
+/* Tablas */
+.card-table .table {
+    margin-bottom: 0;
+}
+
+/* Scroll de las actividades */
+.events-card .card-table {
+    max-height: 250px;
+    overflow-y: auto;
+}

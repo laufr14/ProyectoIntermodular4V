@@ -14,7 +14,7 @@ body {
 
 /* Navbar */
 header{
-    font-size: 30px;
+    font-size: 20px;
 }
 .Logo {
     width: 5%; 
@@ -192,7 +192,7 @@ header{
 /*Seccion Inicio/*/
 .tituloQS{
     padding-top: 10px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color:#82a3c4;
 }
@@ -203,7 +203,7 @@ header{
 }
 .centrartextoQS{
     text-align: center;
-    font-size: 40px ;
+
 }
 .padingQS{
     padding-bottom: 30px;
@@ -212,7 +212,7 @@ header{
     margin-left: 40px;
     margin-right: 40px;
     color:rgb(60, 106, 175);
-    font-size: 25px;
+    font-size: 20px;
 }
 
 
@@ -251,7 +251,9 @@ header{
     font-size: 1.2rem;
     line-height: 1.5;
 }
-
+.hr{
+    color:#82a3c4;
+}
 
 /*Carrusel/*/
 
@@ -337,3 +339,5 @@ padding-left: 50px;
 .footer{
     background-color: #1177aa;
 }
+
+/*Responsive/*/
