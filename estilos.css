@@ -341,3 +341,64 @@ padding-left: 50px;
 }
 
 /*Responsive/*/
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .navbar .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-item, .navbar-link {
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .menu {
+        width: 100%;
+    }
+    .menu-list a {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .card {
+        margin-bottom: 1rem;
+    }
+    .hero.welcome {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    .events-card .card-table {
+        max-height: 200px;
+    }
+    .card-table .table {
+        font-size: 12px;
+    }
+    .hero-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-item, .navbar-link {
+        font-size: 10px;
+    }
+    .menu-label {
+        font-size: 12px;
+    }
+    .hero.welcome .title {
+        font-size: 1.5rem;
+    }
+    .hero.welcome .subtitle {
+        font-size: 1rem;
+    }
+}
