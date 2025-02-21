@@ -57,3 +57,67 @@ font-size: 20px;
   .fa{
     margin-left: 5px;
   }
+  /* Ajustes generales para pantallas pequeñas */
+/* Ajustes generales para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  /* Reducir el margen superior en móviles */
+  .box {
+      margin-top: 2rem;
+  }
+
+  /* Ajustar avatar */
+  .avatar {
+      margin-top: -50px;
+      padding-bottom: 10px;
+  }
+
+  .avatar img {
+      width: 80px; /* Reducir el tamaño del avatar */
+      height: 80px;
+  }
+
+  /* Ajustar el tamaño de fuente para mejor legibilidad */
+  html, body {
+      font-size: 12px;
+  }
+
+  /* Ajustar campos de formulario */
+  input {
+      font-size: 12px;
+      padding: 8px;
+  }
+
+  .field {
+      padding-bottom: 5px;
+  }
+
+  .hero.is-success {
+      padding: 1rem;
+      text-align: center;
+  }
+}
+
+/* Ajustes para móviles más pequeños */
+@media screen and (max-width: 480px) {
+  .box {
+      margin-top: 1rem;
+      padding: 1rem;
+  }
+
+  .avatar img {
+      width: 60px;
+      height: 60px;
+  }
+
+  .hero.is-success {
+      padding: 0.5rem;
+  }
+
+  p {
+      font-size: 12px;
+  }
+
+  .login-hr {
+      border-bottom: 1px solid #ccc;
+  }
+}

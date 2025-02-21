@@ -79,3 +79,64 @@ nav.navbar {
     max-height: 250px;
     overflow-y: auto;
 }
+/* Ajustes generales para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    /* Ajustar la barra de navegación */
+    nav.navbar {
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar-item, .navbar-link {
+        font-size: 12px;
+    }
+
+    /* Hacer que el menú lateral ocupe todo el ancho */
+    .menu {
+        width: 100%;
+    }
+
+    .menu-list a {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    /* Ajustar tarjetas */
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    /* Ajustar la sección Hero */
+    .hero.welcome {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    /* Modificar las tarjetas de eventos */
+    .events-card .card-table {
+        max-height: 200px;
+    }
+
+    /* Reducir padding en tablas */
+    .card-table .table {
+        font-size: 12px;
+    }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media screen and (max-width: 480px) {
+    .navbar-item, .navbar-link {
+        font-size: 10px;
+    }
+
+    .menu-label {
+        font-size: 12px;
+    }
+
+    .hero.welcome .title {
+        font-size: 1.5rem;
+    }
+
+    .hero.welcome .subtitle {
+        font-size: 1rem;
+    }
+}
