@@ -1,261 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="./unete.css" />
-    <link rel="stylesheet" href="./bulma.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="./unete.css">
+    <link rel="stylesheet" href="./bulma.css">
+</head>
+<body>
+
     <section class="section">
-      <div class="container">
+    <div class="container">
         <div class="tab-buttons">
-          <button class="button" onclick="mostrarFormulario('voluntario')">
-            Voluntario
-          </button>
-          <button class="button" onclick="mostrarFormulario('empresa')">
-            Empresa
-          </button>
+            <button class="button" onclick="mostrarFormulario('voluntario')">Voluntario</button>
+            <button class="button" onclick="mostrarFormulario('empresa')">Empresa</button>
         </div>
 
         <!-- Formulario de Voluntarios -->
         <div id="formVoluntario" class="formulario activo">
-          <h2>Registro de Voluntarios</h2>
-          <form id="registroVoluntario">
-            <div class="field">
-              <label class="label" for="nombre">Nombre</label>
-              <div class="control">
-                <input
-                  type="text"
-                  class="input"
-                  name="nombre"
-                  id="nombre"
-                  placeholder="Nombre"
-                  required
-                />
-              </div>
-            </div>
+            <h2>Registro de Voluntarios</h2>
+            <form id="registroVoluntario">
+                <div class="field">
+                    <label class="label" for="nombre">Nombre</label>
+                    <div class="control">
+                        <input type="text" class="input" name="nombre" id="nombre" placeholder="Nombre" required>
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label" for="apellido">Apellido</label>
+                    <div class="control">
+                        <input type="text" class="input" name="apellido" id="apellido" placeholder="Apellido" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="apellido">Apellido</label>
-              <div class="control">
-                <input
-                  type="text"
-                  class="input"
-                  name="apellido"
-                  id="apellido"
-                  placeholder="Apellido"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="edad">Edad</label>
+                    <div class="control">
+                        <input type="number" class="input" name="edad" id="edad" placeholder="Edad" min="16" max="99" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="edad">Edad</label>
-              <div class="control">
-                <input
-                  type="number"
-                  class="input"
-                  name="edad"
-                  id="edad"
-                  placeholder="Edad"
-                  min="16"
-                  max="99"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="email">Correo Electrónico</label>
+                    <div class="control">
+                        <input type="email" class="input" name="email" id="email" placeholder="Correo Electrónico" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="email">Correo Electrónico</label>
-              <div class="control">
-                <input
-                  type="email"
-                  class="input"
-                  name="email"
-                  id="email"
-                  placeholder="Correo Electrónico"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="telefono">Teléfono</label>
+                    <div class="control">
+                        <input type="tel" class="input" name="telefono" id="telefono" placeholder="Teléfono">
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="telefono">Teléfono</label>
-              <div class="control">
-                <input
-                  type="tel"
-                  class="input"
-                  name="telefono"
-                  id="telefono"
-                  placeholder="Teléfono"
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="fechaNacimiento">Fecha de Nacimiento</label>
+                    <div class="control">
+                        <input type="date" class="input" name="fechaNacimiento" id="fechaNacimiento" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="fechaNacimiento"
-                >Fecha de Nacimiento</label
-              >
-              <div class="control">
-                <input
-                  type="date"
-                  class="input"
-                  name="fechaNacimiento"
-                  id="fechaNacimiento"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="curso">Curso</label>
+                    <div class="control">
+                        <select name="curso" id="curso" required>
+                            <option value="" disabled selected>Selecciona tu curso</option>
+                            <optgroup label="Grado Medio">
+                                <option value="sistemas_microinformaticos">Sistemas Microinformáticos y Redes</option>
+                                <option value="gestion_administrativa">Gestión Administrativa</option>
+                                <option value="cocina_gastronomia">Cocina y Gastronomía</option>
+                            </optgroup>
+                            <optgroup label="Grado Superior">
+                                <option value="desarrollo_multiplataforma">Desarrollo de Aplicaciones Multiplataforma</option>
+                                <option value="desarrollo_web">Desarrollo de Aplicaciones Web</option>
+                                <option value="marketing_publicidad">Marketing y Publicidad</option>
+                                <option value="gestion_finanzas">Administración y Finanzas</option>
+                                <option value="direccion_cocina">Dirección de Cocina</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="curso">Curso</label>
-              <div class="control">
-                <select name="curso" id="curso" required>
-                  <option value="" disabled selected>
-                    Selecciona tu curso
-                  </option>
-                  <optgroup label="Grado Medio">
-                    <option value="sistemas_microinformaticos">
-                      Sistemas Microinformáticos y Redes
-                    </option>
-                    <option value="gestion_administrativa">
-                      Gestión Administrativa
-                    </option>
-                    <option value="cocina_gastronomia">
-                      Cocina y Gastronomía
-                    </option>
-                  </optgroup>
-                  <optgroup label="Grado Superior">
-                    <option value="desarrollo_multiplataforma">
-                      Desarrollo de Aplicaciones Multiplataforma
-                    </option>
-                    <option value="desarrollo_web">
-                      Desarrollo de Aplicaciones Web
-                    </option>
-                    <option value="marketing_publicidad">
-                      Marketing y Publicidad
-                    </option>
-                    <option value="gestion_finanzas">
-                      Administración y Finanzas
-                    </option>
-                    <option value="direccion_cocina">
-                      Dirección de Cocina
-                    </option>
-                  </optgroup>
-                </select>
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="ano">Año</label>
+                    <div class="control">
+                        <select name="año" id="ano" required>
+                            <option value="" disabled selected>Selecciona tu año</option>
+                            <option value="1º">1º</option>
+                            <option value="2º">2º</option>
+                        </select>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="ano">Año</label>
-              <div class="control">
-                <select name="año" id="ano" required>
-                  <option value="" disabled selected>Selecciona tu año</option>
-                  <option value="1º">1º</option>
-                  <option value="2º">2º</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control">
-                <button type="submit" class="button is-primary">
-                  Registrarse
-                </button>
-              </div>
-            </div>
-          </form>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-primary">Registrarse</button>
+                    </div>
+                </div>
+            </form>
         </div>
 
         <!-- Formulario de Empresas -->
         <div id="formEmpresa" class="formulario">
-          <h2>Registro de Empresas</h2>
-          <form id="registroEmpresa">
-            <div class="field">
-              <label class="label" for="nombreEmpresa"
-                >Nombre de la Empresa</label
-              >
-              <div class="control">
-                <input
-                  type="text"
-                  class="input"
-                  name="nombreEmpresa"
-                  id="nombreEmpresa"
-                  placeholder="Nombre de la Empresa"
-                  required
-                />
-              </div>
-            </div>
+            <h2>Registro de Empresas</h2>
+            <form id="registroEmpresa">
+                <div class="field">
+                    <label class="label" for="nombreEmpresa">Nombre de la Empresa</label>
+                    <div class="control">
+                        <input type="text" class="input" name="nombreEmpresa" id="nombreEmpresa" placeholder="Nombre de la Empresa" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="cif">CIF</label>
-              <div class="control">
-                <input
-                  type="text"
-                  class="input"
-                  name="cif"
-                  id="cif"
-                  placeholder="CIF"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="cif">CIF</label>
+                    <div class="control">
+                        <input type="text" class="input" name="cif" id="cif" placeholder="CIF" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="emailEmpresa">Correo Electrónico</label>
-              <div class="control">
-                <input
-                  type="email"
-                  class="input"
-                  name="emailEmpresa"
-                  id="emailEmpresa"
-                  placeholder="Correo Electrónico"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="emailEmpresa">Correo Electrónico</label>
+                    <div class="control">
+                        <input type="email" class="input" name="emailEmpresa" id="emailEmpresa" placeholder="Correo Electrónico" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="telefonoEmpresa">Teléfono</label>
-              <div class="control">
-                <input
-                  type="tel"
-                  class="input"
-                  name="telefonoEmpresa"
-                  id="telefonoEmpresa"
-                  placeholder="Teléfono"
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="telefonoEmpresa">Teléfono</label>
+                    <div class="control">
+                        <input type="tel" class="input" name="telefonoEmpresa" id="telefonoEmpresa" placeholder="Teléfono">
+                    </div>
+                </div>
 
-            <div class="field">
-              <label class="label" for="sector">Sector Empresarial</label>
-              <div class="control">
-                <input
-                  type="text"
-                  class="input"
-                  name="sector"
-                  id="sector"
-                  placeholder="Sector Empresarial"
-                  required
-                />
-              </div>
-            </div>
+                <div class="field">
+                    <label class="label" for="sector">Sector Empresarial</label>
+                    <div class="control">
+                        <input type="text" class="input" name="sector" id="sector" placeholder="Sector Empresarial" required>
+                    </div>
+                </div>
 
-            <div class="field">
-              <div class="control">
-                <button type="submit" class="button is-primary">
-                  Registrarse
-                </button>
-              </div>
-            </div>
-          </form>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-primary">Registrarse</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <script src="./script.js"></script>
-  </body>
+<script src="./script.js"></script>
+
+</body>
 </html>

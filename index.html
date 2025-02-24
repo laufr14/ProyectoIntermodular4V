@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Página Principal</title>
-    <link rel="stylesheet" href="./bulma.css" />
-    <link rel="stylesheet" href="./estilos.css" />
+    <link rel="stylesheet" href="./bulma.css">
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
   </head>
 
   <body>
-    <header>
+    <header id="inicio">
 
      <!-- Barra de navegación -->
 
 
 
-    <nav class="navbar is-fixed-top is-dark">
+    <nav class="navbar is-fixed-top is-dark" >
       <img src= "./Imagenes/Logo.png"  alt="Logo" class="Logo" >
       <div class="navbar-brand">
           <a class="navbar-item">
@@ -30,11 +31,11 @@
 
       <div id="navbarBasic" class="navbar-menu">
           <div class="navbar-start">
-              <a class="navbar-item" href="index.html">Inicio</a>
+              <a class="navbar-item" href="#inicio">Inicio</a>
               <a class="navbar-item" href="#QuienesSomos">¿Quiénes Somos?</a>
-              <a class="navbar-item" href="#">Experiencias</a>
-              <a class="navbar-item" href="unete.html">Únete</a>
-              <a class="navbar-item" href="login.html">Log In</a>
+              <a class="navbar-item" href="#experiencias">Experiencias</a>
+              <a class="navbar-item" href="unete.html" target="_blank">Únete</a>
+              <a class="navbar-item" href="login.html" target="_blank">Log In</a>
           </div>
 
 
@@ -81,8 +82,8 @@
       <div class="hero-content">
           <h2 class="title is-1 has-text-white">Bienvenido a Huellas del Cambio</h2>
           <p class="subtitle is-4 has-text-light">Transforma el mundo con nosotros.</p>
-          <a href="./unete.html" class="button is-large is-link">Únete a la causa</a>
-          <a href="./login.html" class="button is-large is-link">Ya tengo cuenta</a>
+          <a href="./unete.html" target="_blank" class="button is-large is-link">Únete a la causa</a>
+          <a href="./login.html" target="_blank" class="button is-large is-link">Ya tengo cuenta</a>
       </div>
   </div>
      <!--Fin seccion imagen de inicio-->
@@ -98,7 +99,7 @@
                 <div class="column is-one-quarter has-text-centered">
                   <div class="box custom-box">
                     <figure class="custom-image">
-                      <img src="./Imagenes/grafica.png" />
+                      <img src="./Imagenes/grafica.png" alt="grafico">
                     </figure>
                     <h2 class="custom-title">Cientos</h2>
                     <p class="custom-subtitle">
@@ -110,7 +111,7 @@
                 <div class="column is-one-quarter has-text-centered">
                   <div class="box custom-box">
                     <figure class="custom-image">
-                      <img src="./Imagenes/paz.png " />
+                      <img src="./Imagenes/paz.png" alt="icono paz">
                     </figure>
                     <h2 class="custom-title">200</h2>
                     <p class="custom-subtitle">
@@ -122,7 +123,7 @@
                 <div class="column is-one-quarter has-text-centered">
                   <div class="box custom-box">
                     <figure class="custom-image">
-                      <img src="./Imagenes/estrella.png" />
+                      <img src="./Imagenes/estrella.png" alt="icono estrella">
                     </figure>
                     <h2 class="custom-title">4.7</h2>
                     <p class="custom-subtitle">
@@ -134,10 +135,10 @@
                 <div class="column is-one-quarter has-text-centered">
                   <div class="box custom-box">
                     <figure class="custom-image">
-                      <img src="./Imagenes/bocadillo.png" />
+                      <img src="./Imagenes/bocadillo.png" alt="icocno comic">
                     </figure>
                     <h2 class="custom-title">100%</h2>
-                    <p class="custom-subtitle">
+                    <p class="custom-subtitle"  id="QuienesSomos">
                       de los voluntarios reciben respuestas a sus inquietudes
                     </p>
                   </div>
@@ -148,7 +149,7 @@
           </section>
 
           <!--Seccion Textos-->
-          <section class="seccion1">
+          <div class="seccion1">
             <div class="columns is-vcentered">
               
               <div class="column is-half has-text-centered">
@@ -169,7 +170,7 @@
                   </div>
           
               
-                  <div class="has-text-centered mt-5">
+                  <div class="has-text-centered mt-5" id="experiencias">
                     <p class="tituloQS">¿QUÉ HACEMOS?</p>
                     <p class="padingQS">
                       Ayudamos a gente de nuestra ciudad, Pamplona, a que tengan una vida mejor, ya sea dándoles alimentos, cuidados básicos y un techo donde dormir, con el objetivo de que en cinco años no haya nadie viviendo en la calle, ni en pobreza extrema.
@@ -179,7 +180,7 @@
               </div>
             </div>
             <!--Fin seccion textos-->
-          </section>
+          </div>
           
         <hr>
     <!--Seccion Carrusel-->
@@ -225,6 +226,7 @@
               <img src="./Imagenes/Andres_Gutierrez.png" alt="Foto de Persona">
             </div>
           </div>
+      </div>
     </section>
 
     <!--Fin seccion carrusel-->  
@@ -276,17 +278,19 @@
                 <div class="column">
                     <h3 class="title is-5 has-text-white">Enlaces rápidos</h3>
                     <ul>
-                        <li><a href="./index.html" class="has-text-grey-light">Inicio</a></li>
-                        <li><a href="./login.html" class="has-text-grey-light">Login </li>
-                        <li><a href="#footer" class="has-text-grey-light">Contacto</a></li>
-                    </ul>
+                      <li><a href="./index.html" target="_blank" class="has-text-grey-light">Inicio</a></li>
+                      <li><a href="./login.html" target="_blank" class="has-text-grey-light">Login</a></li> <!-- Corrección aquí -->
+                      <li><a href="#" class="has-text-grey-light">Contacto</a></li>
+                  </ul>
                 </div>
     
                 <div class="column">
                     <h3 class="title is-5 has-text-white">Síguenos</h3>
                     <div class="mt-3">
-                        <a href="https://www.instagram.com/cipcuatrovientos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="./Imagenes/Instagram.png" class="image is-32x32"></a>
-                        <a href="https://x.com/_cuatrovientos"><img src="./Imagenes/twitter.png" class="image is-32x32"></a>
+                        <a href="https://www.instagram.com/cipcuatrovientos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                          <img src="./Imagenes/Instagram.png" class="image is-32x32" alt="instagram logo"></a>
+                        <a href="https://x.com/_cuatrovientos" target="_blank">
+                          <img src="./Imagenes/twitter.png" class="image is-32x32" alt="x logo"></a>
                     </div>
                 </div>
     

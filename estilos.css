@@ -1,15 +1,17 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
 
 
 body {
-    font-family: 'Indie Flower';
+  font-family: Signika Negative;
     font-size: 20px;
-    
+ 
 }
-
+html{
+    scroll-behavior: smooth;
+}
 
 
 /* Navbar */
