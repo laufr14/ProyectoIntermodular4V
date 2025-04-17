@@ -1,0 +1,93 @@
+body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .box {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    background-color: white;
+  }
+
+  .is-rounded-avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  .tag.is-success {
+    background-color: #c6f6d5;
+    color: #22543d;
+  }
+
+  .tag.is-warning {
+    background-color: #fefcbf;
+    color: #744210;
+  }
+
+  .tag.is-danger {
+    background-color: #fed7d7;
+    color: #742a2a;
+  }
+
+  .button.is-primary {
+    background-color: #4c51bf;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+
+  .button.is-primary:hover {
+    background-color: #434190;
+  }
+
+  .button.is-light {
+    border-radius: 8px;
+  }
+
+  select,
+  input[type="text"] {
+    border-radius: 8px;
+    border: 1px solid #dbdbdb;
+  }
+
+  /*Diseño modal de formulario de proyectos*/
+  .modal {
+    display: none;
+  }
+
+  .modal.is-active {
+    display: flex;
+  }
+
+  .button.is-purple {
+    background-color: #6c63ff;
+    color:white;
+    border: none;
+  }
+
+  .button.is-purple:hover {
+    background-color: #574fd6;
+
+  }
+
+  .button.is-light-gray {
+    background-color: #f5f5f5;
+    color: #4a4a4a;
+  }
+
+  .input, .textarea, .select {
+    border-radius: 8px;
+
+  }
+
+  .checkbox {
+    margin-right: 12px;
+  }
+
+  .field label {
+    font-weight: 600;
+  }
+
+  

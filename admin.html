@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Voluntariado</title>
+  <link rel="stylesheet" href="./bulma.css">
+  <link rel="sylesheet" href="./administrador.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<!-- Remix Icon -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<!-- Echarts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar is-light">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <strong>Logo</strong>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item is-active">Dashboard</a>
+        <a class="navbar-item">Voluntarios</a>
+        <a class="navbar-item" href="./actividades.html">Proyectos</a>
+        <a class="navbar-item" href="./actividades.html">Actividades</a>
+        <a class="navbar-item" >Solicitudes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Filtros -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-5">Filtrar Voluntarios</h2>
+      <div class="columns is-multiline">
+        <div class="column is-3">
+          <input class="input" type="text" placeholder="Buscar por nombre">
+        </div>
+        <div class="column is-3">
+          <div class="select is-fullwidth">
+            <select>
+              <option>Todos los cursos</option>
+              <option>1º ASIR</option>
+              <option>2º ASIR</option>
+              <option>1º DAM</option>
+                <option>2º DAM</option>
+                <option>1º CEGFS</option>
+                <option>2º CEGFS</option>
+            </select>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="select is-fullwidth">
+            <select>
+              <option>Cualquier disponibilidad</option>
+              <option>Lunes - Mañana</option>
+                <option>Lunes - Tarde</option>
+                <option>Martes - Mañana</option>
+                <option>Martes - Tarde</option>
+                <option>Miércoles - Mañana</option>
+                <option>Miércoles - Tarde</option>
+                <option>Jueves - Mañana</option>
+                <option>Jueves - Tarde</option>
+                <option>Viernes - Mañana</option>
+                <option>Viernes - Tarde</option>
+                <option>Sábado - Mañana</option>
+                <option>Sábado - Tarde</option>
+            </select>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="select is-fullwidth">
+            <select>
+              <option>Todos los estados</option>
+              <option>Activo</option>
+              <option>Pendiente</option>
+              <option>Inactivo</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button is-light">Resetear Filtros</button>
+        <button class="button is-link">Aplicar Filtros</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla de Voluntarios -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-5">Voluntarios Registrados</h2>
+      <p>Total: 128 voluntarios</p>
+      <div class="table-container">
+        <table class="table is-fullwidth is-striped is-hoverable">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Curso</th>
+              <th>Disponibilidad</th>
+              <th>Proyectos</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carmen Rodríguez</strong><br><small>carmen.rodriguez@gmail.com</small></td>
+              <td>1º DAM</td>
+              <td>Lunes y Miércoles (Tarde)</td>
+              <td>2 activos</td>
+              <td><span class="tag is-success">Activo</span></td>
+              <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button></td>
+            </tr>
+            <tr>
+              <td><strong>Pablo Sánchez</strong><br><small>pablo.sanchez@gmail.com</small></td>
+              <td>2º ASIR</td>
+              <td>Viernes (Tarde)</td>
+              <td>0 activos</td>
+              <td><span class="tag is-warning">Pendiente</span></td>
+              <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button></td>
+            </tr>
+            <tr>
+                <td><strong>Mónica Martínez</strong><br><small>monica.martinez@gmail.com</small></td>
+                <td>2º DAM</td>
+                <td>Martes y Jueves (Mañana)</td>
+                <td>1 activo</td>
+                <td><span class="tag is-danger">Inactivo</span></td>
+                <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gestión de Proyectos -->
+    
+  
+      <section class="section">
+    <div class="container">
+      <h2 class="title is-5">Gestión de Proyectos</h2>
+      <div class="buttons is-right">
+        <button class="button is-primary" onclick="document.getElementById('modal-crear-proyecto').classList.add('is-active')">+ Crear Nuevo Proyecto</button>
+      </div>
+      <!--Proyectos creados desde el formulario-->
+    <section class="section">
+        <div class="container">
+          <h2 class="title is-5">Proyectos creados</h2>
+          <ul id="lista-proyectos"></ul>
+        </div>
+      </section>
+
+       <!-- Modal -->
+    <div class="modal" id="modal-crear-proyecto">
+        <div class="modal-background" onclick="cerrarModal()"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Crear Nuevo Proyecto</p>
+            <button class="delete" aria-label="close" onclick="cerrarModal()"></button>
+           
+           
+          </header>
+          <section class="modal-card-body">
+            <form id="formulario-proyecto">
+              <div class="field">
+                <label class="label">Nombre del Proyecto</label>
+                <div class="control">
+                  <input id="nombre" class="input" type="text" placeholder="Introduce un nombre">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Descripción</label>
+                <div class="control">
+                  <textarea id="descripcion" class="textarea" placeholder="Descripción del proyecto"></textarea>
+                </div>
+              </div>
+
+              <div class="field is-horizontal">
+                <div class="field-body">
+                  <div class="field">
+                    <label class="label">Fecha de Inicio</label>
+                    <div class="control">
+                      <input id="fecha-inicio" class="input" type="date">
+                    </div>
+                  </div>
+      
+                  <div class="field">
+                    <label class="label">Fecha de Fin</label>
+                    <div class="control">
+                      <input id="fecha-fin" class="input" type="date">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Botón para añadir actividad-->
+              <div class="field">
+                <label class="label">Actividades</label>
+                <div id="actividades-lista" class="content mb-3"></div>
+              
+                <div class="field has-addons">
+                  <div class="control is-expanded">
+                    <input class="input" type="text" id="nombre-actividad-temp" placeholder="Nombre de actividad">
+                  </div>
+                  <div class="control">
+                    <input class="input" type="text" id="horario-actividad-temp" placeholder="Horario">
+                  </div>
+                  <div class="control">
+                    <button class="button is-info" type="button" id="btn-agregar-actividad">➕ Añadir actividad</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Cupo de Voluntarios</label>
+                <div class="control">
+                  <input class="input" type="number" placeholder="Ej. 15">
+                </div>
+              </div>
+      
+      
+              <div class="field">
+                <label class="label">ODS Relacionados</label>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox"> ODS 1: Fin de la pobreza
+                  </label><br>
+                  <label class="checkbox">
+                    <input type="checkbox"> ODS 2: Hambre cero
+                  </label><br>
+                  <label class="checkbox">
+                    <input type="checkbox"> ODS 3: Salud y bienestar
+                  </label><br>
+                  <label class="checkbox">
+                    <input type="checkbox"> ODS 4: Educación de calidad
+                  </label><br>
+                  <label class="checkbox">
+                    <input type="checkbox"> ODS 13: Acción por el clima
+                  </label><br>
+                  <label class="checkbox">
+                    <input type="checkbox"> ODS 14: Vida submarina
+                  </label>
+                </div>
+              </div>
+      
+              <div class="field">
+                <label class="label">Categoría</label>
+                <div class="control custom-select">
+                  <div class="select is-fullwidth">
+                    <select>
+                      <option>Educación</option>
+                      <option>Medio ambiente</option>
+                      <option>Salud</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="field">
+                <label class="label">Activo</label>
+                <div class="control">
+                  <label class="checkbox custom-checkbox">
+                    <input type="checkbox">
+                    ¿Está activo?
+                  </label>
+                </div>
+              </div>
+  
+              <div class="field">
+                <label class="label">Notificaciones</label>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="check"></span>
+                  Activar notificaciones
+                </label>
+              </div>
+            </form>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-primary" id="btn-guardar-proyecto">Guardar cambios</button>
+            <div id="mensaje-alerta" class="notification is-success is-light mt-3" style="display:none;"></div>
+            <br>
+            <button class="button" onclick="cerrarModal()">Cancelar</button>
+            <br>
+            <button class="button is-purple">Crear Proyecto</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+  
+      
+      <table class="table is-fullwidth is-hoverable">
+        <thead>
+          <tr>
+            <th>Proyecto</th>
+            <th>ODS</th>
+            <th>Fechas</th>
+            <th>Voluntarios</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-proyectos">
+          <tr>
+            <td>
+              <strong>Reforestación Parque Natural</strong><br>
+              <small>Plantación de árboles autóctonos</small>
+            </td>
+            <td><span class="tag is-success">ODS 13</span> <span class="tag is-success">ODS 15</span></td>
+            <td>15/04/2025 - 30/06/2025</td>
+            <td>18/25</td>
+            <td><span class="tag is-success">Activo</span></td>
+            <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button> <button class="button is-small is-light">🗑️</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Solicitudes Pendientes -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-5">Solicitudes Pendientes</h2>
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Solicitante</th>
+            <th>Proyecto</th>
+            <th>Fecha de Solicitud</th>
+            <th>Disponibilidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Daniel García</strong><br><small>daniel.garcia@gmail.com</small></td>
+            <td>Reforestación Parque Natural</td>
+            <td>05/04/2025</td>
+            <td>Fines de semana</td>
+            <td>
+              <button class="button is-small is-success">Aprobar</button>
+              <button class="button is-small is-danger">Rechazar</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Luisa Gónzalez</strong><br><small>luisa.gonzalez@gmail.com</small></td>
+            <td>Asistencia a residencia de ancianos</td>
+            <td>05/04/2025</td>
+            <td>Lunes 9:30 a.m-10:30 a.m</td>
+            <td>
+              <button class="button is-small is-success">Aprobar</button>
+              <button class="button is-small is-danger">Rechazar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <script src="./script.js"></script>
+</body>
+</html>
