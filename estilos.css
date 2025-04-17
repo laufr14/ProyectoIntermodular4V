@@ -1,0 +1,314 @@
+/*Estilo para la barra de navegación*/
+
+.button.is-primary {
+    background-color: #1e6ffb;
+    border-color: #1e6ffb;
+    color: #fff;
+    transition: all 0.3s ease; /* Transición suave */
+    border-radius: 9999px; /* Para hacerlo bien redondeado */
+    padding: 0.75rem 1.5rem; /* Tamaño cómodo */
+    font-weight: 600;
+  }
+  
+  .button.is-primary:hover {
+    background-color: #0041c4;
+    border-color: #0041c4;
+    color: #fff;
+    transform: translateY(-3px); /* Efecto de subida */
+    box-shadow: 0px 8px 20px rgba(30, 111, 251, 0.3); /* Sombra azul suave */
+  }
+  
+  
+  /*Sección hero*/
+
+.hero {
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(0,123,255,0.2)), url('Imagenes/imagen_1_Inicio.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-body {
+    padding: 5rem 2rem;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .ods-box {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  /*Estilos en la cabecera*/
+  .hero {
+   color: white;
+    padding: 4rem 1.5rem;
+  }
+  .hero .title {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  .hero .subtitle {
+    color: #f0f0f0;
+    font-size: 1.2rem;
+  }
+  .buttons .button.is-primary {
+    background-color: #1e6ffb;
+    border: none;
+  }
+  .buttons .button.is-outlined {
+    border-color: white;
+    color: white;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .card-style {
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  .icon-style {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e6ffb;
+  }
+  .ods-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .ods-box {
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .ods-box:hover {
+    transform: translateY(-5px);
+  }
+
+/* Estilo solo para la sección Nuestro Impacto */
+.impact-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .impact-section .image img {
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .impact-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #363636;
+  }
+  
+  .impact-section p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+  }
+  
+  .impact-section .has-text-primary {
+    color: #1e6ffb;
+    font-weight: bold;
+  }
+  
+  .impact-section .columns .column p.is-size-3 {
+    margin-bottom: 0.25rem;
+  }
+  
+  .impact-section .columns .column p {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #7a7a7a;
+   
+  }
+
+  .section-spacing {
+    margin-bottom: 5rem; 
+  }
+
+  .impact-image img {
+    width: 100%;
+    height: auto;
+    max-width: 450px; /* Controla que no crezca demasiado */
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+  }
+  
+ .impact-number {
+  color: #1e6ffb;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+  
+  
+  /* Responsive para sección Nuestro Impacto */
+  @media (max-width: 768px) {
+    .impact-section .columns {
+      flex-direction: column;
+    }
+  
+    .impact-section .column.is-5,
+    .impact-section .column.is-7 {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .impact-image img {
+      max-width: 300px; /* Opcional: tamaño más contenido en móviles */
+      margin: 0 auto;
+    }
+  
+    .impact-section h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+  
+    .impact-section p {
+      font-size: 1rem;
+      padding: 0 1.5rem;
+    }
+  }
+  
+  
+  
+
+  /* Testimonios */
+  .testimonial-box {
+    max-width: 1000px; /* Más ancho */
+    margin: 0 auto;
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    background: white;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .testimonial-content {
+    text-align: center;
+  }
+  
+  .testimonial-content img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-content h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .testimonial-content p {
+    margin-bottom: 1rem;
+    color: #4a4a4a;
+  }
+  
+  .testimonial-dots {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+  }
+  
+  .dot.is-active {
+    background-color: #1e6ffb;
+  }
+
+  /*Últimas Noticias*/
+
+  .news-card {
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .news-image img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+  }
+  
+  .news-content {
+    padding: 1.5rem;
+    text-align: left;
+  }
+  
+  .news-content p {
+    color: #4a4a4a;
+  }
+  
+  .button.is-outlined.is-primary {
+    border-color: #1e6ffb;
+    color: #1e6ffb;
+  }
+  
+  .button.is-outlined.is-primary:hover {
+    background-color: #1e6ffb;
+    color: white;
+  }
+
+  .news-content a {
+    color: #1e6ffb;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .news-content a:hover {
+    color: #0041c4; /* Un azul un poquito más oscuro al pasar el ratón */
+  }
+  
+  /*Sección de la app móvil*/
+
+  .app-download {
+    background-color: #82a7c3; /* Azul pastel */
+    color: white;
+    padding: 5rem 1.5rem;
+  }
+  
+  .app-download h2,
+  .app-download p {
+    color: white;
+  }
+  
+  .app-download .buttons .button {
+    margin-right: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .app-download {
+      text-align: center;
+    }
+    .app-download .buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    .app-download .buttons .button {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  
