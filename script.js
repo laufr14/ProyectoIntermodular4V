@@ -1,3 +1,22 @@
+// Script para el menú de navegación
+document.addEventListener('DOMContentLoaded', () => {
+  // Código para abrir/cerrar el menú hamburguesa
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  if ($navbarBurgers.length > 0) {
+    $navbarBurgers.forEach(el => {
+      el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
+
+
 //Funcionalidades para crear, editar y eliminar proyectos 
 
 let proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
@@ -291,3 +310,116 @@ renderizarActividades();
     });
   });
 
+//Funcionalidad de los botones de voluntario y organización
+
+// Script para cambiar entre Voluntario y Organización
+document.addEventListener("DOMContentLoaded", function() {
+  const voluntarioBtn = document.getElementById("voluntarioBtn");
+  const organizacionBtn = document.getElementById("organizacionBtn");
+  const voluntarioForm = document.getElementById("voluntarioForm");
+  const organizacionForm = document.getElementById("organizacionForm");
+
+  voluntarioBtn.addEventListener("click", () => {
+    voluntarioBtn.classList.add("is-primary");
+    voluntarioBtn.classList.remove("is-light");
+    organizacionBtn.classList.remove("is-primary");
+    organizacionBtn.classList.add("is-light");
+    voluntarioForm.style.display = "block";
+    organizacionForm.style.display = "none";
+  });
+
+  organizacionBtn.addEventListener("click", () => {
+    organizacionBtn.classList.add("is-primary");
+    organizacionBtn.classList.remove("is-light");
+    voluntarioBtn.classList.remove("is-primary");
+    voluntarioBtn.classList.add("is-light");
+    organizacionForm.style.display = "block";
+    voluntarioForm.style.display = "none";
+  });
+});
+
+// Script para abrir y cerrar el modal de Iniciar Sesión
+
+// Función para abrir el modal
+function abrirModalLogin() {
+  document.getElementById('modal-login').classList.add('is-active');
+}
+
+// Función para cerrar el modal
+function cerrarModalLogin() {
+  document.getElementById('modal-login').classList.remove('is-active');
+}
+
+// Opcional: código para activar/desactivar menú hamburguesa en móviles
+document.addEventListener('DOMContentLoaded', () => {
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  if ($navbarBurgers.length > 0) {
+    $navbarBurgers.forEach(el => {
+      el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
+
+// Validación del correo y la contraseña en el modal de Iniciar sesión 
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('loginForm');
+  const emailInput = form.querySelector('input[type="email"]');
+  const passwordInput = form.querySelector('input[type="password"]');
+
+  // Crear contenedores de error debajo de los inputs
+  const emailError = document.createElement('p');
+  emailError.className = 'help is-danger';
+  emailInput.parentNode.appendChild(emailError);
+
+  const passwordError = document.createElement('p');
+  passwordError.className = 'help is-danger';
+  passwordInput.parentNode.appendChild(passwordError);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevenir envío del formulario
+
+    // Limpiar errores anteriores
+    emailError.textContent = '';
+    passwordError.textContent = '';
+    emailInput.classList.remove('is-danger');
+    passwordInput.classList.remove('is-danger');
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    let valid = true;
+
+    // Validar correo electrónico
+    if (!validarEmail(email)) {
+      emailError.textContent = 'Introduce un correo electrónico válido.';
+      emailInput.classList.add('is-danger');
+      valid = false;
+    }
+
+    // Validar contraseña
+    if (password.length < 6) {
+      passwordError.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+      passwordInput.classList.add('is-danger');
+      valid = false;
+    }
+
+    if (valid) {
+      alert('Inicio de sesión correcto.');
+      form.submit(); // O redireccionar si quieres
+    }
+  });
+
+  function validarEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+});
+
+ 

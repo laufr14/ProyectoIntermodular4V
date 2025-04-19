@@ -310,5 +310,55 @@
       margin-bottom: 1rem;
     }
   }
+
+  /*Footer*/
+
+  .footer {
+    background: #1a1d24; /* Un gris oscuro azul profundo */
+    padding: 3rem 1.5rem;
+  }
   
+  .footer-links a, .footer-contact li {
+    color: #d1d1d1;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a:hover, .footer-contact li:hover {
+    color: #1e6ffb; /* Azul corporativo al pasar el mouse */
+  }
+  
+  .social-icons a {
+    color: #1e6ffb;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+  }
+
+ 
+/* Estilo para el modal de inicio de sesión */
+
+body {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.login-box h2 {
+  color: #1e6ffb;
+}
   

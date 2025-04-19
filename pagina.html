@@ -8,34 +8,96 @@
   <link rel="stylesheet" href="./bulma.css">
   <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
+ 
 </head>
 <body>
-    <!-- Navbar -->
-  <nav class="navbar is-white">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <strong style="color:#1e6ffb">Huellas del cambio</strong>
-      </a>
+  <!-- Navbar -->
+<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <strong style="color: #1e6ffb;">Huellas del cambio</strong>
+    </a>
+
+    <!-- Burger para móvil -->
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasic" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="#">Inicio</a>
+      <a class="navbar-item" href="#quienes-somos">Sobre Nosotros</a>
+      <a class="navbar-item" href="#">Proyectos</a>
+      <a class="navbar-item" href="noticias.html" target="_blank">Noticias</a>
+      <a class="navbar-item" href="#">Contacto</a>
     </div>
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">Inicio</a>
-        <a class="navbar-item" href="#quienes-somos">Sobre Nosotros</a>
-        <a class="navbar-item">Proyectos</a>
-        <a class="navbar-item" href="noticias.html" target="_blank">Noticias</a>
-        <a class="navbar-item">Contacto</a>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <button class="button is-primary is-rounded" onclick="abrirModalLogin()">
+            Iniciar Sesión
+          </button>
           <a class="button is-primary is-rounded">Únete Ahora</a>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <section class="hero is-medium">
+<!-- Modal de Inicio de Sesión -->
+<div class="modal" id="modal-login">
+  <div class="modal-background" onclick="cerrarModalLogin()"></div>
+
+  <div class="modal-content">
+    <div class="box login-box">
+      <h2 class="title has-text-centered">Iniciar sesión</h2>
+
+      <form id="loginForm">
+        <div class="field">
+          <label class="label">Correo electrónico</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="tu@email.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Contraseña</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="********">
+          </div>
+        </div>
+
+        <div class="field is-grouped is-justify-content-space-between">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox"> Recordarme
+            </label>
+          </div>
+          <div class="control">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
+
+        <div class="field mt-4">
+          <button type="submit" class="button is-primary is-fullwidth">Entrar</button>
+        </div>
+
+        <div class="has-text-centered mt-2">
+          <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close" onclick="cerrarModalLogin()"></button>
+</div>
+
+<!--Hero Section-->
+    <section class="hero is-medium">
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title">Cambia vidas. <br>Incluida la tuya.</h1>
@@ -274,102 +336,104 @@
       </div>
     </div>
   </section>
-<script src="./script.js"></script>
-  </body>
-</html>
 
-<!--Sección de la aplicación-->
+  <!--Sección de la aplicación-->
 
 <section class="section app-download">
-    <div class="container">
-      <div class="columns is-vcentered is-multiline">
-        
-        <!-- Texto -->
-        <div class="column is-6-desktop is-12-mobile">
-          <h2 class="title is-3 has-text-white">Lleva el mundo en tu bolsillo.</h2>
-          <p class="subtitle is-5 has-text-white">
-            Descarga nuestra aplicación y descubre experiencias únicas con una gran comunidad.
-          </p>
-          <div class="buttons mt-4">
-            <a href="#" class="button is-black">
-              <span class="icon">
-                <i class="fab fa-google-play"></i>
-              </span>
-              <span>Disponible en Google Play</span>
-              </a>
-            <a href="#" class="button is-black">
-              <span class="icon">
-                <i class="fab fa-apple"></i>
-              </span>
-              <span>App Store</span>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      
+      <!-- Texto -->
+      <div class="column is-6-desktop is-12-mobile">
+        <h2 class="title is-3 has-text-white">Lleva el mundo en tu bolsillo.</h2>
+        <p class="subtitle is-5 has-text-white">
+          Descarga nuestra aplicación y descubre experiencias únicas con una gran comunidad.
+        </p>
+        <div class="buttons mt-4">
+          <a href="#" class="button is-black">
+            <span class="icon">
+              <i class="fab fa-google-play"></i>
+            </span>
+            <span>Disponible en Google Play</span>
             </a>
-          </div>
+          <a href="#" class="button is-black">
+            <span class="icon">
+              <i class="fab fa-apple"></i>
+            </span>
+            <span>App Store</span>
+          </a>
         </div>
-  
-        <!-- Imagen del móvil -->
-        <div class="column is-6-desktop is-12-mobile has-text-centered mt-5-mobile">
-          <figure class="image is-inline-block">
-            <img src="Imagenes/telefono2.png" alt="App Preview" style="max-width:300px;">
-          </figure>
-        </div>
-  
       </div>
-    </div>
-  </section>
-  
-  
-  <!-- Footer -->
 
-  <footer class="footer has-background-dark has-text-white-ter">
-    <div class="container">
-      <div class="columns">
-  
-        <!-- Logo y descripción -->
-        <div class="column is-3">
-          <h3 class="title is-5 has-text-white">Logo</h3>
-          <p>Transformando vidas a través del voluntariado y la acción comunitaria desde 2010.</p>
-          <div class="social-icons mt-3">
-            <a href="#"><i class="fab fa-facebook fa-lg mr-2"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-lg mr-2"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-lg mr-2"></i></a>
-          </div>
-        </div>
-  
-        <!-- Enlaces rápidos -->
-        <div class="column is-3">
-          <h3 class="title is-6 has-text-white">Enlaces Rápidos</h3>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Noticias</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </div>
-  
-        <!-- Voluntariado -->
-        <div class="column is-3">
-          <h3 class="title is-6 has-text-white">Voluntariado</h3>
-          <ul>
-            <li><a href="#">Cómo Participar</a></li>
-            <li><a href="#">Oportunidades Actuales</a></li>
-            <li><a href="#">Voluntariado Virtual</a></li>
-            <li><a href="#">Voluntariado Internacional</a></li>
-            <li><a href="#">Testimonios</a></li>
-          </ul>
-        </div>
-  
-        <!-- Contacto -->
-        <div class="column is-3">
-          <h3 class="title is-6 has-text-white">Contáctanos</h3>
-          <ul>
-            <li><i class="fas fa-map-marker-alt mr-2"></i> Calle Principal 123, Ciudad Esperanza, 28001</li>
-            <li><i class="fas fa-phone mr-2"></i> +34 912 345 678</li>
-            <li><i class="fas fa-envelope mr-2"></i> cuatrovientos@voluntariado.org</li>
-          </ul>
-        </div>
-  
+      <!-- Imagen del móvil -->
+      <div class="column is-6-desktop is-12-mobile has-text-centered mt-5-mobile">
+        <figure class="image is-inline-block">
+          <img src="Imagenes/telefono2.png" alt="App Preview" style="max-width:300px;">
+        </figure>
       </div>
+
     </div>
-  </footer>
-  
+  </div>
+</section>
+
+
+<!-- Footer -->
+
+<footer class="footer has-background-dark has-text-light">
+  <div class="container">
+    <div class="columns is-multiline">
+
+      <!-- Logo y texto -->
+      <div class="column is-3">
+        <h3 class="title is-5 has-text-white">Logo</h3>
+        <p>Transformando vidas a través del voluntariado y la acción comunitaria desde 2010.</p>
+        <div class="social-icons mt-4">
+          <a href="#"><i class="fab fa-facebook fa-2x mr-3"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-2x mr-3"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div class="column is-3">
+        <h3 class="title is-6 has-text-white">Enlaces Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Noticias</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Voluntariado -->
+      <div class="column is-3">
+        <h3 class="title is-6 has-text-white">Voluntariado</h3>
+        <ul class="footer-links">
+          <li><a href="#">Cómo Participar</a></li>
+          <li><a href="#">Oportunidades Actuales</a></li>
+          <li><a href="#">Voluntariado Virtual</a></li>
+          <li><a href="#">Voluntariado Internacional</a></li>
+          <li><a href="#">Testimonios</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="column is-3">
+        <h3 class="title is-6 has-text-white">Contáctanos</h3>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt mr-2"></i> Calle Principal 123, Ciudad Esperanza</li>
+          <li><i class="fas fa-phone mr-2"></i> +34 912 345 678</li>
+          <li><i class="fas fa-envelope mr-2"></i> cuatrovientos@voluntariado.org</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<script src="./script.js"></script>
+</body>
+</html>
+
+
+
