@@ -145,85 +145,7 @@ function redirigirActividad(id) {
   window.location.href = 'actividades.html';
 }
 
-// Sección de actividades que se añaden a los proyectos
-let actividades = JSON.parse(localStorage.getItem('actividades')) || [];
-
-function cargarProyectos() {
-  const select = document.getElementById('select-proyecto');
-  select.innerHTML = '';
-  const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
-  proyectos.forEach(p => {
-    const option = document.createElement('option');
-    option.value = p.id;
-    option.textContent = p.nombre;
-    select.appendChild(option);
-  });
-
-  const seleccionado = JSON.parse(localStorage.getItem('proyectoSeleccionado'));
-  if (seleccionado) {
-    select.value = seleccionado.id;
-    localStorage.removeItem('proyectoSeleccionado');
-  }
-}
-
-function renderizarActividades() {
-  const tabla = document.querySelector('#tabla-actividades tbody');
-  if (!tabla) return;
-  tabla.innerHTML = "";
-
-  actividades.forEach((act, index) => {
-    const fila = document.createElement('tr');
-    fila.innerHTML = `
-      <td>${act.nombreProyecto}</td>
-      <td>${act.nombre}</td>
-      <td>${act.horario}</td>
-      <td>
-        <button class="button is-small is-light" onclick="editarActividad(${index})">✏️</button>
-        <button class="button is-small is-danger" onclick="eliminarActividad(${index})">🗑</button>
-      </td>
-    `;
-    tabla.appendChild(fila);
-  });
-}
-
-document.getElementById('form-actividad')?.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const select = document.getElementById('select-proyecto');
-  const nombreProyecto = select.options[select.selectedIndex].text;
-  const idProyecto = select.value;
-  const nombre = document.getElementById('nombre-actividad').value;
-  const horario = document.getElementById('horario-actividad').value;
-
-  actividades.push({ idProyecto, nombreProyecto, nombre, horario });
-  localStorage.setItem('actividades', JSON.stringify(actividades));
-
-  renderizarActividades();
-  e.target.reset();
-});
-
-function editarActividad(index) {
-  const act = actividades[index];
-  document.getElementById('select-proyecto').value = act.idProyecto;
-  document.getElementById('nombre-actividad').value = act.nombre;
-  document.getElementById('horario-actividad').value = act.horario;
-
-  actividades.splice(index, 1);
-  renderizarActividades();
-}
-
-function eliminarActividad(index) {
-  actividades.splice(index, 1);
-  localStorage.setItem('actividades', JSON.stringify(actividades));
-  renderizarActividades();
-}
-
-// Inicialización condicional para evitar errores en páginas sin los elementos
-if (document.getElementById('tabla-proyectos')) mostrarProyectos();
-cargarProyectos();
-renderizarActividades();
-
-// Script para testimonios
+// Script para testimonios --EDITAR
 //Revisar
   const testimonials = [
     {
@@ -422,4 +344,336 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
- 
+// Cambiar de formulario
+function mostrarFormulario(tipo) {
+  const formVoluntario = document.getElementById('form-voluntario');
+  const formOrganizacion = document.getElementById('form-organizacion');
+  const btnVoluntario = document.getElementById('btn-voluntario');
+  const btnOrganizacion = document.getElementById('btn-organizacion');
+
+  if (tipo === 'voluntario') {
+    formVoluntario.classList.add('activo');
+    formOrganizacion.classList.remove('activo');
+    btnVoluntario.classList.add('boton-activo');
+    btnOrganizacion.classList.remove('boton-activo');
+  } else {
+    formOrganizacion.classList.add('activo');
+    formVoluntario.classList.remove('activo');
+    btnOrganizacion.classList.add('boton-activo');
+    btnVoluntario.classList.remove('boton-activo');
+  }
+}
+
+// Validación de correo
+function validarCorreo(correo) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(correo);
+}
+
+// Validar Voluntario
+document.getElementById('form-voluntario').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre-voluntario');
+  const correo = document.getElementById('correo-voluntario');
+  const telefono = document.getElementById('telefono-voluntario');
+
+  let valido = true;
+
+  if (nombre.value.trim() === "") {
+    mostrarError('error-nombre-voluntario', 'Introduce tu nombre completo.');
+    valido = false;
+  } else {
+    limpiarError('error-nombre-voluntario');
+  }
+
+  if (!validarCorreo(correo.value.trim())) {
+    mostrarError('error-correo-voluntario', 'Introduce un correo electrónico válido.');
+    valido = false;
+  } else {
+    limpiarError('error-correo-voluntario');
+  }
+
+  if (telefono.value.trim() === "") {
+    mostrarError('error-telefono-voluntario', 'Introduce tu teléfono de contacto.');
+    valido = false;
+  } else {
+    limpiarError('error-telefono-voluntario');
+  }
+
+  if (valido) {
+    alert('Formulario de voluntario enviado correctamente.');
+    this.submit();
+  }
+});
+
+// Validar Organización
+document.getElementById('form-organizacion').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre-organizacion');
+  const correo = document.getElementById('correo-organizacion');
+  const telefono = document.getElementById('telefono-organizacion');
+  const descripcion = document.getElementById('descripcion-organizacion');
+
+  let valido = true;
+
+  if (nombre.value.trim() === "") {
+    mostrarError('error-nombre-organizacion', 'Introduce el nombre de la organización.');
+    valido = false;
+  } else {
+    limpiarError('error-nombre-organizacion');
+  }
+
+  if (!validarCorreo(correo.value.trim())) {
+    mostrarError('error-correo-organizacion', 'Introduce un correo electrónico válido.');
+    valido = false;
+  } else {
+    limpiarError('error-correo-organizacion');
+  }
+
+  if (telefono.value.trim() === "") {
+    mostrarError('error-telefono-organizacion', 'Introduce un número de teléfono.');
+    valido = false;
+  } else {
+    limpiarError('error-telefono-organizacion');
+  }
+
+  if (descripcion.value.trim().length < 10) {
+    mostrarError('error-descripcion-organizacion', 'La descripción debe tener al menos 10 caracteres.');
+    valido = false;
+  } else {
+    limpiarError('error-descripcion-organizacion');
+  }
+
+  if (valido) {
+    alert('Formulario de organización enviado correctamente.');
+    this.submit();
+  }
+});
+
+// Funciones de error
+function mostrarError(id, mensaje) {
+  document.getElementById(id).textContent = mensaje;
+}
+
+function limpiarError(id) {
+  document.getElementById(id).textContent = '';
+}
+
+//Validaciones adicionales en el formulario de voluntarios
+
+document.getElementById('form-voluntario').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let valido = true;
+
+  const nombre = document.getElementById('nombre-voluntario');
+  const correo = document.getElementById('correo-voluntario');
+  const telefono = document.getElementById('telefono-voluntario');
+  const dias = document.querySelectorAll('input[name="dias"]:checked');
+  const horarios = document.querySelectorAll('input[name="horario"]:checked');
+  const motivacion = document.getElementById('motivacion-voluntario');
+  const curso = document.getElementById('curso-voluntario');
+  const terminos = document.getElementById('terminos-voluntario');
+
+  limpiarErrores();
+
+  if (nombre.value.trim() === '') {
+    mostrarError('error-nombre-voluntario', 'Introduce tu nombre.');
+    valido = false;
+  }
+  if (!validarCorreo(correo.value.trim())) {
+    mostrarError('error-correo-voluntario', 'Correo inválido.');
+    valido = false;
+  }
+  if (telefono.value.trim() === '') {
+    mostrarError('error-telefono-voluntario', 'Introduce tu teléfono.');
+    valido = false;
+  }
+  if (dias.length === 0) {
+    mostrarError('error-dias-voluntario', 'Selecciona al menos un día.');
+    valido = false;
+  }
+  if (horarios.length === 0) {
+    mostrarError('error-horario-voluntario', 'Selecciona al menos un horario.');
+    valido = false;
+  }
+  if (motivacion.value.trim().length < 10) {
+    mostrarError('error-motivacion-voluntario', 'Describe tu motivación (mínimo 10 caracteres).');
+    valido = false;
+  }
+  if (curso.value.trim() === '') {
+    mostrarError('error-curso-voluntario', 'Selecciona tu curso.');
+    valido = false;
+  }
+  if (!terminos.checked) {
+    mostrarError('error-terminos-voluntario', 'Debes aceptar los términos.');
+    valido = false;
+  }
+
+  if (valido) {
+    alert('Formulario enviado correctamente.');
+    this.submit();
+  }
+});
+
+// Funciones auxiliares
+function mostrarError(id, mensaje) {
+  document.getElementById(id).textContent = mensaje;
+}
+function limpiarErrores() {
+  const errores = document.querySelectorAll('.help.is-danger');
+  errores.forEach(e => e.textContent = '');
+}
+function validarCorreo(correo) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(correo);
+}
+
+//Validación para el formulario de organización 
+
+document.getElementById('form-organizacion').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let valido = true;
+
+  // Obtener campos
+  const nombre = document.getElementById('nombre-organizacion');
+  const tipo = document.getElementById('tipo-organizacion');
+  const correo = document.getElementById('correo-organizacion');
+  const telefono = document.getElementById('telefono-organizacion');
+  const nombreRepresentante = document.getElementById('nombre-representante');
+  const cargoRepresentante = document.getElementById('cargo-representante');
+  const descripcion = document.getElementById('descripcion-organizacion');
+  const actividades = document.getElementById('actividades-organizacion');
+  const perfiles = document.getElementById('perfiles-voluntarios');
+  const terminos = document.getElementById('terminos-organizacion');
+
+  limpiarErrores();
+
+  // Validaciones
+  if (nombre.value.trim() === '') {
+    mostrarError('error-nombre-organizacion', 'Introduce el nombre de la organización.');
+    valido = false;
+  }
+  if (tipo.value.trim() === '') {
+    mostrarError('error-tipo-organizacion', 'Selecciona el tipo de organización.');
+    valido = false;
+  }
+  if (!validarCorreo(correo.value.trim())) {
+    mostrarError('error-correo-organizacion', 'Correo electrónico inválido.');
+    valido = false;
+  }
+  if (telefono.value.trim() === '') {
+    mostrarError('error-telefono-organizacion', 'Introduce un número de teléfono.');
+    valido = false;
+  }
+  if (nombreRepresentante.value.trim() === '') {
+    mostrarError('error-nombre-representante', 'Introduce el nombre del representante.');
+    valido = false;
+  }
+  if (cargoRepresentante.value.trim() === '') {
+    mostrarError('error-cargo-representante', 'Introduce el cargo del representante.');
+    valido = false;
+  }
+  if (descripcion.value.trim().length < 20) {
+    mostrarError('error-descripcion-organizacion', 'Describe brevemente la misión de la organización (mínimo 20 caracteres).');
+    valido = false;
+  }
+  if (actividades.value.trim().length < 20) {
+    mostrarError('error-actividades-organizacion', 'Describe las principales actividades (mínimo 20 caracteres).');
+    valido = false;
+  }
+  if (perfiles.value.trim().length < 20) {
+    mostrarError('error-perfiles-voluntarios', 'Describe qué perfiles de voluntarios necesitas (mínimo 20 caracteres).');
+    valido = false;
+  }
+  if (!terminos.checked) {
+    mostrarError('error-terminos-organizacion', 'Debes aceptar los términos y condiciones.');
+    valido = false;
+  }
+
+  if (valido) {
+    alert('Formulario de organización enviado correctamente.');
+    this.submit();
+  }
+});
+
+// Funciones auxiliares (ya las teníamos antes pero por si acaso las repito)
+function mostrarError(id, mensaje) {
+  document.getElementById(id).textContent = mensaje;
+}
+function limpiarErrores() {
+  const errores = document.querySelectorAll('.help.is-danger');
+  errores.forEach(e => e.textContent = '');
+}
+function validarCorreo(correo) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(correo);
+}
+
+//Script para los botones de visualizar y editar a los voluntarios registrados 
+// Botones de visualizar
+document.querySelectorAll('.button-visualizar').forEach(boton => {
+  boton.addEventListener('click', () => {
+      alert('Aquí se mostraría la ficha del voluntario.');
+      // Aquí podrías abrir un modal con más detalles
+  });
+});
+
+// Botones de editar
+document.querySelectorAll('.button-editar').forEach(boton => {
+  boton.addEventListener('click', () => {
+      alert('Aquí abrirías el formulario para editar al voluntario.');
+      // Aquí podrías redirigir o abrir un formulario de edición
+  });
+});
+
+//Abrir y cerrar modal de actividades
+function abrirModalActividad() {
+  document.getElementById('modal-crear-actividad').classList.add('is-active');
+}
+
+function cerrarModalActividad() {
+  document.getElementById('modal-crear-actividad').classList.remove('is-active');
+}
+
+
+//Cuando alguien rellene el formulario que se almacene en LocalStorage
+//document.getElementById('form-voluntario').addEventListener('submit', function(e) {
+  //e.preventDefault(); // Evitar que recargue la página
+
+  ////const voluntario = {
+      //nombre: document.getElementById('nombre-voluntario').value,
+      //edad: document.getElementById('edad-voluntario').value,
+      //curso: document.getElementById('curso-voluntario').value,
+      //experiencia: document.getElementById('experiencia-voluntario').value,
+      //motivacion: document.getElementById('motivacion-voluntario').value,
+      //habilidades: document.getElementById('habilidades-voluntario').value,
+      ///dias: Array.from(document.querySelectorAll('input[name="error-dias-voluntario"]:checked')).map(d => d.value),
+      //correo: document.getElementById('correo-voluntario').value,
+      //telefono: document.getElementById('telefono-voluntario').value,
+      
+  //};
+
+  //let voluntarios = JSON.parse(localStorage.getItem('voluntarios')) || [];
+  //voluntarios.push(voluntario);
+  //localStorage.setItem('voluntarios', JSON.stringify(voluntarios));
+
+  //alert('¡Voluntario registrado!');
+  //this.reset();
+//});
+
+
+//Animación para la sección de app móvil
+
+
+
+
+
+
+
+
+
+

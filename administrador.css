@@ -1,93 +1,317 @@
+/* === Mejoras para el nuevo diseño del panel === */
+
+
+/* Estilos para etiquetas ODS */
+.tag.ods {
+  background-color: #e2e8f0;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin: 2px;
+}
+
+/* Botones de aprobar y rechazar solicitudes */
+.button.is-success {
+  background-color: #38a169a8;
+  border-radius: 8px;
+}
+
+.button.is-success:hover {
+  background-color: #2f855a;
+}
+
+.button.is-danger {
+  background-color: #e53e3e9c;
+  border-radius: 8px;
+}
+
+.button.is-danger:hover {
+  background-color: #c5303091;
+}
+
+/* Mejor espaciado y separación general */
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Ajustes para títulos y textos de secciones */
+.title.is-5 {
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+/* Ajustar imagenes de gráficos dentro de los cards */
+.image.is-16by9 img {
+  object-fit: contain;
+  padding: 10px;
+}
+
+  /* Panel de estadísticas */
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-cards .box {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+/* Tarjeta de estadísticas */
+.dashboard-cards .title {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* Gráficos */
+.dashboard-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.dashboard-charts .box {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+/* Ajustes para el título de las tarjetas */
+.dashboard-cards .heading {
+  font-size: 0.9rem;
+  color: #718096; /* gris suave */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Ajustes gráficos ECharts */
+#grafico-voluntarios,
+#grafico-ods {
+  width: 100%;
+  height: 300px;
+}
+
+/* Mejor separación */
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.chart-container {
+  width: 100%;
+  height: auto;
+  padding: 20px 10px;
+}
+
+.chart-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+/* Estilos para el contenedor de Voluntarios Registrados */
+.table-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Título y total */
+.table-container h2.title.is-5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.table-container p {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para la tabla */
+.table {
+  background: transparent;
+  border-spacing: 0;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #4a5568;
+  padding: 0.75rem;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+/* Estilos para filas */
+.table tbody tr {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+/* Botones de acciones */
+.button.is-small.is-light {
+  background-color: #f5f7fa;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+.button.is-small.is-light:hover {
+  background-color: #edf2f7;
+}
+
+/* Iconos de acciones */
+.button.is-small.is-light i {
+  font-size: 1rem;
+}
+
+/* Ajustes para tags (Activo, Pendiente, Inactivo) */
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.4em 0.8em;
+}
+
+/* Exportar CSV botón (opcional si quieres añadirlo) */
+.button.is-export {
+  background-color: #0f19d4d5;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+}
+
+.button.is-export:hover {
+  background-color: #434190;
+}
+
+/* Footer general */
+.footer {
+  background-color: #f9fafb;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-top: 2rem;
+}
+
+/* Mejor distribución de botones en tablas */
+.buttons.are-small {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Botón de creación de proyectos y actividades */
+.button.is-primary {
+  border-radius: 8px;
+  font-weight: 600;
+ background-color: lightblue;
+}
+
+/* Mejor aspecto del modal */
+.modal-card {
+  border-radius: 12px;
+}
+
+/* Navbar items */
+.navbar-item.is-active {
+  font-weight: 700;
+  color: #4c51bf;
+}
+
+.navbar-item:hover {
+  background-color: #f5f7fa;
+  color: #4c51bf;
+}
+
+/* Ajustar tablas dentro de cajas */
+.box table {
+  margin-top: 1rem;
+}
+
+/* Reducir margen en secciones muy juntas */
+.section.is-small {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 body {
-    background-color: #f5f7fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+  background-color: #f5f7fa;
+}
 
-  .box {
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    background-color: white;
-  }
+.section {
+  padding: 2rem 1.5rem;
+}
 
-  .is-rounded-avatar {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-  }
+.box {
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
 
-  .tag.is-success {
-    background-color: #c6f6d5;
-    color: #22543d;
-  }
+.table th, .table td {
+  vertical-align: middle;
+}
 
-  .tag.is-warning {
-    background-color: #fefcbf;
-    color: #744210;
-  }
+.button {
+  margin: 2px;
+}
 
-  .tag.is-danger {
-    background-color: #fed7d7;
-    color: #742a2a;
-  }
+.navbar-item {
+  font-weight: 600;
+}
 
-  .button.is-primary {
-    background-color: #4c51bf;
-    color: white;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-  }
+.heading {
+  font-size: 0.9rem;
+  color: #555;
+}
 
-  .button.is-primary:hover {
-    background-color: #434190;
-  }
+.title {
+  color: #2a2a2a;
+}
 
-  .button.is-light {
-    border-radius: 8px;
-  }
+.subtitle {
+  color: #7a7a7a;
+}
 
-  select,
-  input[type="text"] {
-    border-radius: 8px;
-    border: 1px solid #dbdbdb;
-  }
+.footer {
+  background-color: #fafafa;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+}
 
-  /*Diseño modal de formulario de proyectos*/
-  .modal {
-    display: none;
-  }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
-  .modal.is-active {
-    display: flex;
-  }
-
-  .button.is-purple {
-    background-color: #6c63ff;
-    color:white;
-    border: none;
-  }
-
-  .button.is-purple:hover {
-    background-color: #574fd6;
-
-  }
-
-  .button.is-light-gray {
-    background-color: #f5f5f5;
-    color: #4a4a4a;
-  }
-
-  .input, .textarea, .select {
-    border-radius: 8px;
-
-  }
-
-  .checkbox {
-    margin-right: 12px;
-  }
-
-  .field label {
-    font-weight: 600;
-  }
-
-  
+.section-divider {
+  border-top: 1px solid #e2e8f0;
+  margin: 3rem 0;
+}

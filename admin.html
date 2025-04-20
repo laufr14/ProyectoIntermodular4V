@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestión de Voluntariado</title>
   <link rel="stylesheet" href="./bulma.css">
-  <link rel="sylesheet" href="./administrador.css">
+  <link rel="stylesheet" href="./administrador.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -25,14 +25,79 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item is-active">Dashboard</a>
+        <a class="navbar-item is-active" href="admin.html">Dashboard</a>
         <a class="navbar-item">Voluntarios</a>
-        <a class="navbar-item" href="./actividades.html">Proyectos</a>
+        <a class="navbar-item" href="#">Proyectos</a>
         <a class="navbar-item" href="./actividades.html">Actividades</a>
         <a class="navbar-item" >Solicitudes</a>
       </div>
     </div>
   </nav>
+
+  <!-- Panel de Estadísticas -->
+<section class="section">
+  <div class="container">
+
+    <!-- Tarjetas de estadísticas -->
+    <div class="columns is-multiline">
+      
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="heading">Nuevos Voluntarios</p>
+          <p class="title">24 <span class="tag is-success is-light">+12%</span></p>
+        </div>
+      </div>
+
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="heading">Proyectos Activos</p>
+          <p class="title">12 <span class="tag is-success is-light">+3%</span></p>
+        </div>
+      </div>
+
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="heading">Horas Voluntariado</p>
+          <p class="title">1.254 <span class="tag is-danger is-light">-8%</span></p>
+        </div>
+      </div>
+
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="heading">Solicitudes Pendientes</p>
+          <p class="title">8 <span class="tag is-danger is-light">-4%</span></p>
+        </div>
+      </div>
+
+    </div>
+
+  <!-- Gráficos -->
+<div class="columns is-multiline mt-5">
+  
+  <div class="column is-6">
+    <div class="box">
+      <div class="chart-container">
+        <p class="heading has-text-centered"></p>
+        <figure class="image is-16by9">
+          <img src="Imagenes/graficoVoluntariado.png" alt="Gráfico de Registros de Voluntarios">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-6">
+    <div class="box">
+      <div class="chart-container">
+        <p class="heading has-text-centered"></p>
+        <figure class="image is-16by9">
+          <img src="Imagenes/grafico2.png" alt="Gráfico de Distribición de ODS">
+        </figure>
+        </div>
+    </div>
+  </div>
+
+
+
 
   <!-- Filtros -->
   <section class="section">
@@ -92,11 +157,25 @@
     </div>
   </section>
 
+  <hr class="section-divider">
+
   <!-- Tabla de Voluntarios -->
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-5">Voluntarios Registrados</h2>
-      <p>Total: 128 voluntarios</p>
+<section class="section">
+  <div class="container">
+    <div class="box"> <!-- Nueva caja para centrar todo mejor -->
+
+      <div class="level mb-4">
+        <div class="level-left">
+          <div>
+            <h2 class="title is-5">Voluntarios Registrados</h2>
+            <p class="subtitle is-6">Total: 128 voluntarios</p>
+          </div>
+        </div>
+        <div class="level-right">
+          <button class="button is-primary is-export">Exportar CSV</button>
+        </div>
+      </div>
+
       <div class="table-container">
         <table class="table is-fullwidth is-striped is-hoverable">
           <thead>
@@ -116,7 +195,10 @@
               <td>Lunes y Miércoles (Tarde)</td>
               <td>2 activos</td>
               <td><span class="tag is-success">Activo</span></td>
-              <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button></td>
+              <td>
+                <button class="button is-small is-light">👁</button>
+                <button class="button is-small is-light">✏️</button>
+              </td>
             </tr>
             <tr>
               <td><strong>Pablo Sánchez</strong><br><small>pablo.sanchez@gmail.com</small></td>
@@ -124,40 +206,87 @@
               <td>Viernes (Tarde)</td>
               <td>0 activos</td>
               <td><span class="tag is-warning">Pendiente</span></td>
-              <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button></td>
+              <td>
+                <button class="button is-small is-light">👁</button>
+                <button class="button is-small is-light">✏️</button>
+              </td>
             </tr>
             <tr>
-                <td><strong>Mónica Martínez</strong><br><small>monica.martinez@gmail.com</small></td>
-                <td>2º DAM</td>
-                <td>Martes y Jueves (Mañana)</td>
-                <td>1 activo</td>
-                <td><span class="tag is-danger">Inactivo</span></td>
-                <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button></td>
+              <td><strong>Mónica Martínez</strong><br><small>monica.martinez@gmail.com</small></td>
+              <td>2º DAM</td>
+              <td>Martes y Jueves (Mañana)</td>
+              <td>1 activo</td>
+              <td><span class="tag is-danger">Inactivo</span></td>
+              <td>
+                <button class="button is-small is-light button-visualizar">👁</button>
+                <button class="button is-small is-light button-editar">✏️</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+  <hr class="section-divider">
 
   <!-- Gestión de Proyectos -->
     
-  
-      <section class="section">
-    <div class="container">
-      <h2 class="title is-5">Gestión de Proyectos</h2>
-      <div class="buttons is-right">
-        <button class="button is-primary" onclick="document.getElementById('modal-crear-proyecto').classList.add('is-active')">+ Crear Nuevo Proyecto</button>
-      </div>
-      <!--Proyectos creados desde el formulario-->
-    <section class="section">
-        <div class="container">
-          <h2 class="title is-5">Proyectos creados</h2>
-          <ul id="lista-proyectos"></ul>
-        </div>
-      </section>
 
-       <!-- Modal -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-5">Gestión de Proyectos</h2>
+    <div class="is-flex is-justify-content-flex-end mb-3">
+      <button class="button is-primary" onclick="document.getElementById('modal-crear-proyecto').classList.add('is-active')">
+        + Crear Nuevo Proyecto
+      </button>
+    </div>
+
+    <div class="box">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Proyecto</th>
+            <th>ODS</th>
+            <th>Fechas</th>
+            <th>Voluntarios</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-proyectos">
+          <tr>
+            <td>
+              <div>
+                <strong>Reforestación Parque Natural</strong>
+                <br>
+                <small>Plantación de árboles autóctonos</small>
+              </div>
+            </td>
+            <td>
+              <span class="tag is-success">ODS 13</span>
+              <span class="tag is-success">ODS 15</span>
+            </td>
+            <td>15/04/2025 - 30/06/2025</td>
+            <td>18/25</td>
+            <td><span class="tag is-success">Activo</span></td>
+            <td>
+              <div class="buttons are-small">
+                <button class="button is-light">👁</button>
+                <button class="button is-light">✏️</button>
+                <button class="button is-light">🗑️</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+  <!-- Modal Proyecto -->
     <div class="modal" id="modal-crear-proyecto">
         <div class="modal-background" onclick="cerrarModal()"></div>
         <div class="modal-card">
@@ -197,23 +326,6 @@
                     <div class="control">
                       <input id="fecha-fin" class="input" type="date">
                     </div>
-                  </div>
-                </div>
-              </div>
-              <!--Botón para añadir actividad-->
-              <div class="field">
-                <label class="label">Actividades</label>
-                <div id="actividades-lista" class="content mb-3"></div>
-              
-                <div class="field has-addons">
-                  <div class="control is-expanded">
-                    <input class="input" type="text" id="nombre-actividad-temp" placeholder="Nombre de actividad">
-                  </div>
-                  <div class="control">
-                    <input class="input" type="text" id="horario-actividad-temp" placeholder="Horario">
-                  </div>
-                  <div class="control">
-                    <button class="button is-info" type="button" id="btn-agregar-actividad">➕ Añadir actividad</button>
                   </div>
                 </div>
               </div>
@@ -288,47 +400,19 @@
             <div id="mensaje-alerta" class="notification is-success is-light mt-3" style="display:none;"></div>
             <br>
             <button class="button" onclick="cerrarModal()">Cancelar</button>
-            <br>
-            <button class="button is-purple">Crear Proyecto</button>
-          </footer>
+            </footer>
         </div>
       </div>
     </div>
+</section>
 
-  
-      
-      <table class="table is-fullwidth is-hoverable">
-        <thead>
-          <tr>
-            <th>Proyecto</th>
-            <th>ODS</th>
-            <th>Fechas</th>
-            <th>Voluntarios</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-proyectos">
-          <tr>
-            <td>
-              <strong>Reforestación Parque Natural</strong><br>
-              <small>Plantación de árboles autóctonos</small>
-            </td>
-            <td><span class="tag is-success">ODS 13</span> <span class="tag is-success">ODS 15</span></td>
-            <td>15/04/2025 - 30/06/2025</td>
-            <td>18/25</td>
-            <td><span class="tag is-success">Activo</span></td>
-            <td><button class="button is-small is-light">👁</button> <button class="button is-small is-light">✏️</button> <button class="button is-small is-light">🗑️</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+<hr class="section-divider">
 
-  <!-- Solicitudes Pendientes -->
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-5">Solicitudes Pendientes</h2>
+  <!-- Mejora de la parte de "Solicitudes Pendientes" -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-5">Solicitudes Pendientes</h2>
+    <div class="box">
       <table class="table is-fullwidth">
         <thead>
           <tr>
@@ -341,29 +425,46 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Daniel García</strong><br><small>daniel.garcia@gmail.com</small></td>
+            <td>
+              <div>
+                <strong>Daniel García</strong>
+                <br>
+                <small>daniel.garcia@gmail.com</small>
+              </div>
+            </td>
             <td>Reforestación Parque Natural</td>
             <td>05/04/2025</td>
             <td>Fines de semana</td>
             <td>
-              <button class="button is-small is-success">Aprobar</button>
-              <button class="button is-small is-danger">Rechazar</button>
+              <div class="buttons are-small">
+                <button class="button is-success">Aprobar</button>
+                <button class="button is-danger">Rechazar</button>
+              </div>
             </td>
           </tr>
           <tr>
-            <td><strong>Luisa Gónzalez</strong><br><small>luisa.gonzalez@gmail.com</small></td>
+            <td>
+              <div>
+                <strong>Luisa Gónzalez</strong>
+                <br>
+                <small>luisa.gonzalez@gmail.com</small>
+              </div>
+            </td>
             <td>Asistencia a residencia de ancianos</td>
             <td>05/04/2025</td>
-            <td>Lunes 9:30 a.m-10:30 a.m</td>
+            <td>Lunes 9:30 a.m - 10:30 a.m</td>
             <td>
-              <button class="button is-small is-success">Aprobar</button>
-              <button class="button is-small is-danger">Rechazar</button>
+              <div class="buttons are-small">
+                <button class="button is-success">Aprobar</button>
+                <button class="button is-danger">Rechazar</button>
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </section>
+  </div>
+</section>
   <script src="./script.js"></script>
 </body>
 </html>

@@ -282,62 +282,203 @@
   
   /*Sección de la app móvil*/
 
-  .app-download {
-    background-color: #82a7c3; /* Azul pastel */
-    color: white;
-    padding: 5rem 1.5rem;
+ 
+.app-download {
+  background-color: #1791c8;
+  padding: 5rem 2rem;
+  color: white;
+}
+
+/* Contenedor */
+.app-download-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* Texto */
+.app-download-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.app-download-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.app-download-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Botones de descarga */
+.store-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.store-button img {
+  height: 3rem;
+  transition: transform 0.3s;
+}
+
+.store-button img:hover {
+  transform: scale(1.1);
+}
+
+/* Imagen */
+.app-download-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-download-image img {
+  max-width: 300px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animación de flotación ligera */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .app-download-container {
+    flex-direction: column;
+    text-align: center;
   }
+
+  .store-buttons {
+    justify-content: center;
+  }
+}
+
   
-  .app-download h2,
-  .app-download p {
-    color: white;
-  }
-  
-  .app-download .buttons .button {
-    margin-right: 1rem;
-  }
-  
-  @media (max-width: 768px) {
-    .app-download {
-      text-align: center;
-    }
-    .app-download .buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-    .app-download .buttons .button {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-  }
 
   /*Footer*/
 
-  .footer {
-    background: #1a1d24; /* Un gris oscuro azul profundo */
-    padding: 3rem 1.5rem;
+  .footer-modern {
+    background-color: #f7f7f7;
+    padding: 4rem 1.5rem 2rem;
+    color: #4a4a4a;
   }
   
-  .footer-links a, .footer-contact li {
-    color: #d1d1d1;
-    transition: color 0.3s ease;
-    display: block;
-    margin-bottom: 0.5rem;
+  .footer-modern h2.footer-logo {
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #1791c8;
   }
   
-  .footer-links a:hover, .footer-contact li:hover {
-    color: #1e6ffb; /* Azul corporativo al pasar el mouse */
+  .footer-modern .footer-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #6b7280;
   }
   
-  .social-icons a {
-    color: #1e6ffb;
-    margin-right: 1rem;
-    transition: transform 0.3s ease;
+  .footer-modern .footer-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #4a4a4a;
   }
   
-  .social-icons a:hover {
-    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+  .footer-modern .footer-links,
+  .footer-modern .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
+  
+  .footer-modern .footer-links li,
+  .footer-modern .footer-contact li {
+    margin-bottom: 0.7rem;
+  }
+  
+  .footer-modern .footer-links li a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  
+  .footer-modern .footer-links li a:hover {
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-contact li i {
+    margin-right: 0.5rem;
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-social {
+    margin-top: 1rem;
+  }
+  
+  .footer-modern .footer-social a {
+    margin-right: 0.7rem;
+    font-size: 1.8rem;
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-copy {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-modern .columns {
+      text-align: center;
+    }
+    .footer-modern .footer-social {
+      justify-content: center;
+    }
+  }
+/*Estilos para los iconos de redes sociales*/
+.footer-social {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.footer-social .social-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 0.7rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
+}
+
+.footer-social .social-circle:hover {
+  transform: translateY(-4px);
+  background-color: #e0f2ff; /* Azul muy claro al pasar el mouse */
+}
+
+.footer-social .social-icon,
+.footer-social .social-circle i {
+  font-size: 1.5rem;
+  color: #1791c8;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
 
  
 /* Estilo para el modal de inicio de sesión */

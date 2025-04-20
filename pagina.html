@@ -28,7 +28,7 @@
 
   <div id="navbarBasic" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="#">Inicio</a>
+      <a class="navbar-item" href="pagina.html">Inicio</a>
       <a class="navbar-item" href="#quienes-somos">Sobre Nosotros</a>
       <a class="navbar-item" href="#">Proyectos</a>
       <a class="navbar-item" href="noticias.html" target="_blank">Noticias</a>
@@ -41,7 +41,7 @@
           <button class="button is-primary is-rounded" onclick="abrirModalLogin()">
             Iniciar Sesión
           </button>
-          <a class="button is-primary is-rounded">Únete Ahora</a>
+          <a class="button is-primary is-rounded" href="formulario.html">Únete Ahora</a>
         </div>
       </div>
     </div>
@@ -60,14 +60,14 @@
         <div class="field">
           <label class="label">Correo electrónico</label>
           <div class="control">
-            <input class="input" type="email" placeholder="tu@email.com">
+            <input id="correo-login" class="input" type="email" placeholder="tu@email.com">
           </div>
         </div>
 
         <div class="field">
           <label class="label">Contraseña</label>
           <div class="control">
-            <input class="input" type="password" placeholder="********">
+            <input id="password-login" class="input" type="password" placeholder="********">
           </div>
         </div>
 
@@ -87,7 +87,8 @@
         </div>
 
         <div class="has-text-centered mt-2">
-          <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+          <p>¿No tienes una cuenta? <a href="formulario.html">Regístrate aquí</a></p>
+          <a href="admin.html">Ir al panel de administrador</a>
         </div>
       </form>
     </div>
@@ -95,6 +96,7 @@
 
   <button class="modal-close is-large" aria-label="close" onclick="cerrarModalLogin()"></button>
 </div>
+
 
 <!--Hero Section-->
     <section class="hero is-medium">
@@ -139,6 +141,9 @@
       </div>
     </div>
   </section>
+
+  <br><br><br>
+  <!--Sección ODS-->
 
   <section class="section">
     <div class="container">
@@ -208,6 +213,7 @@
     </div>
   </section>
 
+  <br><br><br>
   <!--Impacto-->
 
   <section class="section impact-section section-spacing">
@@ -248,7 +254,91 @@
       </div>
     </div>
   </section>
+
+  <!--Sección de proyectos realizados-->
+  <section class="section" id="seccion-proyectos-principal">
+    <div class="container has-text-centered">
   
+      <h1 class="title is-3">Nuestros Proyectos</h1>
+      <p class="subtitle is-5 mb-6">Descubre cómo estamos transformando comunidades a través de nuestras iniciativas</p>
+  
+    <!-- Galería de proyectos -->
+      <div class="columns is-multiline" id="galeria-proyectos">
+        
+        <!-- Proyecto 1 -->
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="Imagenes/ancianos.jpeg" alt="Residencia de ancianos">
+              </figure>
+            </div>
+            <div class="card-content has-text-left">
+              <div class="tags mb-2">
+                <span class="tag is-danger is-light">Salud</span>
+              </div>
+              <p class="is-size-7 has-text-grey mb-2">Abril 2025</p>
+              <p class="title is-5">Residencia de ancianos</p>
+              <p class="mb-4">Brindamos apoyo y compañía a personas mayores en residencias, organizando actividades recreativas, asistencia en tareas cotidianas y fomentando su bienestar emocional y social.</p>
+              <p class="is-size-7 mb-2"><strong>12 voluntarios necesarios</strong></p>
+              <a class="is-link is-size-7" href="#">Ver detalles →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Proyecto 2 -->
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="Imagenes/bosqueVoluntariado.png" alt="Bosques Renovados">
+              </figure>
+            </div>
+            <div class="card-content has-text-left">
+              <div class="tags mb-2">
+                <span class="tag is-success is-light">Medio Ambiente</span>
+              </div>
+              <p class="is-size-7 has-text-grey mb-2">Mayo 2025</p>
+              <p class="title is-5">Bosques Renovados</p>
+              <p class="mb-4">Restauramos ecosistemas degradados mediante la plantación de especies nativas, involucrando a las comunidades locales en la conservación de sus recursos naturales.</p>
+              <p class="is-size-7 mb-2"><strong>20 voluntarios necesarios</strong></p>
+              <a class="is-link is-size-7" href="#">Ver detalles →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Proyecto 3 -->
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://images.unsplash.com/photo-1588776814546-ef32853aab59" alt="Salud para Todos">
+              </figure>
+            </div>
+            <div class="card-content has-text-left">
+              <div class="tags mb-2">
+                <span class="tag is-danger is-light">Salud</span>
+              </div>
+              <p class="is-size-7 has-text-grey mb-2">Junio 2025</p>
+              <p class="title is-5">Salud para Todos</p>
+              <p class="mb-4">Organizamos brigadas médicas en zonas de difícil acceso, ofreciendo atención primaria, educación sanitaria y formación de promotores locales de salud.</p>
+              <p class="is-size-7 mb-2"><strong>15 voluntarios necesarios</strong></p>
+              <a class="is-link is-size-7" href="#">Ver detalles →</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Botón ver más -->
+      <div class="mt-5">
+        <button class="button is-link is-outlined is-rounded">Ver todos los proyectos</button>
+      </div>
+  
+    </div>
+  </section>
+  
+  <br><br><br>
   
   <!--Última Noticias--->
 
@@ -302,7 +392,7 @@
       </div>
   
       <div class="mt-5">
-        <a class="button is-outlined is-primary is-rounded">Ver todas las noticias</a>
+        <a class="button is-outlined is-primary is-rounded" href="noticias.html">Ver todas las noticias</a>
       </div>
     </div>
   </section>
@@ -339,64 +429,55 @@
 
   <!--Sección de la aplicación-->
 
-<section class="section app-download">
-  <div class="container">
-    <div class="columns is-vcentered is-multiline">
+  <section class="section app-download">
+    <div class="container app-download-container">
       
-      <!-- Texto -->
-      <div class="column is-6-desktop is-12-mobile">
-        <h2 class="title is-3 has-text-white">Lleva el mundo en tu bolsillo.</h2>
-        <p class="subtitle is-5 has-text-white">
-          Descarga nuestra aplicación y descubre experiencias únicas con una gran comunidad.
-        </p>
-        <div class="buttons mt-4">
-          <a href="#" class="button is-black">
-            <span class="icon">
-              <i class="fab fa-google-play"></i>
-            </span>
-            <span>Disponible en Google Play</span>
-            </a>
-          <a href="#" class="button is-black">
-            <span class="icon">
-              <i class="fab fa-apple"></i>
-            </span>
-            <span>App Store</span>
+      <!-- Zona de texto -->
+      <div class="app-download-text">
+        <h2>Lleva el mundo en el bolsillo.</h2>
+        <p>Descarga nuestra aplicación y descubre increíbles anfitriones, experiencias y una comunidad con más de 6,6 millones de Worldpackers iguales a ti.</p>
+        
+        <div class="store-buttons">
+          <a href="#" class="store-button">
+            <img src="Imagenes/GooglePlay2.png" alt="Descargar en Google Play">
+          </a>
+          <a href="#" class="store-button">
+            <img src="Imagenes/AppStore.png" alt="Descargar en App Store">
           </a>
         </div>
       </div>
-
+  
       <!-- Imagen del móvil -->
-      <div class="column is-6-desktop is-12-mobile has-text-centered mt-5-mobile">
-        <figure class="image is-inline-block">
-          <img src="Imagenes/telefono2.png" alt="App Preview" style="max-width:300px;">
-        </figure>
+      <div class="app-download-image">
+        <img src="Imagenes/movil.png" alt="Mockup App">
       </div>
-
+  
     </div>
-  </div>
-</section>
+  </section>
+  
+  
+  <!-- Footer -->
 
-
-<!-- Footer -->
-
-<footer class="footer has-background-dark has-text-light">
+<footer class="footer-modern">
   <div class="container">
-    <div class="columns is-multiline">
+    <div class="columns is-multiline is-variable is-6">
 
-      <!-- Logo y texto -->
-      <div class="column is-3">
-        <h3 class="title is-5 has-text-white">Logo</h3>
-        <p>Transformando vidas a través del voluntariado y la acción comunitaria desde 2010.</p>
-        <div class="social-icons mt-4">
-          <a href="#"><i class="fab fa-facebook fa-2x mr-3"></i></a>
-          <a href="#"><i class="fab fa-instagram fa-2x mr-3"></i></a>
-          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      <!-- Logo + Descripción -->
+      <div class="column is-3-desktop is-6-tablet">
+        <h2 class="footer-logo"><italic>Huellas del cambio</italic></h2>
+        <p class="footer-description">
+          Transformando vidas a través del voluntariado y la acción comunitaria desde 2010.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-circle"><img src="Imagenes/Instagram.png" alt="Instagram" class="social-icon"></a>
+          <a href="#" class="social-circle"><img src="Imagenes/Twitter.png " alt="X" class="social-icon"></a>
+          <a href="#" class="social-circle"><img src="Imagenes/facebookLogo.png" alt="Facebook" class="social-icon" ></a>
         </div>
       </div>
 
       <!-- Enlaces rápidos -->
-      <div class="column is-3">
-        <h3 class="title is-6 has-text-white">Enlaces Rápidos</h3>
+      <div class="column is-3-desktop is-6-tablet">
+        <h3 class="footer-title">Enlaces Rápidos</h3>
         <ul class="footer-links">
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Sobre Nosotros</a></li>
@@ -407,30 +488,35 @@
       </div>
 
       <!-- Voluntariado -->
-      <div class="column is-3">
-        <h3 class="title is-6 has-text-white">Voluntariado</h3>
+      <div class="column is-3-desktop is-6-tablet">
+        <h3 class="footer-title">Voluntariado</h3>
         <ul class="footer-links">
           <li><a href="#">Cómo Participar</a></li>
           <li><a href="#">Oportunidades Actuales</a></li>
           <li><a href="#">Voluntariado Virtual</a></li>
-          <li><a href="#">Voluntariado Internacional</a></li>
+          <li><a href="#">Internacional</a></li>
           <li><a href="#">Testimonios</a></li>
         </ul>
       </div>
 
       <!-- Contacto -->
-      <div class="column is-3">
-        <h3 class="title is-6 has-text-white">Contáctanos</h3>
+      <div class="column is-3-desktop is-6-tablet">
+        <h3 class="footer-title">Contáctanos</h3>
         <ul class="footer-contact">
-          <li><i class="fas fa-map-marker-alt mr-2"></i> Calle Principal 123, Ciudad Esperanza</li>
-          <li><i class="fas fa-phone mr-2"></i> +34 912 345 678</li>
-          <li><i class="fas fa-envelope mr-2"></i> cuatrovientos@voluntariado.org</li>
+          <li><i class="ri-map-pin-line"></i> Calle Principal 123, Ciudad Esperanza</li>
+          <li><i class="ri-phone-line"></i> +34 912 345 678</li>
+          <li><i class="ri-mail-line"></i> cuatrivientos@voluntariado.org</li>
         </ul>
       </div>
 
     </div>
+
+    <div class="has-text-centered mt-6">
+      <p class="footer-copy">&copy; 2025 Voluntariado. Todos los derechos reservados.</p>
+    </div>
   </div>
 </footer>
+
 <script src="./script.js"></script>
 </body>
 </html>
