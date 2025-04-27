@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Organizaciones Demo</title>
+  <link rel="stylesheet" href="./bulma.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  
+</head>
+<body>
+
+<!-- Volver al panel de administrador -->
+<section class="section pt-5 pb-0">
+  <div class="container">
+    <h2 class="is-sr-only">Navegación</h2>
+    <a href="admin.html" class="button is-light is-small">
+      ← Volver
+    </a>
+  </div>
+</section>
+
+<!-- Sección de Organizaciones -->
+<section class="section">
+  <div class="container">
+    <h1 class="title">Organizaciones Colaboradoras</h1>
+    <p class="subtitle">Descubre las organizaciones que trabajan con nosotros para hacer un mundo mejor.</p>
+
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="Imagenes/Solera.png" alt="Solera">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Solera</p>
+            <span class="tag is-danger">Salud</span>
+            <p>Organización humanitaria que proporciona asistencia médica y ayuda en emergencias a nivel nacional e internacional.</p>
+            <p class="is-size-7 mt-2">150 voluntarios activos</p>
+            <a href="#" class="is-link is-size-7">Ver más →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="Imagenes/Unzutxikiberri-logo-2.png" alt="Untuztxiki berri">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Untuztxiki berri</p>
+            <span class="tag is-success">Alimentación</span>
+            <p>Organización dedicada a la recolección y distribución de alimentos a personas en situación de vulnerabilidad.</p>
+            <p class="is-size-7 mt-2">120 voluntarios activos</p>
+            <a href="#" class="is-link is-size-7">Ver más →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="Imagenes/amavir.png" alt="Amavir">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Amavir</p>
+            <span class="tag is-info">Medio Ambiente</span>
+            <p>Organización global centrada en la protección del medio ambiente y la promoción de la paz.</p>
+            <p class="is-size-7 mt-2">200 voluntarios activos</p>
+            <a href="#" class="is-link is-size-7">Ver más →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Registro -->
+<section class="section">
+  <div class="container">
+    <h2 class="title">Registro de Organización</h2>
+
+    <!-- Formulario -->
+    <form id="form-organizacion" class="box mb-5">
+      <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Nombre" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Tipo</label>
+        <div class="control">
+          <div class="select is-fullwidth">
+            <select>
+              <option>Seleccionar tipo</option>
+              <option>ONG</option>
+              <option>Fundación</option>
+              <option>Asociación</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="ejemplo@correo.org">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Teléfono</label>
+        <div class="control">
+          <input class="input" type="tel" placeholder="+34 600 000 000">
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" type="submit">Registrar Organización</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Tabla -->
+    <div class="box">
+      <h2 class="title is-5">Organizaciones Registradas</h2>
+      <p class="subtitle is-6" id="total-organizaciones">Total: 0 organizaciones</p>
+      <table class="table is-fullwidth is-striped">
+        <thead>
+          <tr>
+            <th>Organización</th>
+            <th>Tipo</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-organizaciones">
+          <!-- Se insertan dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL VER -->
+<div class="modal" id="modal-ver-org">
+  <div class="modal-background" onclick="cerrarModalVer()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title" id="modal-org-nombre">Organización</p>
+      <button class="delete" aria-label="close" onclick="cerrarModalVer()"></button>
+    </header>
+    <section class="modal-card-body">
+      <h2 class="title is-5">Detalles de la Organización</h2>
+      <p><strong>Tipo:</strong> <span id="modal-org-tipo"></span></p>
+      <p><strong>Email:</strong> <span id="modal-org-email"></span></p>
+      <p><strong>Teléfono:</strong> <span id="modal-org-telefono"></span></p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-link" onclick="cerrarModalVer()">Cerrar</button>
+    </footer>
+  </div>
+</div>
+
+<!-- MODAL EDITAR -->
+<div class="modal" id="modal-editar-org">
+  <div class="modal-background" onclick="cerrarModalEditar()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Editar Organización</p>
+      <button class="delete" aria-label="close" onclick="cerrarModalEditar()"></button>
+    </header>
+    <section class="modal-card-body">
+      <h2 class="title is-5">Formulario de Edición</h2>
+      <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+          <input class="input" type="text" id="editar-nombre">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Tipo</label>
+        <div class="control">
+          <div class="select is-fullwidth">
+            <select id="editar-tipo">
+              <option>Seleccionar tipo</option>
+              <option>ONG</option>
+              <option>Fundación</option>
+              <option>Asociación</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" id="editar-email">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Teléfono</label>
+        <div class="control">
+          <input class="input" type="tel" id="editar-telefono">
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" onclick="guardarCambiosEdicion()">Guardar cambios</button>
+      <button class="button" onclick="cerrarModalEditar()">Cancelar</button>
+    </footer>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script src="./organizaciones.js"></script>
+
+</body>
+</html>

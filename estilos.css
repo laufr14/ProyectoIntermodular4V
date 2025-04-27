@@ -1,34 +1,122 @@
-/*Estilo para la barra de navegación*/
+/*Barra de navegación*/
 
+/* Ajustes generales de la navbar */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Estilo para los enlaces del menú */
+.navbar-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333333;
+  margin: 0 0.75rem; /* separación entre los ítems */
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: #1e6ffb; /* color azul en hover */
+}
+
+/* Botones de la derecha */
+.navbar-end .buttons {
+  display: flex;
+  gap: 1rem; /* separación entre los botones */
+}
+
+/* Burger menu para móviles */
+.navbar-burger {
+  color: #1e6ffb;
+}
+
+/* Estilo para botones primarios (Únete Ahora) */
 .button.is-primary {
-    background-color: #1e6ffb;
-    border-color: #1e6ffb;
-    color: #fff;
-    transition: all 0.3s ease; /* Transición suave */
-    border-radius: 9999px; /* Para hacerlo bien redondeado */
-    padding: 0.75rem 1.5rem; /* Tamaño cómodo */
-    font-weight: 600;
-  }
-  
-  .button.is-primary:hover {
-    background-color: #0041c4;
-    border-color: #0041c4;
-    color: #fff;
-    transform: translateY(-3px); /* Efecto de subida */
-    box-shadow: 0px 8px 20px rgba(30, 111, 251, 0.3); /* Sombra azul suave */
-  }
-  
+  background-color: #1e6ffb;
+  border-color: #1e6ffb;
+  color: #fff;
+  transition: all 0.3s ease; /* Transición suave */
+  border-radius: 9999px; /* Bien redondeado */
+  padding: 0.75rem 1.5rem; /* Tamaño cómodo */
+  font-weight: 600;
+}
+
+.button.is-primary:hover {
+  background-color: #0041c4;
+  border-color: #0041c4;
+  color: #fff;
+  transform: translateY(-3px); /* Efecto de subida */
+  box-shadow: 0px 8px 20px rgba(30, 111, 251, 0.3); /* Sombra azul suave */
+}
+
+/* Estilo para botones outline (Iniciar Sesión) */
+.button.is-primary.is-outlined {
+  background-color: transparent;
+  color: #1e6ffb;
+  border: 2px solid #1e6ffb;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+}
+
+.button.is-primary.is-outlined:hover {
+  background-color: #e6efff; /* Fondo muy suave al pasar el ratón */
+  color: #0041c4;
+  border-color: #0041c4;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(30, 111, 251, 0.3);
+}
+
   
   /*Sección hero*/
 
 .hero {
-    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(0,123,255,0.2)), url('Imagenes/imagen_1_Inicio.jpg');
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(0,123,255,0.2)), url('Imagenes/imagen_1_Inicio.jpg'), url('Imagenes/imagen_2_Inicio.jpg'), url('Imagenes/imagen_3_Inicio.jpg');
     background-size: cover;
     background-position: center;
+    transition: background-image 1s ease-in-out; /* SUAVIZA la transición de imagen */
   }
   .hero-body {
     padding: 5rem 2rem;
   }
+
+  #hero.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  #hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  #hero img.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  /* Asegura que el texto (hero-body) esté por encima de las imágenes */
+  .hero-body {
+    position: relative;
+    z-index: 2;
+  }
+  
   .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -503,3 +591,75 @@ body {
   color: #1e6ffb;
 }
   
+/*Sección de contacto*/
+
+#contacto {
+  padding: 4rem 0;
+  background-color: #f9fafb;
+}
+
+.container-contacto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.container-contacto h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.container-contacto p {
+  margin-bottom: 2rem;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.formulario-contacto, .info-contacto {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formulario-contacto button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.info-contacto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-contacto li {
+  margin-bottom: 1rem;
+}
+
+.mapa-contacto {
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
