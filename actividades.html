@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de Actividades</title>
+  <link rel="stylesheet" href="./bulma.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="admin.html">
+      <strong>← Volver</strong>
+    </a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Gestión de Actividades</h1>
+
+    <div class="mb-4">
+      <button class="button is-primary" id="btn-abrir-modal">+ Crear Nueva Actividad</button>
+    </div>
+
+    <div id="mensaje-alerta-actividad" class="notification is-success is-light" style="display:none;"></div>
+
+    <table class="table is-fullwidth is-striped">
+      <thead>
+        <tr>
+          <th>Actividad</th>
+          <th>Horario</th>
+          <th>Descripción</th>
+          <th>Proyecto Asociado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-actividades"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="modal-crear-actividad">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Crear Nueva Actividad</p>
+      <button class="delete" aria-label="close" id="btn-cerrar-modal"></button>
+    </header>
+
+    <section class="modal-card-body">
+      <form id="formulario-actividad">
+        <div class="field">
+          <label class="label">Nombre de la Actividad</label>
+          <div class="control">
+            <input class="input" id="nombre-actividad" type="text" placeholder="Nombre de la actividad">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Horario</label>
+          <div class="control">
+            <input class="input" id="horario-actividad" type="text" placeholder="Ejemplo: Lunes 10:00 - 12:00">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Descripción breve</label>
+          <div class="control">
+            <textarea class="textarea" id="descripcion-actividad" placeholder="Describe la actividad"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Proyecto Asociado</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select id="select-proyecto-actividad">
+                <option value="">Selecciona un proyecto</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </section>
+
+    <footer class="modal-card-foot">
+      <button type="button" class="button is-primary" id="btn-guardar-actividad">Guardar Actividad</button>
+      <button type="button" class="button" id="btn-cancelar-modal">Cancelar</button>
+    </footer>
+  </div>
+</div>
+
+<script src="./actividades.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.formulario {
+    display: none;
+    
+  }
+  .formulario.activo {
+    display: block;
+    animation: fadeIn 0.5s;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  .boton-activo {
+    background-color: #3273dc;
+    color: white;
+  }
+
+  .help.is-danger {
+    font-size: 0.8rem;
+  }
+
+  /*Estilo para el botón Volver*/
+  .boton-volver {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #f5f7fa;
+    color: #1e6ffb;
+    border: 1px solid #1e6ffb;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .boton-volver:hover {
+    background-color: #1e6ffb;
+    color: white;
+  }

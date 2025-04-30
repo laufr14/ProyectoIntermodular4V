@@ -1,0 +1,665 @@
+/*Barra de navegación*/
+
+/* Ajustes generales de la navbar */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Estilo para los enlaces del menú */
+.navbar-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333333;
+  margin: 0 0.75rem; /* separación entre los ítems */
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: #1e6ffb; /* color azul en hover */
+}
+
+/* Botones de la derecha */
+.navbar-end .buttons {
+  display: flex;
+  gap: 1rem; /* separación entre los botones */
+}
+
+/* Burger menu para móviles */
+.navbar-burger {
+  color: #1e6ffb;
+}
+
+/* Estilo para botones primarios (Únete Ahora) */
+.button.is-primary {
+  background-color: #1e6ffb;
+  border-color: #1e6ffb;
+  color: #fff;
+  transition: all 0.3s ease; /* Transición suave */
+  border-radius: 9999px; /* Bien redondeado */
+  padding: 0.75rem 1.5rem; /* Tamaño cómodo */
+  font-weight: 600;
+}
+
+.button.is-primary:hover {
+  background-color: #0041c4;
+  border-color: #0041c4;
+  color: #fff;
+  transform: translateY(-3px); /* Efecto de subida */
+  box-shadow: 0px 8px 20px rgba(30, 111, 251, 0.3); /* Sombra azul suave */
+}
+
+/* Estilo para botones outline (Iniciar Sesión) */
+.button.is-primary.is-outlined {
+  background-color: transparent;
+  color: #1e6ffb;
+  border: 2px solid #1e6ffb;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+}
+
+.button.is-primary.is-outlined:hover {
+  background-color: #e6efff; /* Fondo muy suave al pasar el ratón */
+  color: #0041c4;
+  border-color: #0041c4;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(30, 111, 251, 0.3);
+}
+
+  
+  /*Sección hero*/
+
+.hero {
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(0,123,255,0.2)), url('Imagenes/imagen_1_Inicio.jpg'), url('Imagenes/imagen_2_Inicio.jpg'), url('Imagenes/imagen_3_Inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* SUAVIZA la transición de imagen */
+  }
+  .hero-body {
+    padding: 5rem 2rem;
+  }
+
+  #hero.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  #hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  #hero img.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  /* Asegura que el texto (hero-body) esté por encima de las imágenes */
+  .hero-body {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .ods-box {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  /*Estilos en la cabecera*/
+  .hero {
+   color: white;
+    padding: 4rem 1.5rem;
+  }
+  .hero .title {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  .hero .subtitle {
+    color: #f0f0f0;
+    font-size: 1.2rem;
+  }
+  .buttons .button.is-primary {
+    background-color: #1e6ffb;
+    border: none;
+  }
+  .buttons .button.is-outlined {
+    border-color: white;
+    color: white;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .card-style {
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  .icon-style {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e6ffb;
+  }
+  .ods-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .ods-box {
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .ods-box:hover {
+    transform: translateY(-5px);
+  }
+
+/* Estilo solo para la sección Nuestro Impacto */
+.impact-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .impact-section .image img {
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .impact-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #363636;
+  }
+  
+  .impact-section p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+  }
+  
+  .impact-section .has-text-primary {
+    color: #1e6ffb;
+    font-weight: bold;
+  }
+  
+  .impact-section .columns .column p.is-size-3 {
+    margin-bottom: 0.25rem;
+  }
+  
+  .impact-section .columns .column p {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #7a7a7a;
+   
+  }
+
+  .section-spacing {
+    margin-bottom: 5rem; 
+  }
+
+  .impact-image img {
+    width: 100%;
+    height: auto;
+    max-width: 450px; /* Controla que no crezca demasiado */
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+  }
+  
+ .impact-number {
+  color: #1e6ffb;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+  
+  
+  /* Responsive para sección Nuestro Impacto */
+  @media (max-width: 768px) {
+    .impact-section .columns {
+      flex-direction: column;
+    }
+  
+    .impact-section .column.is-5,
+    .impact-section .column.is-7 {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .impact-image img {
+      max-width: 300px; /* Opcional: tamaño más contenido en móviles */
+      margin: 0 auto;
+    }
+  
+    .impact-section h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+  
+    .impact-section p {
+      font-size: 1rem;
+      padding: 0 1.5rem;
+    }
+  }
+  
+  
+  
+
+  /* Testimonios */
+  .testimonial-box {
+    max-width: 1000px; /* Más ancho */
+    margin: 0 auto;
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    background: white;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .testimonial-content {
+    text-align: center;
+  }
+  
+  .testimonial-content img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-content h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .testimonial-content p {
+    margin-bottom: 1rem;
+    color: #4a4a4a;
+  }
+  
+  .testimonial-dots {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+  }
+  
+  .dot.is-active {
+    background-color: #1e6ffb;
+  }
+
+  /*Últimas Noticias*/
+
+  .news-card {
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .news-image img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+  }
+  
+  .news-content {
+    padding: 1.5rem;
+    text-align: left;
+  }
+  
+  .news-content p {
+    color: #4a4a4a;
+  }
+  
+  .button.is-outlined.is-primary {
+    border-color: #1e6ffb;
+    color: #1e6ffb;
+  }
+  
+  .button.is-outlined.is-primary:hover {
+    background-color: #1e6ffb;
+    color: white;
+  }
+
+  .news-content a {
+    color: #1e6ffb;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .news-content a:hover {
+    color: #0041c4; /* Un azul un poquito más oscuro al pasar el ratón */
+  }
+  
+  /*Sección de la app móvil*/
+
+ 
+.app-download {
+  background-color: #1791c8;
+  padding: 5rem 2rem;
+  color: white;
+}
+
+/* Contenedor */
+.app-download-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* Texto */
+.app-download-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.app-download-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.app-download-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Botones de descarga */
+.store-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.store-button img {
+  height: 3rem;
+  transition: transform 0.3s;
+}
+
+.store-button img:hover {
+  transform: scale(1.1);
+}
+
+/* Imagen */
+.app-download-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-download-image img {
+  max-width: 300px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animación de flotación ligera */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .app-download-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+}
+
+  
+
+  /*Footer*/
+
+  .footer-modern {
+    background-color: #f7f7f7;
+    padding: 4rem 1.5rem 2rem;
+    color: #4a4a4a;
+  }
+  
+  .footer-modern h2.footer-logo {
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #6b7280;
+  }
+  
+  .footer-modern .footer-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #4a4a4a;
+  }
+  
+  .footer-modern .footer-links,
+  .footer-modern .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-modern .footer-links li,
+  .footer-modern .footer-contact li {
+    margin-bottom: 0.7rem;
+  }
+  
+  .footer-modern .footer-links li a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  
+  .footer-modern .footer-links li a:hover {
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-contact li i {
+    margin-right: 0.5rem;
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-social {
+    margin-top: 1rem;
+  }
+  
+  .footer-modern .footer-social a {
+    margin-right: 0.7rem;
+    font-size: 1.8rem;
+    color: #1791c8;
+  }
+  
+  .footer-modern .footer-copy {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-modern .columns {
+      text-align: center;
+    }
+    .footer-modern .footer-social {
+      justify-content: center;
+    }
+  }
+/*Estilos para los iconos de redes sociales*/
+.footer-social {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.footer-social .social-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 0.7rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
+}
+
+.footer-social .social-circle:hover {
+  transform: translateY(-4px);
+  background-color: #e0f2ff; /* Azul muy claro al pasar el mouse */
+}
+
+.footer-social .social-icon,
+.footer-social .social-circle i {
+  font-size: 1.5rem;
+  color: #1791c8;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+ 
+/* Estilo para el modal de inicio de sesión */
+
+body {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.login-box h2 {
+  color: #1e6ffb;
+}
+  
+/*Sección de contacto*/
+
+#contacto {
+  padding: 4rem 0;
+  background-color: #f9fafb;
+}
+
+.container-contacto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.container-contacto h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.container-contacto p {
+  margin-bottom: 2rem;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.formulario-contacto, .info-contacto {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formulario-contacto button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.info-contacto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-contacto li {
+  margin-bottom: 1rem;
+}
+
+.mapa-contacto {
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
