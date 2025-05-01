@@ -9,7 +9,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="admin.html">
       <strong>← Volver</strong>
@@ -51,7 +51,8 @@
       <button class="delete" aria-label="close" id="btn-cerrar-modal"></button>
     </header>
 
-    <section class="modal-card-body">
+    <!-- Cambiado de <section> a <div> para evitar warning -->
+    <div class="modal-card-body">
       <form id="formulario-actividad">
         <div class="field">
           <label class="label">Nombre de la Actividad</label>
@@ -84,9 +85,8 @@
             </div>
           </div>
         </div>
-
       </form>
-    </section>
+    </div>
 
     <footer class="modal-card-foot">
       <button type="button" class="button is-primary" id="btn-guardar-actividad">Guardar Actividad</button>

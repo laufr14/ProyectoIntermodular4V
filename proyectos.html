@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos</title>
+  <link rel="stylesheet" href="./bulma.css">
+  <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
+  <link rel="stylesheet" href="./administrador.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+         <!-- Volver al panel de administrador -->
+<section class="section pt-5 pb-0">
+    <div class="container">
+      <h2 class="is-sr-only">Navegación</h2>
+      <a href="admin.html" class="button is-light is-small">
+        ← Volver
+      </a>
+    </div>
+  </section>
+     <hr>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-3">📁 Proyectos Activos</h1>
+      <p class="subtitle is-6 has-text-grey-dark">Consulta el estado actual de cada proyecto y accede a sus detalles y horarios.</p>
+
+      <div class="box">
+        <table class="table is-fullwidth is-hoverable is-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Estado</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Fin</th>
+              <th>ODS</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-proyectos">
+            <!-- JS Insertado -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal-proyecto">
+    <div class="modal-background" onclick="cerrarModalProyecto()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Detalles del Proyecto</p>
+        <button class="delete" aria-label="close" onclick="cerrarModalProyecto()"></button>
+      </header>
+      <section class="modal-card-body" id="contenido-proyecto">
+        <!-- Info cargada -->
+      </section>
+    </div>
+  </div>
+
+ <script src="./projects.js"></script>
+</body>
+</html>

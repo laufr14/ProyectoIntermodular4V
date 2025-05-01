@@ -7,17 +7,15 @@
   <link rel="stylesheet" href="./bulma.css">
   <link rel="stylesheet" href="./formulario.css">
   <link rel="stylesheet" href="./estilos.css">
+  <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
 </head>
 <body>
 
-    <!-- Botón flotante de Volver -->
-<a href="pagina.html" class="button is-link is-light boton-volver">
-    ← Volver
-  </a>
-  
- <section class="section">
-  <div class="container" style="max-width: 500px;">
+<!-- Botón flotante de Volver -->
+<a href="pagina.html" class="button is-link is-light boton-volver">← Volver</a>
 
+<section class="section">
+  <div class="container" style="max-width: 500px;">
     <h1 class="title has-text-centered">Formulario de registro</h1>
 
     <!-- Botones para cambiar entre formularios -->
@@ -36,13 +34,14 @@
         </div>
       </div>
 
-      <!--Edad (validación JavaScript)-->
-        <div class="field">
-            <label class="label">Edad</label>
-            <div class="control">
-            <input id="edad-voluntario" class="input" type="number" placeholder="Tu edad" min="18" max="99">
-            <p id="error-edad-voluntario" class="help is-danger"></p>
-            </div>
+      <!-- Edad -->
+      <div class="field">
+        <label class="label">Edad</label>
+        <div class="control">
+          <input id="edad-voluntario" class="input" type="number" placeholder="Tu edad" min="18" max="99">
+          <p id="error-edad-voluntario" class="help is-danger"></p>
+        </div>
+      </div>
 
       <div class="field">
         <label class="label">Correo electrónico</label>
@@ -63,7 +62,6 @@
       <hr class="my-4">
       <h2 class="title is-5">Disponibilidad</h2>
 
-      <!-- Días disponibles -->
       <div class="field">
         <label class="label">¿Qué días de la semana estás disponible? *</label>
         <div class="control">
@@ -78,18 +76,15 @@
         <p id="error-dias-voluntario" class="help is-danger"></p>
       </div>
 
-      <!-- Horario -->
       <div class="field">
         <label class="label">¿En qué horario prefieres colaborar? *</label>
         <div class="control">
           <label class="checkbox"><input type="checkbox" name="horario" value="Mañana"> Mañana (8:00 - 12:00)</label>
           <label class="checkbox"><input type="checkbox" name="horario" value="Tarde"> Tarde (12:00 - 17:00)</label>
-         
         </div>
         <p id="error-horario-voluntario" class="help is-danger"></p>
       </div>
 
-      <!-- Frecuencia -->
       <div class="field">
         <label class="label">¿Con qué frecuencia te gustaría participar? *</label>
         <div class="control">
@@ -103,7 +98,6 @@
       <hr class="my-4">
       <h2 class="title is-5">Experiencia y Motivación</h2>
 
-      <!-- Experiencia previa -->
       <div class="field">
         <label class="label">¿Tienes experiencia previa como voluntario?</label>
         <div class="control">
@@ -111,7 +105,6 @@
         </div>
       </div>
 
-      <!-- Motivación -->
       <div class="field">
         <label class="label">¿Por qué quieres ser voluntario? *</label>
         <div class="control">
@@ -120,7 +113,6 @@
         </div>
       </div>
 
-      <!-- Habilidades -->
       <div class="field">
         <label class="label">¿Qué habilidades o conocimientos podrías aportar?</label>
         <div class="control">
@@ -131,7 +123,6 @@
       <hr class="my-4">
       <h2 class="title is-5">Información Académica</h2>
 
-      <!-- Curso actual -->
       <div class="field">
         <label class="label">Curso Actual *</label>
         <div class="control">
@@ -150,7 +141,6 @@
         </div>
       </div>
 
-      <!-- Aceptar términos -->
       <div class="field">
         <div class="control">
           <label class="checkbox">
@@ -161,140 +151,14 @@
         </div>
       </div>
 
-      <!-- Botón de enviar -->
-      <div class="field mt-5">
-        <button type="submit" class="button is-primary is-fullwidth">Registrarme</button>
+      <div class="field mt-3">
+        <button type="button" class="button is-info is-fullwidth" onclick="enviarSolicitudPendiente()">Enviar solicitud a revisión</button>
       </div>
     </form>
   </div>
 </section>
-    
-<!-- Formulario Organizaciones -->
-    <form id="form-organizacion" class="formulario">
-        <hr class="my-4">
-        <h2 class="title is-5">Datos de la Organización</h2>
-        
-        <div class="field">
-          <label class="label">Nombre de la Organización *</label>
-          <div class="control">
-            <input id="nombre-organizacion" class="input" type="text" placeholder="Nombre de tu organización">
-            <p id="error-nombre-organizacion" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Tipo de Organización *</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-              <select id="tipo-organizacion">
-                <option value="">Selecciona el tipo</option>
-                <option>ONG</option>
-                <option>Asociación</option>
-                <option>Fundación</option>
-                <option>Cooperativa</option>
-              </select>
-            </div>
-            <p id="error-tipo-organizacion" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Correo Electrónico *</label>
-          <div class="control">
-            <input id="correo-organizacion" class="input" type="email" placeholder="organization@ejemplo.com">
-            <p id="error-correo-organizacion" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Teléfono *</label>
-          <div class="control">
-            <input id="telefono-organizacion" class="input" type="tel" placeholder="+34 900 000 000">
-            <p id="error-telefono-organizacion" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Sitio Web</label>
-          <div class="control">
-            <input id="sitio-organizacion" class="input" type="url" placeholder="https://www.ejemplo.org">
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Número de Registro Legal</label>
-          <div class="control">
-            <input id="registro-organizacion" class="input" type="text" placeholder="Número de registro oficial">
-          </div>
-        </div>
-        
-        <hr class="my-4">
-        <h2 class="title is-5">Información de Contacto del Representante</h2>
-        
-        <div class="field">
-          <label class="label">Nombre del Representante *</label>
-          <div class="control">
-            <input id="nombre-representante" class="input" type="text" placeholder="Nombre completo">
-            <p id="error-nombre-representante" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Cargo *</label>
-          <div class="control">
-            <input id="cargo-representante" class="input" type="text" placeholder="Cargo en la organización">
-            <p id="error-cargo-representante" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <hr class="my-4">
-        <h2 class="title is-5">Descripción y Actividades</h2>
-        
-        <div class="field">
-          <label class="label">Descripción de la Organización *</label>
-          <div class="control">
-            <textarea id="descripcion-organizacion" class="textarea" placeholder="Describe brevemente la misión"></textarea>
-            <p id="error-descripcion-organizacion" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Principales Actividades *</label>
-          <div class="control">
-            <textarea id="actividades-organizacion" class="textarea" placeholder="Proyectos y actividades principales"></textarea>
-            <p id="error-actividades-organizacion" class="help is-danger"></p>
-          </div>
-        </div>
-        
-        <hr class="my-4">
-  <h2 class="title is-5">Necesidades de Voluntariado</h2>
 
-  <div class="field">
-  <label class="label">Perfiles de Voluntarios Requeridos *</label>
-  <div class="control">
-    <textarea id="perfiles-voluntarios" class="textarea" placeholder="Describe los tipos de voluntarios que necesita tu organización"></textarea>
-    <p id="error-perfiles-voluntarios" class="help is-danger"></p>
-  </div>
- </div>
-
- <div class="field">
-  <div class="control">
-    <label class="checkbox">
-      <input type="checkbox" id="terminos-organizacion">
-      He leído y acepto la <a href="#">política de privacidad</a> y los <a href="#">términos de servicio</a>.
-    </label>
-    <p id="error-terminos-organizacion" class="help is-danger"></p>
-  </div>
-</div>
-
-<div class="field mt-5">
-  <button type="submit" class="button is-primary is-fullwidth">Registrarme como Organización</button>
-</div>
-
- </form>
-
-  </div>
-</section>
 <script src="./script.js"></script>
+<script src="./formularios.js"></script>
 </body>
 </html>

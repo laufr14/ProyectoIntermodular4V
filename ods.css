@@ -1,0 +1,117 @@
+body {
+    background-color: #f8f9fa;
+  }
+
+  .ods-section {
+    background-color: #f5f5f5;
+    padding: 5rem 2rem;
+  }
+
+  .ods-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+
+  .ods-subtitle {
+    color: #555;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    max-width: 600px;
+  }
+
+  .ods-buttons {
+    margin-top: 2rem;
+  }
+
+  .ods-grid {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .ods-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .ods-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .bg-orange { background-color: #f47c6c; }
+  .bg-pink { background-color: #f89e9e; }
+  .bg-blue { background-color: #3a89c9; }
+  .bg-green { background-color: #72bf44; }
+  .bg-yellow { background-color: #f5c542; }
+  .bg-darkgreen { background-color: #4a7b3f; }
+
+  .content-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #3273dc;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /*Animación*/
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /*Proyectos anteriores*/
+  body {
+    background-color: #f8f9fc;
+  }
+  .project-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  .tag {
+    font-size: 0.75rem;
+  }
+  .project-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }

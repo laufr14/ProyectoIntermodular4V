@@ -6,6 +6,7 @@
   <title>Gestión de Voluntariado</title>
   <link rel="stylesheet" href="./bulma.css">
   <link rel="stylesheet" href="./administrador.css">
+  <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -17,35 +18,25 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar is-light">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <strong>Logo</strong>
-      </a>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item is-active" href="admin.html">Dashboard</a>
+      <a class="navbar-item" href="voluntarios.html">Voluntarios</a>
+      <a class="navbar-item" href="proyectos.html">Proyectos</a>
+      <a class="navbar-item" href="./actividades.html">Actividades</a>
+      <a class="navbar-item" href="solicitudes.html">Solicitudes</a>
+      <a class="navbar-item" href="organizaciones.html">Organizaciones</a>
     </div>
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <div class="navbar-end">
-        <a class="navbar-item is-active" href="admin.html">Dashboard</a>
-        <a class="navbar-item">Voluntarios</a>
-        <a class="navbar-item" href="#">Proyectos</a>
-        <a class="navbar-item" href="./actividades.html">Actividades</a>
-        <a class="navbar-item" >Solicitudes</a>
-        <a class="navbar-item" href="organizaciones.html">Organizaciones
-        </a>
-      </div>
-    </div>
-   
+  
+    <div class="navbar-end">
       <!-- Notificación -->
       <div class="navbar-item">
         <button class="notification-button" aria-label="Notificaciones">
-          <span class="icon">
-            🔔
-          </span>
+          <span class="icon">🔔</span>
           <span class="badge">2</span>
         </button>
       </div>
-    
+  
       <!-- Avatar -->
       <div class="navbar-item">
         <figure class="image is-32x32">
@@ -53,16 +44,16 @@
         </figure>
       </div>
     </div>
-    
-  </nav>
+  </div>
+
 
   <!-- Panel de Estadísticas -->
 <section class="section">
   <div class="container">
+    <h2 class="title is-5">Panel de Estadísticas</h2>
 
     <!-- Tarjetas de estadísticas -->
     <div class="columns is-multiline">
-      
       <div class="column is-3">
         <div class="box has-text-centered">
           <p class="heading">Nuevos Voluntarios</p>
@@ -90,61 +81,63 @@
           <p class="title">8 <span class="tag is-danger is-light">-4%</span></p>
         </div>
       </div>
-
     </div>
 
-  <!-- Gráficos -->
-<div class="columns is-multiline mt-5">
-  
-  <div class="column is-6">
-    <div class="box">
-      <div class="chart-container">
-        <p class="heading has-text-centered"></p>
-        <figure class="image is-16by9">
-          <img src="Imagenes/graficoVoluntariado.png" alt="Gráfico de Registros de Voluntarios">
-        </figure>
+    <!-- Gráficos -->
+    <div class="columns is-multiline mt-5">
+      <div class="column is-6">
+        <div class="box">
+          <div class="chart-container">
+            <p class="heading has-text-centered">Voluntarios Registrados</p>
+            <figure class="image is-16by9">
+              <img src="Imagenes/graficoVoluntariado.png" alt="Gráfico de registros de voluntarios">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="box">
+          <div class="chart-container">
+            <p class="heading has-text-centered">Distribución ODS</p>
+            <figure class="image is-16by9">
+              <img src="Imagenes/grafico2.png" alt="Gráfico de distribución de ODS">
+            </figure>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="column is-6">
-    <div class="box">
-      <div class="chart-container">
-        <p class="heading has-text-centered"></p>
-        <figure class="image is-16by9">
-          <img src="Imagenes/grafico2.png" alt="Gráfico de Distribición de ODS">
-        </figure>
-        </div>
-    </div>
-  </div>
+</section>
 
 
-
-
-
-<!-- Filtros -->
 <!-- Filtros -->
 <section class="section">
   <div class="container card filtro-panel">
     <h2 class="title is-5">Filtrar Voluntarios</h2>
     <div class="columns is-multiline">
+      
       <div class="column is-3">
-        <input class="input" type="text" placeholder="Buscar por nombre">
+        <input class="input" type="text" id="filtro-nombre" placeholder="Buscar por nombre">
       </div>
+
       <div class="column is-3">
         <div class="select is-fullwidth">
-          <select>
+          <select id="filtro-curso">
             <option>Todos los cursos</option>
-            <option>1º Bachillerato</option>
-            <option>Universidad</option>
-            <option>4º ESO</option>
-            <option>2º Bachillerato</option>
+            <option>1º DAM</option>
+            <option>2º DAM</option>
+            <option>1º ASIR</option>
+            <option>2º ASIR</option>
+            <option>1º CEFGS</option>
+            <option>2º CEFGS</option>
           </select>
         </div>
       </div>
+
       <div class="column is-3">
         <div class="select is-fullwidth">
-          <select>
+          <select id="filtro-disponibilidad">
             <option>Cualquier disponibilidad</option>
             <option>Lunes - Mañana</option>
             <option>Lunes - Tarde</option>
@@ -160,9 +153,10 @@
           </select>
         </div>
       </div>
+
       <div class="column is-3">
         <div class="select is-fullwidth">
-          <select>
+          <select id="filtro-estado">
             <option>Todos los estados</option>
             <option>Activo</option>
             <option>Pendiente</option>
@@ -170,18 +164,45 @@
           </select>
         </div>
       </div>
+
     </div>
+
     <div class="buttons">
-      <button class="button is-light">Resetear Filtros</button>
-      <button class="button is-link">Aplicar Filtros</button>
+      <button class="button is-light" id="btn-resetear">Resetear Filtros</button>
+      <button class="button is-link" id="btn-aplicar">Aplicar Filtros</button>
     </div>
   </div>
 </section>
 
-<!--Sección para añadir voluntarios-->
 
+<!-- Tabla de voluntarios filtrados -->
 <section class="section">
   <div class="container">
+    <h2 class="title is-5">Voluntarios Encontrados</h2>
+
+    <div class="table-container mt-5">
+      <table class="table is-fullwidth is-striped" id="tabla-voluntarios">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Curso</th>
+            <th>Disponibilidad</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-voluntarios">
+          <!-- Aquí se insertan las filas dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Sección para añadir voluntarios -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-5">Añadir Voluntario</h2>
+
     <button class="button is-primary" onclick="abrirModalVoluntario()">Nuevo Voluntario</button>
 
     <table class="table is-fullwidth is-striped mt-5">
@@ -204,66 +225,85 @@
   </div>
 </section>
 
-<!-- Modal para añadir el voluntario-->
+
+<!-- Modal para añadir el voluntario -->
 <div class="modal" id="modal-voluntario">
   <div class="modal-background" onclick="cerrarModalVoluntario()"></div>
+
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Añadir / Editar Voluntario</p>
       <button class="delete" aria-label="close" onclick="cerrarModalVoluntario()"></button>
     </header>
-    <section class="modal-card-body">
+
+    <div class="modal-card-body">
       <form id="form-voluntario">
+        
         <div class="field">
-          <label class="label">Nombre</label>
+          <label class="label" for="nombre-voluntario">Nombre</label>
           <div class="control">
-            <input class="input" type="text" id="nombre-voluntario">
+            <input class="input" type="text" id="nombre-voluntario" name="nombre-voluntario">
+            <p id="error-nombre-voluntario" class="help is-danger"></p>
           </div>
         </div>
+
         <div class="field">
-          <label class="label">Correo</label>
+          <label class="label" for="correo-voluntario">Correo</label>
           <div class="control">
-            <input class="input" type="email" id="correo-voluntario">
+            <input class="input" type="email" id="correo-voluntario" name="correo-voluntario">
+            <p id="error-correo-voluntario" class="help is-danger"></p>
           </div>
         </div>
+
         <div class="field">
-          <label class="label">Curso</label>
+          <label class="label" for="curso-voluntario">Curso</label>
           <div class="control">
-            <input class="input" type="text" id="curso-voluntario">
+            <input class="input" type="text" id="curso-voluntario" name="curso-voluntario">
+            <p id="error-curso-voluntario" class="help is-danger"></p>
           </div>
         </div>
+
         <div class="field">
-          <label class="label">Disponibilidad</label>
+          <label class="label" for="disponibilidad-voluntario">Disponibilidad</label>
           <div class="control">
-            <input class="input" type="text" id="disponibilidad-voluntario">
+            <input class="input" type="text" id="disponibilidad-voluntario" name="disponibilidad-voluntario">
+            <p id="error-disponibilidad-voluntario" class="help is-danger"></p>
           </div>
         </div>
+
         <div class="field">
-          <label class="label">Proyectos</label>
+          <label class="label" for="proyectos-voluntario">Proyectos</label>
           <div class="control">
-            <input class="input" type="text" id="proyectos-voluntario">
+            <input class="input" type="text" id="proyectos-voluntario" name="proyectos-voluntario">
+            <p id="error-proyectos-voluntario" class="help is-danger"></p>
           </div>
         </div>
+
         <div class="field">
-          <label class="label">Estado</label>
+          <label class="label" for="estado-voluntario">Estado</label>
           <div class="control">
             <div class="select is-fullwidth">
-              <select id="estado-voluntario">
+              <select id="estado-voluntario" name="estado-voluntario">
                 <option>Activo</option>
                 <option>Pendiente</option>
                 <option>Inactivo</option>
               </select>
+              <p id="error-estado-voluntario" class="help is-danger"></p>
             </div>
           </div>
         </div>
+
         <div class="field">
-          <label class="label">Foto</label>
+          <label class="label" for="foto-voluntario">Foto</label>
           <div class="control">
-            <input class="input" type="file" id="foto-voluntario" accept="image/*">
+            <input class="input" type="file" id="foto-voluntario" name="foto-voluntario" accept="image/*">
+            <p id="error-foto-voluntario" class="help is-danger"></p>
           </div>
         </div>
+
       </form>
-    </section>
+    </div>
+
     <footer class="modal-card-foot">
       <button class="button is-success" onclick="guardarVoluntario()">Guardar</button>
       <button class="button" onclick="cerrarModalVoluntario()">Cancelar</button>
@@ -272,14 +312,13 @@
 </div>
 
 
-
-
-  <!-- Gestión de Proyectos -->
-    <section class="section">
+<!-- Gestión de Proyectos -->
+<section class="section">
   <div class="container">
     <h2 class="title is-5">Gestión de Proyectos</h2>
+
     <div class="is-flex is-justify-content-flex-end mb-3">
-      <button class="button is-primary" onclick="document.getElementById('modal-crear-proyecto').classList.add('is-active')">
+      <button type="button" class="button is-primary" onclick="document.getElementById('modal-crear-proyecto').classList.add('is-active')">
         + Crear Nuevo Proyecto
       </button>
     </div>
@@ -300,8 +339,7 @@
           <tr>
             <td>
               <div>
-                <strong>Reforestación Parque Natural</strong>
-                <br>
+                <strong>Reforestación Parque Natural</strong><br>
                 <small>Plantación de árboles autóctonos</small>
               </div>
             </td>
@@ -314,9 +352,9 @@
             <td><span class="tag is-success">Activo</span></td>
             <td>
               <div class="buttons are-small">
-                <button class="button is-light">👁</button>
-                <button class="button is-light">✏️</button>
-                <button class="button is-light">🗑️</button>
+                <button class="button is-light" title="Ver">👁</button>
+                <button class="button is-light" title="Editar">✏️</button>
+                <button class="button is-light" title="Eliminar">🗑️</button>
               </div>
             </td>
           </tr>
@@ -326,187 +364,181 @@
   </div>
 </section>
 
+
   <!-- Modal Proyecto -->
-    <div class="modal" id="modal-crear-proyecto">
-        <div class="modal-background" onclick="cerrarModal()"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Crear Nuevo Proyecto</p>
-            <button class="delete" aria-label="close" onclick="cerrarModal()"></button>
-           
-           
-          </header>
-          <section class="modal-card-body">
-            <form id="formulario-proyecto">
-              <div class="field">
-                <label class="label">Nombre del Proyecto</label>
-                <div class="control">
-                  <input id="nombre" class="input" type="text" placeholder="Introduce un nombre">
-                </div>
-              </div>
+<div class="modal" id="modal-crear-proyecto">
+  <div class="modal-background" onclick="cerrarModal()"></div>
 
-              <div class="field">
-                <label class="label">Descripción</label>
-                <div class="control">
-                  <textarea id="descripcion" class="textarea" placeholder="Descripción del proyecto"></textarea>
-                </div>
-              </div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Crear Nuevo Proyecto</p>
+      <button class="delete" aria-label="close" onclick="cerrarModal()"></button>
+    </header>
 
-              <div class="field is-horizontal">
-                <div class="field-body">
-                  <div class="field">
-                    <label class="label">Fecha de Inicio</label>
-                    <div class="control">
-                      <input id="fecha-inicio" class="input" type="date">
-                    </div>
-                  </div>
-      
-                  <div class="field">
-                    <label class="label">Fecha de Fin</label>
-                    <div class="control">
-                      <input id="fecha-fin" class="input" type="date">
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div class="modal-card-body">
+      <form id="formulario-proyecto">
 
-              <div class="field">
-                <label class="label">Cupo de Voluntarios</label>
-                <div class="control">
-                  <input class="input" type="number" placeholder="Ej. 15">
-                </div>
-              </div>
-      
-      
-              <div class="field">
-                <label class="label">ODS Relacionados</label>
-                <div class="control">
-                  <label class="checkbox">
-                    <input type="checkbox"> ODS 1: Fin de la pobreza
-                  </label><br>
-                  <label class="checkbox">
-                    <input type="checkbox"> ODS 2: Hambre cero
-                  </label><br>
-                  <label class="checkbox">
-                    <input type="checkbox"> ODS 3: Salud y bienestar
-                  </label><br>
-                  <label class="checkbox">
-                    <input type="checkbox"> ODS 4: Educación de calidad
-                  </label><br>
-                  <label class="checkbox">
-                    <input type="checkbox"> ODS 13: Acción por el clima
-                  </label><br>
-                  <label class="checkbox">
-                    <input type="checkbox"> ODS 14: Vida submarina
-                  </label>
-                </div>
-              </div>
-      
-              <div class="field">
-                <label class="label">Categoría</label>
-                <div class="control custom-select">
-                  <div class="select is-fullwidth">
-                    <select>
-                      <option>Educación</option>
-                      <option>Medio ambiente</option>
-                      <option>Salud</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label class="label">Activo</label>
-                <div class="control">
-                  <label class="checkbox custom-checkbox">
-                    <input type="checkbox">
-                    ¿Está activo?
-                  </label>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label class="label">Notificaciones</label>
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="check"></span>
-                  Activar notificaciones
-                </label>
-              </div>
-            </form>
-          </section>
-          <footer class="modal-card-foot">
-            <button class="button is-primary" id="btn-guardar-proyecto">Guardar cambios</button>
-            <div id="mensaje-alerta" class="notification is-success is-light mt-3" style="display:none;"></div>
-            <br>
-            <button class="button" onclick="cerrarModal()">Cancelar</button>
-            </footer>
+        <div class="field">
+          <label class="label" for="nombre">Nombre del Proyecto</label>
+          <div class="control">
+            <input id="nombre" name="nombre" class="input" type="text" placeholder="Introduce un nombre">
+          </div>
         </div>
-      </div>
+
+        <div class="field">
+          <label class="label" for="descripcion">Descripción</label>
+          <div class="control">
+            <textarea id="descripcion" name="descripcion" class="textarea" placeholder="Descripción del proyecto"></textarea>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label" for="fecha-inicio">Fecha de Inicio</label>
+              <div class="control">
+                <input id="fecha-inicio" name="fecha-inicio" class="input" type="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="fecha-fin">Fecha de Fin</label>
+              <div class="control">
+                <input id="fecha-fin" name="fecha-fin" class="input" type="date">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="cupo-voluntarios">Cupo de Voluntarios</label>
+          <div class="control">
+            <input id="cupo-voluntarios" name="cupo-voluntarios" class="input" type="number" placeholder="Ej. 15">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">ODS Relacionados</label>
+          <div class="control">
+            <label class="checkbox"><input type="checkbox" name="ods" value="1"> ODS 1: Fin de la pobreza</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="2"> ODS 2: Hambre cero</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="3"> ODS 3: Salud y bienestar</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="4"> ODS 4: Educación de calidad</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="13"> ODS 13: Acción por el clima</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="14"> ODS 14: Vida submarina</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="categoria">Categoría</label>
+          <div class="control custom-select">
+            <div class="select is-fullwidth">
+              <select id="categoria" name="categoria">
+                <option>Educación</option>
+                <option>Medio ambiente</option>
+                <option>Salud</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="activo">Activo</label>
+          <div class="control">
+            <label class="checkbox custom-checkbox">
+              <input type="checkbox" id="activo" name="activo">
+              ¿Está activo?
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="notificaciones">Notificaciones</label>
+          <label class="switch">
+            <input type="checkbox" id="notificaciones" name="notificaciones">
+            <span class="check"></span>
+            Activar notificaciones
+          </label>
+        </div>
+
+      </form>
     </div>
-</section>
+
+    <footer class="modal-card-foot">
+      <button class="button is-primary" id="btn-guardar-proyecto">Guardar cambios</button>
+      <div id="mensaje-alerta" class="notification is-success is-light mt-3" style="display:none;"></div>
+      <button class="button" onclick="cerrarModal()">Cancelar</button>
+    </footer>
+  </div>
+</div>
+
 
 <hr class="section-divider">
 
   <!-- Mejora de la parte de "Solicitudes Pendientes" -->
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-5">Solicitudes Pendientes</h2>
-      <div class="box">
-        <table class="table is-fullwidth">
-          <thead>
-            <tr>
-              <th>Solicitante</th>
-              <th>Proyecto</th>
-              <th>Fecha de Solicitud</th>
-              <th>Disponibilidad</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tabla-solicitudes">
-            <tr>
-              <td>
-                <div>
-                  <strong>Daniel García</strong>
-                  <br>
-                  <small>daniel.garcia@gmail.com</small>
-                </div>
-              </td>
-              <td>Reforestación Parque Natural</td>
-              <td>05/04/2025</td>
-              <td>Fines de semana</td>
-              <td>
-                <div class="buttons are-small">
-                  <button class="button is-success" onclick="aprobarSolicitud(this)">Aprobar</button>
-                  <button class="button is-danger" onclick="rechazarSolicitud(this)">Rechazar</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div>
-                  <strong>Luisa Gónzalez</strong>
-                  <br>
-                  <small>luisa.gonzalez@gmail.com</small>
-                </div>
-              </td>
-              <td>Asistencia a residencia de ancianos</td>
-              <td>05/04/2025</td>
-              <td>Lunes 9:30 a.m - 10:30 a.m</td>
-              <td>
-                <div class="buttons are-small">
-                  <button class="button is-success" onclick="aprobarSolicitud(this)">Aprobar</button>
-                  <button class="button is-danger" onclick="rechazarSolicitud(this)">Rechazar</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<section class="section">
+  <div class="container">
+    <h2 class="title is-5">Solicitudes Pendientes</h2>
+
+    <div class="box">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Solicitante</th>
+            <th>Proyecto</th>
+            <th>Fecha de Solicitud</th>
+            <th>Disponibilidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-solicitudes">
+
+          <tr>
+            <td>
+              <div>
+                <strong>Daniel García</strong><br>
+                <small>daniel.garcia@gmail.com</small>
+              </div>
+            </td>
+            <td>Reforestación Parque Natural</td>
+            <td>05/04/2025</td>
+            <td>Fines de semana</td>
+            <td>
+              <div class="buttons are-small">
+                <button class="button is-success" type="button" title="Aprobar solicitud" onclick="aprobarSolicitud(this)">Aprobar</button>
+                <button class="button is-danger" type="button" title="Rechazar solicitud" onclick="rechazarSolicitud(this)">Rechazar</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div>
+                <strong>Luisa González</strong><br>
+                <small>luisa.gonzalez@gmail.com</small>
+              </div>
+            </td>
+            <td>Asistencia a residencia de ancianos</td>
+            <td>05/04/2025</td>
+            <td>Lunes 9:30 a.m - 10:30 a.m</td>
+            <td>
+              <div class="buttons are-small">
+                <button class="button is-success" type="button" title="Aprobar solicitud" onclick="aprobarSolicitud(this)">Aprobar</button>
+                <button class="button is-danger" type="button" title="Rechazar solicitud" onclick="rechazarSolicitud(this)">Rechazar</button>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
-  </section>
+  </div>
+</section>
+
   
   <script src="./script.js"></script>
   <script src="./organizaciones.js"></script>
+  <script src="./filtrosadmin.js"></script>
+ 
 </body>
 </html>

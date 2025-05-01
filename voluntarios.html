@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voluntarios Registrados</title>
+  <link rel="stylesheet" href="./bulma.css">
+  <link rel="stylesheet" href="./administrador.css">
+  <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+     <!-- Volver al panel de administrador -->
+<section class="section pt-5 pb-0">
+    <div class="container">
+      <h2 class="is-sr-only">Navegación</h2>
+      <a href="admin.html" class="button is-light is-small">
+        ← Volver
+      </a>
+    </div>
+  </section>
+     <hr>
+  <!-- Filtro -->
+<div class="field is-grouped mb-4">
+    <div class="control">
+      <div class="select">
+        <select id="filtro-curso" onchange="filtrarVoluntarios()">
+          <option value="">Todos los cursos</option>
+          <option>1º DAM</option>
+          <option>2º DAM</option>
+          <option>1º ASIR</option>
+          <option>2º ASIR</option>
+          <option>1º CEGFS</option>
+          <option>2º CEGFS</option>
+        </select>
+      </div>
+    </div>
+    <div class="control">
+      <div class="select">
+        <select id="filtro-estado" onchange="filtrarVoluntarios()">
+          <option value="">Todos los estados</option>
+          <option>Activo</option>
+          <option>Pendiente</option>
+          <option>Inactivo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-3">👥 Voluntarios Registrados</h1>
+      <p class="subtitle is-6 has-text-grey-dark">Listado actualizado de voluntarios participantes en los proyectos del centro.</p>
+
+      <div class="box">
+        <table class="table is-fullwidth is-hoverable is-striped">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Curso</th>
+              <th>Disponibilidad</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-voluntarios">
+            <!-- Se genera desde JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modal-voluntario">
+    <div class="modal-background" onclick="cerrarModalVoluntario()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Ficha del Voluntario</p>
+        <button class="delete" aria-label="close" onclick="cerrarModalVoluntario()"></button>
+      </header>
+      <section class="modal-card-body" id="contenido-voluntario">
+        <h2 class="title is-5">Información del Voluntario</h2>
+        <!-- Contenido dinámico -->
+      </section>
+    </div>
+  </div>
+<script src="./voluntarios.js"></script>
+  </body>
+  </html>

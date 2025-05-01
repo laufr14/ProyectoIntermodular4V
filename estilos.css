@@ -5,12 +5,10 @@
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 0.75rem 1.5rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+   width: 100%;
+  
 }
+
 
 /* Estilo para los enlaces del menú */
 .navbar-item {
@@ -36,6 +34,16 @@
   color: #1e6ffb;
 }
 
+
+/*Sección con el logo en la página principal*/
+.logo-navbar img {
+  height: 40px; 
+  width: auto;
+}
+
+.nombre-pagina {
+  color: #1e6ffb;
+}
 /* Estilo para botones primarios (Únete Ahora) */
 .button.is-primary {
   background-color: #1e6ffb;
@@ -84,6 +92,8 @@
     transition: background-image 1s ease-in-out; /* SUAVIZA la transición de imagen */
   }
   .hero-body {
+    position: relative;
+    z-index: 2;
     padding: 5rem 2rem;
   }
 
@@ -130,9 +140,23 @@
 
   /*Estilos en la cabecera*/
   .hero {
+    padding-top: 5rem;
    color: white;
     padding: 4rem 1.5rem;
+    position: relative;
+    overflow: hidden;
   }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* blanco con transparencia */
+    z-index: 1;
+  }
+
   .hero .title {
     font-size: 3rem;
     font-weight: 800;
@@ -144,6 +168,7 @@
   .buttons .button.is-primary {
     background-color: #1e6ffb;
     border: none;
+    
   }
   .buttons .button.is-outlined {
     border-color: white;
@@ -177,6 +202,48 @@
   .ods-box:hover {
     transform: translateY(-5px);
   }
+
+  /*Sección de ODS*/
+  .ods-flip-card {
+    background: transparent;
+    width: 100%;
+    height: 230px;
+    perspective: 1000px;
+    margin-bottom: 2rem;
+  }
+  
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .ods-flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front,
+  .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+  
 
 /* Estilo solo para la sección Nuestro Impacto */
 .impact-section {
@@ -662,4 +729,30 @@ body {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Sección de is-active del carrusel*/
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.is-active {
+  background-color: #1e6ffb;
+}
+
+/*Sección de imágenes Hero*/
+#hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  position: relative;
+  z-index: 0;
 }

@@ -15,7 +15,8 @@
 <nav class="navbar is-white" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="#">
-      <strong style="color: #1e6ffb;">Huellas del cambio</strong>
+      <img src="Imagenes/Logo.png" alt="Logo" class="logo-navbar">
+      <strong class="nombre-pagina">Huellas del cambio</strong>
     </a>
 
     <!-- Burger para móvil -->
@@ -30,7 +31,7 @@
     <div class="navbar-start">
       <a class="navbar-item" href="pagina.html">Inicio</a>
       <a class="navbar-item" href="#quienes-somos">Sobre Nosotros</a>
-      <a class="navbar-item" href="#galeria-proyectos">Proyectos</a>
+      <a class="navbar-item" href="./proyectos-anteriores.html">Proyectos</a>
       <a class="navbar-item" href="noticias.html" target="_blank">Noticias</a>
       <a class="navbar-item" href="#contacto">Contacto</a>
     </div>
@@ -48,6 +49,8 @@
   </div>
 </nav>
 
+
+
 <!-- Modal de Inicio de Sesión -->
 <div class="modal" id="modal-login">
   <div class="modal-background" onclick="cerrarModalLogin()"></div>
@@ -61,6 +64,7 @@
           <label class="label">Correo electrónico</label>
           <div class="control">
             <input id="correo-login" class="input" type="email" placeholder="tu@email.com">
+            <p class="help is-danger" id="email-error" style="display: none;">Correo no válido</p>
           </div>
         </div>
 
@@ -68,6 +72,7 @@
           <label class="label">Contraseña</label>
           <div class="control">
             <input id="password-login" class="input" type="password" placeholder="********">
+            <p class="help is-danger" id="password-error" style="display: none;">La contraseña debe tener al menos 6 caracteres</p>
           </div>
         </div>
 
@@ -85,12 +90,12 @@
         <div class="field mt-4">
           <button type="submit" class="button is-primary is-fullwidth">Entrar</button>
         </div>
-
+      </form>
         <div class="has-text-centered mt-2">
           <p>¿No tienes una cuenta? <a href="formulario.html">Regístrate aquí</a></p>
           <a href="admin.html">Ir al panel de administrador</a>
         </div>
-      </form>
+      
     </div>
   </div>
 
@@ -100,19 +105,25 @@
 
 <!--Hero Section-->
 
-<section class="hero is-medium">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">Cambia vidas. <br>Incluida la tuya.</h1>
-        <p class="subtitle mt-3">Únete a nuestra comunidad de voluntarios y marca la diferencia en proyectos que transforman realidades. Cada acción cuenta.</p>
-        <div class="buttons is-centered mt-4">
-          <button class="button is-primary">Comienza Ahora</button>
-          <button class="button is-outlined">Conoce Más</button>
-        </div>
+<section id="hero" class="hero is-medium has-background">
+  <div class="hero-overlay"></div> <!--Overlay para el fondo-->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title has-text-white">Cambia vidas. <br>Incluida la tuya.</h1>
+      <p class="subtitle has-text-white mt-3">
+        Únete a nuestra comunidad de voluntarios y marca la diferencia en proyectos que transforman realidades. Cada acción cuenta.
+      </p>
+      <div class="buttons is-centered mt-4">
+        <a class="button is-primary" href="formulario.html">Comienza Ahora</a>
+        <a class="button is-outlined has-text-white" href="#quienes-somos">Conoce Más</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+
+
+<!--Quienes somos-->
   <section class="section" id="quienes-somos">
     <div class="container">
       <h2 class="has-text-centered section-title">Quiénes Somos</h2>
@@ -144,75 +155,170 @@
   </section>
 
   <br><br><br>
-  <!--Sección ODS-->
 
+  <!--Sección ODS-->
+ 
   <section class="section">
     <div class="container">
       <h2 class="has-text-centered section-title">Comprometidos con los ODS</h2>
       <p class="has-text-centered mb-5">Nuestras acciones están alineadas con los Objetivos de Desarrollo Sostenible de la ONU.</p>
-      <div class="columns is-multiline">
+  
+      <div class="columns is-multiline is-centered">
+        
+        <!-- Fin de la Pobreza -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-danger-light">
-            <div class="ods-icon">🏠</div>
-            <strong>Fin de la Pobreza</strong>
-            <p>Programas para erradicar la pobreza mediante desarrollo económico.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-danger-light has-text-centered">
+                <div class="ods-icon">🏠</div>
+                <strong>Fin de la Pobreza</strong>
+                <p>Programas para erradicar la pobreza mediante desarrollo económico.</p>
+              </div>
+              <div class="flip-back has-background-danger has-text-white has-text-centered">
+                <h4 class="title is-6">ODS 1</h4>
+                <p>Erradicar la pobreza en todas sus formas y en todo el mundo.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Hambre Cero -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-warning-light">
-            <div class="ods-icon">🌾</div>
-            <strong>Hambre Cero</strong>
-            <p>Acceso a alimentos nutritivos para todos.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-warning-light has-text-centered">
+                <div class="ods-icon">🌾</div>
+                <strong>Hambre Cero</strong>
+                <p>Acceso a alimentos nutritivos para todos.</p>
+              </div>
+              <div class="flip-back has-background-warning has-text-black has-text-centered">
+                <h4 class="title is-6">ODS 2</h4>
+                <p>Garantizar el acceso a una alimentación suficiente y saludable.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Salud y Bienestar -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-success-light">
-            <div class="ods-icon">💚</div>
-            <strong>Salud y Bienestar</strong>
-            <p>Acceso a salud y hábitos saludables.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-success-light has-text-centered">
+                <div class="ods-icon">💚</div>
+                <strong>Salud y Bienestar</strong>
+                <p>Acceso a salud y hábitos saludables.</p>
+              </div>
+              <div class="flip-back has-background-success has-text-white has-text-centered">
+                <h4 class="title is-6">ODS 3</h4>
+                <p>Garantizar una vida sana y promover el bienestar para todos.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Educación de Calidad -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-danger-light">
-            <div class="ods-icon">📚</div>
-            <strong>Educación de Calidad</strong>
-            <p>Programas educativos para todas las edades.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-danger-light has-text-centered">
+                <div class="ods-icon">📚</div>
+                <strong>Educación de Calidad</strong>
+                <p>Programas educativos para todas las edades.</p>
+              </div>
+              <div class="flip-back has-background-danger has-text-white has-text-centered">
+                <h4 class="title is-6">ODS 4</h4>
+                <p>Garantizar una educación inclusiva, equitativa y de calidad.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Reducción de Desigualdades -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-link-light">
-            <div class="ods-icon">⚖️</div>
-            <strong>Reducción de Desigualdades</strong>
-            <p>Reducimos la desigualdad social y económica.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-link-light has-text-centered">
+                <div class="ods-icon">⚖️</div>
+                <strong>Reducción de Desigualdades</strong>
+                <p>Reducimos la desigualdad social y económica.</p>
+              </div>
+              <div class="flip-back has-background-link has-text-white has-text-centered">
+                <h4 class="title is-6">ODS 10</h4>
+                <p>Reducir la desigualdad en y entre los países.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Ciudades Sostenibles -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-warning-light">
-            <div class="ods-icon">🏙️</div>
-            <strong>Ciudades Sostenibles</strong>
-            <p>Comunidad inclusiva y segura para todos.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-warning-light has-text-centered">
+                <div class="ods-icon">🏙️</div>
+                <strong>Ciudades Sostenibles</strong>
+                <p>Comunidad inclusiva y segura para todos.</p>
+              </div>
+              <div class="flip-back has-background-warning has-text-black has-text-centered">
+                <h4 class="title is-6">ODS 11</h4>
+                <p>Lograr que las ciudades sean seguras, resilientes y sostenibles.</p>
+               
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Acción por el Clima -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-success-light">
-            <div class="ods-icon">🌍</div>
-            <strong>Acción por el Clima</strong>
-            <p>Medidas para combatir el cambio climático.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-success-light has-text-centered">
+                <div class="ods-icon">🌍</div>
+                <strong>Acción por el Clima</strong>
+                <p>Medidas para combatir el cambio climático.</p>
+              </div>
+              <div class="flip-back has-background-success has-text-white has-text-centered">
+                <h4 class="title is-6">ODS 13</h4>
+                <p>Adoptar medidas urgentes para combatir el cambio climático.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
+        <!-- Alianzas para los Objetivos -->
         <div class="column is-one-quarter">
-          <div class="box ods-box has-text-centered has-background-info-light">
-            <div class="ods-icon">🤝</div>
-            <strong>Alianzas para los Objetivos</strong>
-            <p>Fortalecemos alianzas globales sostenibles.</p>
+          <div class="ods-flip-card">
+            <div class="flip-inner">
+              <div class="flip-front has-background-info-light has-text-centered">
+                <div class="ods-icon">🤝</div>
+                <strong>Alianzas para los Objetivos</strong>
+                <p>Fortalecemos alianzas globales sostenibles.</p>
+              </div>
+              <div class="flip-back has-background-info has-text-white has-text-centered">
+                <h4 class="title is-6">ODS 17</h4>
+                <p>Revitalizar la Alianza Mundial para el Desarrollo Sostenible.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
+  
       </div>
+  
       <div class="has-text-centered mt-5">
-        <a class="button is-primary">Conoce más sobre nuestro impacto en los ODS</a>
+        <a href="ods.html" class="button is-primary">
+          Conoce más sobre nuestro impacto en los ODS
+        </a>
       </div>
     </div>
   </section>
+  
 
   <br><br><br>
   <!--Impacto-->
@@ -333,8 +439,11 @@
   
       <!-- Botón ver más -->
       <div class="mt-5">
-        <button class="button is-link is-outlined is-rounded">Ver todos los proyectos</button>
+        <button class="button is-link is-outlined is-rounded" onclick="location.href='proyectos-anteriores.html'">
+          Ver todos los proyectos
+        </button>
       </div>
+      
   
     </div>
   </section>
@@ -419,6 +528,14 @@
             <span style="color: #ffc107;">★★★★★</span>
           </div>
         </div>
+  
+        <!-- Flechas de navegación -->
+        <div class="testimonial-navigation mt-4">
+          <button class="button is-small is-link prev">◀</button>
+          <button class="button is-small is-link next">▶</button>
+        </div>
+  
+        <!-- Puntos de navegación -->
         <div class="testimonial-dots mt-4">
           <span class="dot is-active"></span>
           <span class="dot"></span>
@@ -427,6 +544,7 @@
       </div>
     </div>
   </section>
+  
 
   <!--Sección de contacto-->
 
@@ -529,11 +647,11 @@
       <div class="column is-3-desktop is-6-tablet">
         <h3 class="footer-title">Enlaces Rápidos</h3>
         <ul class="footer-links">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Sobre Nosotros</a></li>
-          <li><a href="#">Proyectos</a></li>
-          <li><a href="#">Noticias</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="pagina.html">Inicio</a></li>
+          <li><a href="#quienes-somos">Sobre Nosotros</a></li>
+          <li><a href="#galeria-proyectos">Proyectos</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
 
@@ -553,9 +671,9 @@
       <div class="column is-3-desktop is-6-tablet">
         <h3 class="footer-title">Contáctanos</h3>
         <ul class="footer-contact">
-          <li><i class="ri-map-pin-line"></i> Calle Principal 123, Ciudad Esperanza</li>
-          <li><i class="ri-phone-line"></i> +34 912 345 678</li>
-          <li><i class="ri-mail-line"></i> cuatrivientos@voluntariado.org</li>
+          <li><i class="ri-map-pin-line"></i>Av. de San Jorge, 6, 31012 Pamplona</li>
+          <li><i class="ri-phone-line"></i> +34 948 12 41 29</li>
+          <li><i class="ri-mail-line"></i> cuatrovientos@voluntariado.org</li>
         </ul>
       </div>
 
@@ -568,6 +686,10 @@
 </footer>
 
 <script src="./script.js"></script>
+<script src="./validacion.js"></script>
+<script src="./carrusel.js"></script>
+<script src="./imagenes.js"></script>
+
 </body>
 </html>
 

@@ -292,57 +292,47 @@ document.addEventListener('DOMContentLoaded', () => {
 // Validación del correo y la contraseña en el modal de Iniciar sesión 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('loginForm');
-  const emailInput = form.querySelector('input[type="email"]');
-  const passwordInput = form.querySelector('input[type="password"]');
+  const emailInput = document.getElementById('correo-login');
+  const passwordInput = document.getElementById('password-login');
+  const emailError = document.getElementById('email-error');
+  const passwordError = document.getElementById('password-error');
 
-  // Crear contenedores de error debajo de los inputs
-  const emailError = document.createElement('p');
-  emailError.className = 'help is-danger';
-  emailInput.parentNode.appendChild(emailError);
-
-  const passwordError = document.createElement('p');
-  passwordError.className = 'help is-danger';
-  passwordInput.parentNode.appendChild(passwordError);
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevenir envío del formulario
-
-    // Limpiar errores anteriores
-    emailError.textContent = '';
-    passwordError.textContent = '';
-    emailInput.classList.remove('is-danger');
-    passwordInput.classList.remove('is-danger');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
+    let isValid = true;
 
-    let valid = true;
-
-    // Validar correo electrónico
-    if (!validarEmail(email)) {
-      emailError.textContent = 'Introduce un correo electrónico válido.';
-      emailInput.classList.add('is-danger');
-      valid = false;
+    // Validación de email con expresión regular
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      emailError.style.display = 'block';
+      isValid = false;
+    } else {
+      emailError.style.display = 'none';
     }
 
-    // Validar contraseña
+    // Validación de contraseña
     if (password.length < 6) {
-      passwordError.textContent = 'La contraseña debe tener al menos 6 caracteres.';
-      passwordInput.classList.add('is-danger');
-      valid = false;
+      passwordError.style.display = 'block';
+      isValid = false;
+    } else {
+      passwordError.style.display = 'none';
     }
 
-    if (valid) {
-      alert('Inicio de sesión correcto.');
-      form.submit(); // O redireccionar si quieres
+    if (isValid) {
+      // Validación final de credenciales simuladas
+      if (email === "admin@email.com" && password === "123456") {
+        alert("Inicio de sesión exitoso");
+        cerrarModalLogin();
+      } else {
+        alert("Correo o contraseña incorrectos");
+      }
     }
   });
-
-  function validarEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
 });
+
 
 // Cambiar de formulario
 function mostrarFormulario(tipo) {
@@ -666,14 +656,95 @@ function cerrarModalActividad() {
 //});
 
 
-//Animación para la sección de app móvil
+//Sección de voluntarios (filtrar, eliminar, aprobar o rechazar solicitudes)
+
+function cerrarModalVoluntario() {
+  document.getElementById('modal-voluntario').classList.remove('is-active');
+  document.getElementById('form-voluntario').reset();
+}
+
+function guardarVoluntario() {
+  const nombre = document.getElementById('nombre-voluntario').value;
+  const correo = document.getElementById('correo-voluntario').value;
+  const curso = document.getElementById('curso-voluntario').value;
+  const disponibilidad = document.getElementById('disponibilidad-voluntario').value;
+  const proyectos = document.getElementById('proyectos-voluntario').value;
+  const estado = document.getElementById('estado-voluntario').value;
+
+  const fila = crearFilaVoluntario(nombre, correo, curso, disponibilidad, proyectos, estado);
+
+  document.getElementById('tabla-voluntarios-body').appendChild(fila);
+  cerrarModalVoluntario();
+}
+
+function crearFilaVoluntario(nombre, correo, curso, disponibilidad, proyectos, estado) {
+  const fila = document.createElement('tr');
+  fila.innerHTML = `
+    <td>
+      <div class="voluntario-info">
+        <img src="Imagenes/default.jpg" alt="${nombre}">
+        <div>
+          <strong>${nombre}</strong><br><small>${correo}</small>
+        </div>
+      </div>
+    </td>
+    <td>${curso}</td>
+    <td>${disponibilidad}</td>
+    <td>${proyectos}</td>
+    <td><span class="tag is-${estado === 'Activo' ? 'success' : estado === 'Pendiente' ? 'warning' : 'danger'}">${estado}</span></td>
+    <td>
+      <button class="button is-small is-light" onclick="verVoluntario(this)">👁</button>
+      <button class="button is-small is-light" onclick="editarVoluntario(this)">✏️</button>
+      <button class="button is-small is-light" onclick="eliminarVoluntario(this)">🗑️</button>
+    </td>
+  `;
+  return fila;
+}
+
+function eliminarVoluntario(btn) {
+  const fila = btn.closest('tr');
+  fila.remove();
+}
+
+function aprobarSolicitud(boton) {
+  const fila = boton.closest('tr');
+  const nombre = fila.querySelector('strong').textContent;
+  const correo = fila.querySelector('small').textContent;
+  const disponibilidad = fila.cells[3].textContent;
+  const curso = "Proyecto aprobado"; // Puedes ajustarlo si deseas más detalle
+  const proyectos = "1 activo";
+  const estado = "Activo";
+
+  const nuevaFila = crearFilaVoluntario(nombre, correo, curso, disponibilidad, proyectos, estado);
+
+  document.getElementById('tabla-voluntarios-body').appendChild(nuevaFila);
+  fila.remove();
+}
+
+function rechazarSolicitud(boton) {
+  const fila = boton.closest('tr');
+  fila.remove();
+}
+
+//Cambio entre tres imagenes de la sección de  -REVISAR
+
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll("#hero img");
+  let currentIndex = 0;
+
+  function changeImage() {
+    images[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add("active");
+  }
+
+  setInterval(changeImage, 4000); // cada 4 segundos
+});
+
+// Efecto scroll del navbar
 
 
 
 
 
-
-
-
-
-
+  

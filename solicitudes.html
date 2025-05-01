@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitudes de Voluntarios</title>
+  <link rel="stylesheet" href="./bulma.css">
+  <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
+  <link rel="stylesheet" href="./administrador.css">
+
+</head>
+<body>
+    <!-- Volver al panel de administrador -->
+<section class="section pt-5 pb-0">
+    <div class="container">
+      <h2 class="is-sr-only">Navegación</h2>
+      <a href="admin.html" class="button is-light is-small">
+        ← Volver
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">📋 Solicitudes de Voluntariado</h1>
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Curso</th>
+            <th>Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tabla-solicitudes">
+          <tr>
+            <td>Laura Martínez</td>
+            <td>laura@example.com</td>
+            <td>2º DAM</td>
+            <td>Pendiente</td>
+            <td><button class="button is-small is-link" onclick="verSolicitud(0)">Ver</button></td>
+          </tr>
+          <tr>
+            <td>Iván Pérez</td>
+            <td>ivan@example.com</td>
+            <td>1º ASIR</td>
+            <td>Pendiente</td>
+            <td><button class="button is-small is-link" onclick="verSolicitud(1)">Ver</button></td>
+          </tr>
+          <tr>
+            <td>Carmen López</td>
+            <td>carmen@example.com</td>
+            <td>2º ASIR</td>
+            <td>Pendiente</td>
+            <td><button class="button is-small is-link" onclick="verSolicitud(2)">Ver</button></td>
+          </tr>
+          <tr>
+            <td>Mario Sánchez</td>
+            <td>mario@example.com</td>
+            <td>1º DAM</td>
+            <td>Pendiente</td>
+            <td><button class="button is-small is-link" onclick="verSolicitud(3)">Ver</button></td>
+          </tr>
+          <tr>
+            <td>Julia Torres</td>
+            <td>julia@example.com</td>
+            <td>1º CEFGS</td>
+            <td>Pendiente</td>
+            <td><button class="button is-small is-link" onclick="verSolicitud(4)">Ver</button></td>
+          </tr>
+          <tr>
+            <td>David Romero</td>
+            <td>david@example.com</td>
+            <td>1º DAM</td>
+            <td>Pendiente</td>
+            <td><button class="button is-small is-link" onclick="verSolicitud(5)">Ver</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modal-solicitud">
+    <div class="modal-background" onclick="cerrarModal()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Detalles de la Solicitud</p>
+        <button class="delete" aria-label="close" onclick="cerrarModal()"></button>
+      </header>
+      <section class="modal-card-body" id="contenido-solicitud">
+        <h2 class="title is-5">Información de la Solicitud</h2>
+        <!-- Contenido dinámico -->
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" onclick="aceptarSolicitud()">Aceptar</button>
+        <button class="button is-danger" onclick="rechazarSolicitud()">Rechazar</button>
+      </footer>
+    </div>
+  </div>
+  <script src="./solicitudes.js"></script>
+</body>
+</html>
