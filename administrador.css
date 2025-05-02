@@ -1,5 +1,28 @@
 /* === Mejoras para el nuevo diseño del panel === */
 
+/* Estilo para el navbar */
+@media (max-width: 768px) {
+  .navbar-menu {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+
+  .navbar-item {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-end {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .navbar-item .notification-button,
+  .navbar-item figure.image {
+    margin-top: 1rem;
+  }
+}
 
 /* Estilos para etiquetas ODS */
 .tag.ods {
@@ -508,3 +531,79 @@ form .select select:focus {
       height: 40px; 
       width: auto;
     }
+
+    @media (max-width: 768px) {
+      /* Tarjetas del dashboard */
+      .dashboard-cards {
+        flex-direction: column;
+      }
+    
+      .dashboard-cards .box {
+        width: 100%;
+        min-width: unset;
+      }
+    
+      /* Gráficos */
+      .dashboard-charts {
+        flex-direction: column;
+      }
+    
+      .dashboard-charts .box {
+        width: 100%;
+        min-width: unset;
+      }
+    
+      /* Contenedor de la tabla */
+      .table-container {
+        padding: 1rem;
+        overflow-x: auto;
+      }
+    
+      /* Tabla scroll horizontal */
+      .table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    
+      /* Texto y títulos */
+      .table-container h2.title.is-5 {
+        font-size: 1.1rem;
+      }
+    
+      .table-container p {
+        font-size: 0.85rem;
+      }
+    
+      /* Botones de acción en tablas */
+      .buttons.are-small {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .button.is-small {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    
+      /* Modal más ajustado en móviles */
+      .modal-card {
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+    
+      /* Voluntario info: imagen + texto vertical */
+      .voluntario-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      /* Gráficos ECharts */
+      #grafico-voluntarios,
+      #grafico-ods {
+        height: 250px;
+      }
+    }
+    

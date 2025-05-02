@@ -119,8 +119,73 @@ let organizaciones = JSON.parse(localStorage.getItem("organizaciones")) || [];
   });
 
   
-  
-  
+  // Validaciones al guardar voluntario
+document.querySelector('#modal-voluntario .button.is-success').addEventListener('click', function (e) {
+  // Limpiar errores
+  document.querySelectorAll('#form-voluntario .help.is-danger').forEach(p => p.textContent = '');
+
+  let valido = true;
+
+  // Obtener campos
+  const nombre = document.getElementById('nombre-voluntario');
+  const correo = document.getElementById('correo-voluntario');
+  const curso = document.getElementById('curso-voluntario');
+  const disponibilidad = document.getElementById('disponibilidad-voluntario');
+  const proyectos = document.getElementById('proyectos-voluntario');
+  const estado = document.getElementById('estado-voluntario');
+  const foto = document.getElementById('foto-voluntario');
+
+  // Función para mostrar errores
+  function mostrarError(campo, mensaje) {
+    const errorEl = campo.parentElement.querySelector('.help.is-danger');
+    if (errorEl) errorEl.textContent = mensaje;
+  }
+
+  // Validar campos
+  if (nombre.value.trim().length < 3) {
+    mostrarError(nombre, 'El nombre debe tener al menos 3 caracteres.');
+    valido = false;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(correo.value.trim())) {
+    mostrarError(correo, 'Correo electrónico no válido.');
+    valido = false;
+  }
+
+  if (curso.value.trim().length < 2) {
+    mostrarError(curso, 'Curso demasiado corto.');
+    valido = false;
+  }
+
+  if (disponibilidad.value.trim().length < 3) {
+    mostrarError(disponibilidad, 'Disponibilidad muy corta.');
+    valido = false;
+  }
+
+  if (proyectos.value.trim().length === 0) {
+    mostrarError(proyectos, 'Indica al menos un proyecto.');
+    valido = false;
+  }
+
+  if (!['Activo', 'Pendiente', 'Inactivo'].includes(estado.value)) {
+    mostrarError(estado, 'Selecciona un estado válido.');
+    valido = false;
+  }
+
+  // Solo pedir foto si es nuevo
+  if (!voluntarioEditando && (!foto.files || foto.files.length === 0)) {
+    mostrarError(foto, 'Debes subir una foto.');
+    valido = false;
+  }
+
+  // Ejecutar guardarVoluntario solo si es válido
+  if (valido) {
+    guardarVoluntario(); // tu función existente
+  }
+});
+
+
   //Sección para añadir, modificar y eliminar voluntarios
   let voluntarioEditando = null;
 let imagenBase64 = "";
@@ -201,3 +266,4 @@ function eliminarVoluntario(btn) {
   const fila = btn.closest('tr');
   fila.remove();
 }
+

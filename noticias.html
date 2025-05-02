@@ -11,33 +11,42 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar is-white">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#">
-            <img src="Imagenes/Logo.png" alt="Logo" class="logo-navbar">
-            <strong class="nombre-pagina">Huellas del cambio</strong>
-          </a>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" href="pagina.html">Inicio</a>
-            <a class="navbar-item" href="#quienes-somos">Sobre Nosotros</a>
-            <a class="navbar-item">Proyectos</a>
-            <a class="navbar-item">Noticias</a>
-            <a class="navbar-item">Contacto</a>
-          </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <a class="button is-primary is-rounded" href="formulario.html">Únete Ahora</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+   <!-- Navbar -->
+<nav class="navbar is-white">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <img src="Imagenes/Logo.png" alt="Logo" class="logo-navbar">
+      <strong class="nombre-pagina">Huellas del cambio</strong>
+    </a>
+
+    <!-- Burger para móvil -->
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasic" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="pagina.html">Inicio</a>
+      <a class="navbar-item" href="#quienes-somos">Sobre Nosotros</a>
+      <a class="navbar-item">Proyectos</a>
+      <a class="navbar-item">Noticias</a>
+      <a class="navbar-item">Contacto</a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a class="button is-primary is-rounded" href="formulario.html">Únete Ahora</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
 
   <section class="hero is-primary is-bold">
     <div class="hero-body has-text-centered">
-      <p class="title is-2">Noticias y Actualizaciones</p>
+      <h1 class="title is-2">Noticias y Actualizaciones</h1>
       <p class="subtitle is-5">Explora nuestras actividades, logros y proyectos recientes en las comunidades</p>
     </div>
   </section>
@@ -139,6 +148,6 @@
       </div>
     </div>
   </section>
-
+<script src="./noticias.js"></script>
 </body>
 </html>

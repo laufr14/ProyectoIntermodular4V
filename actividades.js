@@ -206,3 +206,54 @@ document.getElementById("btn-guardar-actividad").addEventListener("click", () =>
   document.getElementById("formulario-actividad").reset();
   document.getElementById("modal-crear-actividad").classList.remove("is-active");
 });
+
+//Script para modal de crear actividad
+document.getElementById('btn-guardar-actividad').addEventListener('click', function () {
+  // Limpiar errores previos
+  document.querySelectorAll('#formulario-actividad .help.is-danger').forEach(el => el.remove());
+
+  let valido = true;
+
+  const nombre = document.getElementById('nombre-actividad');
+  const horario = document.getElementById('horario-actividad');
+  const descripcion = document.getElementById('descripcion-actividad');
+  const proyecto = document.getElementById('select-proyecto-actividad');
+
+  function mostrarError(elemento, mensaje) {
+    const p = document.createElement('p');
+    p.className = 'help is-danger';
+    p.textContent = mensaje;
+    elemento.parentElement.appendChild(p);
+  }
+
+  // Validar nombre
+  if (nombre.value.trim().length < 3) {
+    mostrarError(nombre, 'El nombre debe tener al menos 3 caracteres.');
+    valido = false;
+  }
+
+  // Validar horario
+  if (horario.value.trim().length < 5) {
+    mostrarError(horario, 'Indica un horario válido.');
+    valido = false;
+  }
+
+  // Validar descripción
+  if (descripcion.value.trim().length < 10) {
+    mostrarError(descripcion, 'La descripción debe tener al menos 10 caracteres.');
+    valido = false;
+  }
+
+  // Validar proyecto
+  if (proyecto.value === '') {
+    mostrarError(proyecto, 'Selecciona un proyecto asociado.');
+    valido = false;
+  }
+
+  // Si es válido
+  if (valido) {
+    alert('Actividad creada correctamente.');
+    document.getElementById('formulario-actividad').reset();
+    cerrarModalCrearActividad(); // Usa esta función si la tienes para cerrar el modal
+  }
+});

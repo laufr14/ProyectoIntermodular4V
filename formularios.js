@@ -139,3 +139,97 @@ function enviarSolicitudPendiente() {
     }
   });
   
+  //ABRIR Y CERRAR MODAL DE REGISTRO DE ACTIVIDADES POR PARTE DE UNA ORGANIZACIÓN
+  function abrirModalActividad() {
+    document.getElementById('modal-actividad').classList.add('is-active');
+  }
+  function cerrarModalActividad() {
+    document.getElementById('modal-actividad').classList.remove('is-active');
+  }
+
+  //Validaciones para el modal de registro de actividad por parte de las organizaciones y simulación de registro de actividad 
+  document.getElementById('form-actividad-organizacion').addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    // Limpiar errores anteriores
+    document.querySelectorAll('#form-actividad-organizacion .help.is-danger').forEach(p => p.textContent = '');
+  
+    let valido = true;
+  
+    // Obtener elementos
+    const nombre = document.getElementById('nombre-actividad');
+    const descripcion = document.getElementById('descripcion-actividad');
+    const fecha = document.getElementById('fecha-actividad');
+    const duracion = document.getElementById('duracion-actividad');
+    const modalidad = document.getElementById('modalidad-actividad');
+    const perfiles = document.getElementById('perfiles-actividad');
+    const accesible = document.getElementById('accesible-actividad');
+  
+    // Función auxiliar para mostrar errores
+    function mostrarError(input, mensaje) {
+      let help = input.parentElement.querySelector('.help.is-danger');
+      if (!help) {
+        help = document.createElement('p');
+        help.className = 'help is-danger';
+        input.parentElement.appendChild(help);
+      }
+      help.textContent = mensaje;
+    }
+  
+    // Validaciones
+    if (nombre.value.trim().length < 3) {
+      mostrarError(nombre, 'El nombre debe tener al menos 3 caracteres.');
+      valido = false;
+    }
+  
+    if (descripcion.value.trim().length < 20) {
+      mostrarError(descripcion, 'La descripción debe tener al menos 20 caracteres.');
+      valido = false;
+    }
+  
+    if (!fecha.value) {
+      mostrarError(fecha, 'La fecha es obligatoria.');
+      valido = false;
+    }
+  
+    if (!duracion.value || isNaN(duracion.value) || parseInt(duracion.value) <= 0) {
+      mostrarError(duracion, 'Introduce una duración válida en horas.');
+      valido = false;
+    }
+  
+    if (!modalidad.value) {
+      mostrarError(modalidad, 'Selecciona una modalidad.');
+      valido = false;
+    }
+  
+    if (perfiles.value.trim().length < 10) {
+      mostrarError(perfiles, 'Describe los perfiles requeridos (mín. 10 caracteres).');
+      valido = false;
+    }
+  
+    // Si pasa todas las validaciones
+    if (valido) {
+      const odsSeleccionados = Array.from(document.querySelectorAll('input[name="ods"]:checked'))
+        .map(cb => 'ODS ' + cb.value)
+        .join(', ') || 'Ninguno';
+  
+      const fila = document.createElement('tr');
+      fila.innerHTML = `
+        <td>${nombre.value.trim()}</td>
+        <td>${fecha.value}</td>
+        <td>${duracion.value} h</td>
+        <td>${modalidad.value}</td>
+        <td>${odsSeleccionados}</td>
+        <td>${accesible.checked ? 'Sí' : 'No'}</td>
+      `;
+  
+      document.getElementById('tabla-actividades-body').appendChild(fila);
+  
+      document.getElementById('form-actividad-organizacion').reset();
+      cerrarModalActividad();
+    }
+  });
+  
+
+  
+  

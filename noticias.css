@@ -1,121 +1,144 @@
-/* Estilo general de la sección de noticias */
+/* Estilo general de la tarjeta de noticias */
 .news-card {
-    border-radius: 16px;
-    overflow: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen */
+.news-card figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+/* Contenido */
+.news-card .content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.news-card .content p {
+  color: #4a4a4a;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.news-card .content p.is-size-7 {
+  font-size: 0.85rem;
+  color: #7a7a7a;
+}
+
+.news-card .content h3 {
+  font-weight: 700;
+  color: #363636;
+  font-size: 1.2rem;
+}
+
+.news-card .content a {
+  color: #1e6ffb;
+  font-weight: 500;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.news-card .content a:hover {
+  color: #0041c4;
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero.is-primary {
+  background: linear-gradient(135deg, #1e6ffb, #0041c4bc) !important;
+  color: white;
+}
+
+.hero .title,
+.hero .subtitle {
+  color: white;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .news-card figure img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    margin-bottom: 2rem;
+  }
+
+  .news-card figure img {
+    height: 160px;
+  }
+
+  .columns.is-multiline {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 1rem;
   }
-  
-  .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Imagen de la noticia */
-  .news-card figure img {
-    object-fit: cover;
+
+  .columns.is-multiline .column {
     width: 100%;
-    height: 200px;
   }
-  
-  /* Contenido de cada noticia */
+}
+
+@media (max-width: 480px) {
+  .news-card figure img {
+    height: 140px;
+  }
+
   .news-card .content {
-    padding: 1.5rem;
-    text-align: left;
+    padding: 1rem;
   }
-  
-  .news-card .content p {
-    color: #4a4a4a;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-  }
-  
-  /* Categoría y fecha */
-  .news-card .content p.is-size-7 {
-    font-size: 0.85rem;
-    color: #7a7a7a;
-  }
-  
-  /* Título de la noticia */
+
   .news-card .content h3 {
-    font-weight: 700;
-    color: #363636;
-  }
-  
-  /* Enlace "Leer más" */
-  .news-card .content a {
-    color: #1e6ffb;
-    font-weight: 500;
-    margin-top: 1rem;
-    display: inline-block;
-    transition: color 0.3s ease;
-  }
-  
-  .news-card .content a:hover {
-    color: #0041c4;
-    text-decoration: underline;
-  }
-  
-  /* Hero de cabecera */
-  .hero.is-primary {
-    background-color: #1e6ffb;
-    color: white;
-  }
-  
-  .hero .title,
-  .hero .subtitle {
-    color: white;
-  }
-  
-  /* Ajustes responsive */
-  @media (max-width: 1024px) {
-    .news-card figure img {
-      height: 180px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .news-card {
-      margin-bottom: 2rem;
-    }
-  
-    .news-card figure img {
-      height: 160px;
-    }
-  
-    .columns.is-multiline {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .columns.is-multiline .column {
-      width: 100%;
-    }
+    font-size: 1rem;
   }
 
-  .hero.is-primary {
-    background: linear-gradient(135deg, #1e6ffb, #0041c4bc) !important;
-    color: white;
+  .news-card .content p {
+    font-size: 0.9rem;
   }
-  
-  
-  .hero.is-primary .title,
-  .hero.is-primary .subtitle {
-    color: white;
+}
+
+/* Botón burger para móviles */
+.navbar-burger {
+  display: none;
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+
+/* Mostrar burger solo en pantallas pequeñas */
+@media (max-width: 1024px) {
+  .navbar-burger {
+    display: flex;
   }
 
-  .news-card .content a {
-    color: #1e6ffb;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  .navbar-menu {
+    display: none;
   }
-  
-  .news-card .content a:hover {
-    color: #0041c4;
-    text-decoration: underline;
+
+  .navbar-menu.is-active {
+    display: block;
   }
-  
-  
+}
+

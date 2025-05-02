@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voluntariado</title>
-  <link rel="stylesheet" href="./estilos.css">
   <link rel="stylesheet" href="./bulma.css">
+  <link rel="stylesheet" href="./estilos.css">
   <link rel="icon" type="image/x-icon" href="./Imagenes/Logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+<nav class="navbar is-white" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="#">
-      <img src="Imagenes/Logo.png" alt="Logo" class="logo-navbar">
-      <strong class="nombre-pagina">Huellas del cambio</strong>
+      <img src="Imagenes/Logo.png" alt="Logo de Huellas del cambio" class="logo-navbar">
+      <em class="nombre-pagina">Huellas del cambio</em>
     </a>
 
     <!-- Burger para móvil -->
@@ -61,21 +61,21 @@
 
       <form id="loginForm">
         <div class="field">
-          <label class="label">Correo electrónico</label>
+          <label class="label" for="correo-login">Correo electrónico</label>
           <div class="control">
-            <input id="correo-login" class="input" type="email" placeholder="tu@email.com">
+            <input id="correo-login" name="email" class="input" type="email" placeholder="tu@email.com">
             <p class="help is-danger" id="email-error" style="display: none;">Correo no válido</p>
           </div>
         </div>
-
+      
         <div class="field">
-          <label class="label">Contraseña</label>
+          <label class="label" for="password-login">Contraseña</label>
           <div class="control">
-            <input id="password-login" class="input" type="password" placeholder="********">
+            <input id="password-login" name="password" class="input" type="password" placeholder="********">
             <p class="help is-danger" id="password-error" style="display: none;">La contraseña debe tener al menos 6 caracteres</p>
           </div>
         </div>
-
+      
         <div class="field is-grouped is-justify-content-space-between">
           <div class="control">
             <label class="checkbox">
@@ -86,22 +86,22 @@
             <a href="#">¿Olvidaste tu contraseña?</a>
           </div>
         </div>
-
+      
         <div class="field mt-4">
           <button type="submit" class="button is-primary is-fullwidth">Entrar</button>
         </div>
       </form>
+      
         <div class="has-text-centered mt-2">
           <p>¿No tienes una cuenta? <a href="formulario.html">Regístrate aquí</a></p>
           <a href="admin.html">Ir al panel de administrador</a>
         </div>
-      
+     
     </div>
   </div>
 
   <button class="modal-close is-large" aria-label="close" onclick="cerrarModalLogin()"></button>
 </div>
-
 
 <!--Hero Section-->
 
@@ -329,7 +329,7 @@
         <!-- Imagen -->
         <div class="column is-5">
           <figure class="image impact-image">
-            <img src="Imagenes/CARTEL VOLUNTARIADO (6)_page-0001(1).jpg" alt="Nuestro Impacto">
+            <img src="Imagenes/cartel_voluntariado.jpg" alt="Nuestro Impacto">
           </figure>
         </div>
   
@@ -450,7 +450,7 @@
   
   <br><br><br>
   
-  <!--Última Noticias--->
+  <!--Última Noticias-->
 
   <section class="section" id="noticias">
     <div class="container has-text-centered">
@@ -557,13 +557,23 @@
         <!-- Formulario de contacto -->
         <div class="formulario-contacto">
           <h3>Envíanos un mensaje</h3>
+          <hr><hr>
           <form>
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu email" required>
-            <input type="text" placeholder="Asunto del mensaje" required>
-            <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Tu nombre">
+          
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Tu email">
+          
+            <label for="asunto">Asunto</label>
+            <input id="asunto" type="text" placeholder="Asunto del mensaje">
+          
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Tu mensaje" rows="5"></textarea>
+          
             <button type="submit">Enviar Mensaje</button>
           </form>
+          
         </div>
   
         <!-- Información de contacto -->
@@ -583,7 +593,7 @@
     <div class="mapa-contacto">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.2995058268307!2d-1.662429023867147!3d42.8242868056469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCentro%20Cuatro%20Vientos!5e0!3m2!1sen!2ses!4v1745259812224!5m2!1sen!2ses" 
-        width="100%" 
+        width="800" 
         height="250" 
         style="border:0;" 
         allowfullscreen="" 
@@ -632,7 +642,7 @@
 
       <!-- Logo + Descripción -->
       <div class="column is-3-desktop is-6-tablet">
-        <h2 class="footer-logo"><italic>Huellas del cambio</italic></h2>
+        <h2 class="footer-logo"><em>Huellas del cambio</em></h2>
         <p class="footer-description">
           Transformando vidas a través del voluntariado y la acción comunitaria desde 2010.
         </p>

@@ -280,10 +280,120 @@ He leído y acepto la <a href="#">política de privacidad</a> y los <a href="#">
 <button type="submit" class="button is-primary is-fullwidth">Registrarme como Organización</button>
 </div>
 
+<div class="field mt-3">
+  <button type="button" class="button is-link is-light is-fullwidth" onclick="abrirModalActividad()">+ Añadir Actividad</button>
+</div>
+
+
 </form>
 
-</div>
+<!-- Modal para Registrar Actividad -->
+<div class="modal" id="modal-actividad">
+  <div class="modal-background" onclick="cerrarModalActividad()"></div>
+  <div class="modal-card" style="width: 90%;">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Registrar Actividad</p>
+      <button class="delete" aria-label="close" onclick="cerrarModalActividad()"></button>
+    </header>
+    <section class="modal-card-body">
+      <h2 class="title is-5">Detalles de la Actividad</h2>
+      <!-- Aquí va el formulario de actividad -->
+      <form id="form-actividad-organizacion">
+        <div class="field">
+          <label class="label">Nombre de la Actividad *</label>
+          <div class="control">
+            <input type="text" class="input" id="nombre-actividad" placeholder="Ej. Taller de reciclaje">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Descripción *</label>
+          <div class="control">
+            <textarea id="descripcion-actividad" class="textarea" placeholder="Descripción mínima de 20 caracteres"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Fecha *</label>
+          <div class="control">
+            <input type="date" id="fecha-actividad" class="input">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Duración (en horas) *</label>
+          <div class="control">
+            <input type="number" id="duracion-actividad" class="input" min="1">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Modalidad *</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select id="modalidad-actividad">
+                <option value="">Selecciona una opción</option>
+                <option>Presencial</option>
+                <option>Online</option>
+                <option>Mixta</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Perfiles requeridos *</label>
+          <div class="control">
+            <textarea class="textarea" id="perfiles-actividad" placeholder="Ej. Estudiantes con perfil medioambiental"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="accesible-actividad">
+            Actividad accesible para personas con movilidad reducida
+          </label>
+        </div>
+
+        <div class="field">
+          <label class="label">ODS relacionados</label>
+          <div class="control">
+            <label class="checkbox"><input type="checkbox" name="ods" value="4"> Educación de calidad</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="13"> Acción por el clima</label><br>
+            <label class="checkbox"><input type="checkbox" name="ods" value="3"> Salud y bienestar</label>
+          </div>
+        </div>
+
+        <div class="field mt-4">
+          <button type="submit" class="button is-success is-fullwidth">Registrar Actividad</button>
+        </div>
+      </form>
+
+      <!--Tabla de actividades registradas-->
+
+<section class="section">
+  <h2 class="title is-5">Actividades Registradas</h2>
+  <div class="table-container">
+    <table class="table is-fullwidth is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          <th>Duración</th>
+          <th>Modalidad</th>
+          <th>ODS</th>
+          <th>Accesible</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-actividades-body">
+        <!-- Se insertarán aquí las actividades -->
+      </tbody>
+    </table>
+  </div>
 </section>
+    </section>
+  </div>
+</div>
 
 
 <script src="./script.js"></script>

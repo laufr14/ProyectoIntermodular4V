@@ -17,27 +17,39 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar-menu">
+ <!-- Navbar principal -->
+<nav class="navbar is-white" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="admin.html">
+      <strong>Panel Admin</strong>
+    </a>
+
+    <!-- Burger para móviles -->
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="adminNavbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="adminNavbar" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item is-active" href="admin.html">Dashboard</a>
       <a class="navbar-item" href="voluntarios.html">Voluntarios</a>
       <a class="navbar-item" href="proyectos.html">Proyectos</a>
-      <a class="navbar-item" href="./actividades.html">Actividades</a>
+      <a class="navbar-item" href="actividades.html">Actividades</a>
       <a class="navbar-item" href="solicitudes.html">Solicitudes</a>
       <a class="navbar-item" href="organizaciones.html">Organizaciones</a>
     </div>
-  
+
     <div class="navbar-end">
-      <!-- Notificación -->
       <div class="navbar-item">
         <button class="notification-button" aria-label="Notificaciones">
           <span class="icon">🔔</span>
           <span class="badge">2</span>
         </button>
       </div>
-  
-      <!-- Avatar -->
+
       <div class="navbar-item">
         <figure class="image is-32x32">
           <img class="is-rounded" src="Imagenes/Icono_panel.jpeg" alt="Usuario">
@@ -45,6 +57,8 @@
       </div>
     </div>
   </div>
+</nav>
+
 
 
   <!-- Panel de Estadísticas -->
@@ -382,6 +396,7 @@
           <label class="label" for="nombre">Nombre del Proyecto</label>
           <div class="control">
             <input id="nombre" name="nombre" class="input" type="text" placeholder="Introduce un nombre">
+            <p class="help is-danger"></p> 
           </div>
         </div>
 
@@ -389,6 +404,7 @@
           <label class="label" for="descripcion">Descripción</label>
           <div class="control">
             <textarea id="descripcion" name="descripcion" class="textarea" placeholder="Descripción del proyecto"></textarea>
+            <p class="help is-danger"></p> 
           </div>
         </div>
 
@@ -398,6 +414,7 @@
               <label class="label" for="fecha-inicio">Fecha de Inicio</label>
               <div class="control">
                 <input id="fecha-inicio" name="fecha-inicio" class="input" type="date">
+                <p class="help is-danger"></p>
               </div>
             </div>
 
@@ -405,6 +422,7 @@
               <label class="label" for="fecha-fin">Fecha de Fin</label>
               <div class="control">
                 <input id="fecha-fin" name="fecha-fin" class="input" type="date">
+                <p class="help is-danger"></p>
               </div>
             </div>
           </div>
@@ -414,6 +432,7 @@
           <label class="label" for="cupo-voluntarios">Cupo de Voluntarios</label>
           <div class="control">
             <input id="cupo-voluntarios" name="cupo-voluntarios" class="input" type="number" placeholder="Ej. 15">
+            <p class="help is-danger"></p>
           </div>
         </div>
 
@@ -439,6 +458,7 @@
                 <option>Salud</option>
               </select>
             </div>
+            <p class="help is-danger"></p>
           </div>
         </div>
 
@@ -447,6 +467,7 @@
           <div class="control">
             <label class="checkbox custom-checkbox">
               <input type="checkbox" id="activo" name="activo">
+              
               ¿Está activo?
             </label>
           </div>
@@ -536,9 +557,11 @@
 </section>
 
   
-  <script src="./script.js"></script>
+  <script src="/script.js"></script>
   <script src="./organizaciones.js"></script>
   <script src="./filtrosadmin.js"></script>
+  <script src="./validacionModalProyecto.js"></script>
  
+  
 </body>
 </html>
