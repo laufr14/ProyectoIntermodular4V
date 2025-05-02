@@ -741,7 +741,7 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(changeImage, 4000); // cada 4 segundos
 });
 
-// Efecto scroll del navbar
+
 
 
 
