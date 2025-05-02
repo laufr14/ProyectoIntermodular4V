@@ -1,4 +1,4 @@
-// Función para validar el correo de Gmail -David
+// Función para validar el correo de Gmail
 function validarGmail() {
   const correoInput = document.getElementById('correo-login');
   const errorDiv = document.getElementById('email-error');

@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 //Funcionalidades para crear, editar y eliminar proyectos 
 
 let proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];

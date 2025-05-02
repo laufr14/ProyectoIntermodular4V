@@ -4,7 +4,6 @@ document.getElementById('btn-guardar-proyecto').addEventListener('click', functi
   
     let valido = true;
   
-    // Obtener campos
     const nombre = document.getElementById('nombre');
     const descripcion = document.getElementById('descripcion');
     const fechaInicio = document.getElementById('fecha-inicio');
@@ -59,7 +58,6 @@ document.getElementById('btn-guardar-proyecto').addEventListener('click', functi
       document.getElementById('mensaje-alerta').textContent = '✅ Proyecto registrado correctamente.';
       document.getElementById('mensaje-alerta').style.display = 'block';
       document.getElementById('formulario-proyecto').reset();
-      // cerrarModal(); // Descomenta si quieres cerrar automáticamente
     }
   });
   
