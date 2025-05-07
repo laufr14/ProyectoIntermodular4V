@@ -55,7 +55,7 @@ let organizaciones = JSON.parse(localStorage.getItem("organizaciones")) || [];
     guardarOrganizaciones();
     document.getElementById("form-organizacion").reset();
   }
-
+ 
   function verOrganizacion(index) {
     const org = organizaciones[index];
     document.getElementById("modal-org-nombre").textContent = org.nombre;
